@@ -1,0 +1,23 @@
+module org.serviio.ui.representation.all;
+
+public import org.serviio.ui.representation.ActionRepresentation;
+public import org.serviio.ui.representation.ApplicationRepresentation;
+public import org.serviio.ui.representation.BrowsingCategory;
+public import org.serviio.ui.representation.ConsoleSettingsRepresentation;
+public import org.serviio.ui.representation.DataValue;
+public import org.serviio.ui.representation.LibraryStatusRepresentation;
+public import org.serviio.ui.representation.LicenseRepresentation;
+public import org.serviio.ui.representation.MetadataRepresentation;
+public import org.serviio.ui.representation.OnlinePlugin;
+public import org.serviio.ui.representation.OnlinePluginsRepresentation;
+public import org.serviio.ui.representation.OnlineRepository;
+public import org.serviio.ui.representation.PresentationRepresentation;
+public import org.serviio.ui.representation.ReferenceDataRepresentation;
+public import org.serviio.ui.representation.RemoteAccessRepresentation;
+public import org.serviio.ui.representation.RendererRepresentation;
+public import org.serviio.ui.representation.RepositoryRepresentation;
+public import org.serviio.ui.representation.ServiceStatusRepresentation;
+public import org.serviio.ui.representation.SharedFolder;
+public import org.serviio.ui.representation.StatusRepresentation;
+public import org.serviio.ui.representation.TranscodingRepresentation;
+public import org.serviio.ui.representation.WithAccessGroups;

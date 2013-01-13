@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0" xmlns:dlna="urn:schemas-dlna-org:device-1-0" xmlns:sec="http://www.sec.co.kr/dlna">
+<specVersion>
+<major>1</major>
+<minor>0</minor>
+</specVersion>
+<device>
+<dlna:X_DLNACAP/>
+<dlna:X_DLNADOC>DMS-1.50</dlna:X_DLNADOC>
+<dlna:X_DLNADOC>M-DMS-1.50</dlna:X_DLNADOC>
+<UDN>uuid:${device.uuid}</UDN>
+<friendlyName>${deviceDescription.friendlyName}</friendlyName>
+<deviceType>${device.deviceType}</deviceType>
+<manufacturer>${deviceDescription.manufacturer}</manufacturer>
+<manufacturerURL>http://www.serviio.org</manufacturerURL> 
+<modelName>${deviceDescription.modelName}</modelName>
+<modelDescription>Serviio, a DLNA media server</modelDescription>
+<modelNumber>${deviceDescription.modelNumber}</modelNumber> 
+<modelURL>http://www.serviio.org</modelURL> 
+<serialNumber></serialNumber>
+<#if deviceDescription.extraElements??>${deviceDescription.extraElements}</#if>
+<iconList>
+<icon>
+<mimetype>image/png</mimetype>
+<width>48</width>
+<height>48</height>
+<depth>24</depth>
+<url>${smallPngURL?xml}</url>
+</icon>
+<icon>
+<mimetype>image/png</mimetype>
+<width>120</width>
+<height>120</height>
+<depth>24</depth>
+<url>${largePngURL?xml}</url>
+</icon>
+<icon>
+<mimetype>image/jpeg</mimetype>
+<width>48</width>
+<height>48</height>
+<depth>24</depth>
+<url>${smallJpgURL?xml}</url>
+</icon>
+<icon>
+<mimetype>image/jpeg</mimetype>
+<width>120</width>
+<height>120</height>
+<depth>24</depth>
+<url>${largeJpgURL?xml}</url>
+</icon>
+</iconList>
+<serviceList>
+<#list services as service>
+<service>
+<serviceType>${service.serviceType}</serviceType>
+<serviceId>${service.serviceId}</serviceId>
+<SCPDURL>${service.scpdURL?xml}</SCPDURL>
+<controlURL>${service.controlURL?xml}</controlURL>
+<eventSubURL>${service.eventSubURL?xml}</eventSubURL>
+</service>
+</#list>
+</serviceList>
+</device>
+</root>

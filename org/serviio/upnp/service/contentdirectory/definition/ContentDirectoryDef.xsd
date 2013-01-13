@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:simpleType name="ContainerClassType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CONTAINER"/>
+			<xsd:enumeration value="PERSON"/>
+			<xsd:enumeration value="MUSIC_ARTIST"/>
+			<xsd:enumeration value="GENRE"/>
+			<xsd:enumeration value="MUSIC_GENRE"/>
+			<xsd:enumeration value="ALBUM"/>
+			<xsd:enumeration value="MUSIC_ALBUM"/>
+			<xsd:enumeration value="STORAGE_FOLDER"/>
+			<xsd:enumeration value="PLAYLIST_CONTAINER"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="ItemClassType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="MUSIC_TRACK"/>
+			<xsd:enumeration value="PHOTO"/>
+			<xsd:enumeration value="AUDIO_ITEM"/>
+			<xsd:enumeration value="IMAGE_ITEM"/>
+			<xsd:enumeration value="VIDEO_ITEM"/>
+			<xsd:enumeration value="MOVIE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="ContainerType">
+		<xsd:choice>
+			<xsd:group ref="allowed-under-container"/>
+		</xsd:choice>
+		<xsd:attribute name="title_key" type="xsd:string" use="required"/>
+		<xsd:attribute name="id" type="xsd:string" use="required"/>
+		<xsd:attribute name="browsable" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="editable" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="containerClass" type="ContainerClassType" use="required"/>
+		<xsd:attribute name="cacheRegion" type="xsd:string"	use="required"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="ActionType">
+		<xsd:choice>
+			<xsd:group ref="allowed-under-action"/>
+		</xsd:choice>
+		<xsd:attribute name="command" type="xsd:string"	use="required"/>
+		<xsd:attribute name="idPrefix" type="xsd:string" use="required" />
+		<xsd:attribute name="containerClass" type="ContainerClassType" use="optional" />
+		<xsd:attribute name="itemClass" type="ItemClassType" use="optional" />
+		<xsd:attribute name="recursive" type="xsd:boolean" use="optional"/>
+		<xsd:attribute name="cacheRegion" type="xsd:string"	use="required"/>
+	</xsd:complexType>
+
+	<xsd:element name="container" type="ContainerType"/>
+
+    <xsd:group name="allowed-root">
+    	<xsd:sequence>
+    		<xsd:element ref="container" minOccurs="1" maxOccurs="1"/>
+    	</xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name="allowed-under-container">
+    	<xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+    			<xsd:element ref="action"/>
+    			<xsd:element ref="container"/>
+    		</xsd:choice>
+    	</xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name="allowed-under-action">
+    	<xsd:sequence>
+    		<xsd:element ref="action" minOccurs="0" maxOccurs="1"/>
+    	</xsd:sequence>
+    </xsd:group>
+
+    <xsd:element name="action" type="ActionType"/>
+</xsd:schema>

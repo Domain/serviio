@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="unqualified">
+
+
+	<xsd:complexType name="ProfilesType">
+		<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="Profile" type="ProfileType"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="1.0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="ProfileType">
+		<xsd:all>
+			<xsd:element name="ContentDirectoryMessageBuilder" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="false"/>
+			<xsd:element name="Detection" minOccurs="0" type="DetectionType" maxOccurs="1"/>
+			<xsd:element name="ProtocolInfo" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="simple"/>
+						<xsd:enumeration value="DLNA"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="DeviceDescription" type="DeviceDescriptionType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="MediaFormatProfiles" type="MediaFormatProfilesType" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="ResourceTransportProtocolHandler" type="xsd:string" maxOccurs="1" minOccurs="0" nillable="false"/>
+			<xsd:element name="ContentDirectoryDefinitionFilter" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="H264LevelCheck" type="H264LevelCheckType" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="Transcoding" type="TranscodingType" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="OnlineTranscoding" type="OnlineTranscodingType" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="AlternativeQualities" type="QualitiesType" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="AutomaticImageRotation" type="xsd:boolean" maxOccurs="1" minOccurs="0" nillable="false"/>
+			<xsd:element name="LimitImageResolution" type="xsd:boolean" maxOccurs="1" minOccurs="0" nillable="false"/>
+			<xsd:element name="SubtitlesMimeType" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attribute name="id" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="10" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="extendsProfileId" type="xsd:string" use="optional"/>
+		<xsd:attribute name="alwaysEnableTranscoding" type="xsd:boolean" use="optional" default="false"/>		
+		<xsd:attribute name="selectable" type="xsd:boolean" use="optional" default="true"/>
+	</xsd:complexType>
+
+	<xsd:element name="Profiles" type="ProfilesType"/>
+
+	<xsd:simpleType name="H264LevelCheckType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ANY"/>
+			<xsd:enumeration value="HEADER"/>
+			<xsd:enumeration value="FILE_ATTRIBUTES"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="QualityType">
+		<xsd:all>
+			<xsd:element name="Transcoding" type="TranscodingType" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="OnlineTranscoding" type="OnlineTranscodingType" maxOccurs="1" minOccurs="0"/>		
+		</xsd:all>
+		<xsd:attribute name="type" type="qualityTypeEnumType" use="required"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="QualitiesType">
+		<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="Quality" type="QualityType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DeviceDescriptionType">
+		<xsd:all>
+			<xsd:element name="FriendlyName" type="xsd:string" maxOccurs="1" minOccurs="0" nillable="false"/>
+			<xsd:element name="ModelName" type="xsd:string"	maxOccurs="1" minOccurs="0" nillable="false"/>
+			<xsd:element name="ModelNumber" type="xsd:string" maxOccurs="1" minOccurs="0" nillable="false"/>
+			<xsd:element name="Manufacturer" type="xsd:string" maxOccurs="1" minOccurs="0" nillable="false"/>
+			<xsd:element name="ExtraElements" type="xsd:string" maxOccurs="1" minOccurs="0" nillable="false"/>
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:complexType name="MediaFormatProfilesType">
+		<xsd:sequence>
+			<xsd:element name="MediaFormatProfile" type="MediaFormatProfileType" minOccurs="0" maxOccurs="unbounded" nillable="false"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MediaFormatProfileType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="mime-type" type="xsd:string" use="required"/>
+				<xsd:attribute name="name" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="TranscodingType">
+		<xsd:sequence>
+			<xsd:element name="Video" type="LocalVideoTranscodingType" maxOccurs="unbounded" minOccurs="0"/>
+			<xsd:element name="Audio" type="LocalAudioTranscodingType" maxOccurs="unbounded" minOccurs="0"/>
+			<xsd:element name="Image" type="ImageTranscodingType" maxOccurs="unbounded" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OnlineTranscodingType">
+		<xsd:sequence>
+			<xsd:element name="Video" type="OnlineVideoTranscodingType" maxOccurs="unbounded" minOccurs="0"/>
+			<xsd:element name="Audio" type="OnlineAudioTranscodingType" maxOccurs="unbounded" minOccurs="0"/>
+			<xsd:element name="Image" type="ImageTranscodingType" maxOccurs="unbounded" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="keepStreamOpen" default="true" type="xsd:boolean"/>		
+	</xsd:complexType>
+
+	<xsd:attributeGroup name="transcodingAttributes">
+		<xsd:attribute name="aBitrate" type="xsd:int"/>
+		<xsd:attribute name="aSamplerate" type="xsd:int"/>
+		<xsd:attribute name="forceInheritance" type="xsd:boolean"/>
+	</xsd:attributeGroup>
+	
+	<xsd:complexType name="AbstractVideoTranscodingType" abstract="true">
+		<xsd:attributeGroup ref="transcodingAttributes"/>
+		<xsd:attribute name="targetContainer" type="targetContainerEnumType" use="required"/>
+		<xsd:attribute name="targetVCodec" type="targetVideoCodecEnumType"/>
+		<xsd:attribute name="targetACodec" type="targetAudioCodecEnumType"/>
+		<xsd:attribute name="maxVBitrate" type="xsd:int"/>
+		<xsd:attribute name="maxHeight" type="xsd:int"/>
+		<xsd:attribute name="forceVTranscoding" type="xsd:boolean"/>
+		<xsd:attribute name="forceStereo" type="xsd:boolean"/>
+		<xsd:attribute name="DAR" type="darEnumType"/>		
+	</xsd:complexType>
+	
+	<xsd:complexType name="LocalVideoTranscodingType">
+		<xsd:complexContent>
+			<xsd:extension base="AbstractVideoTranscodingType">
+				<xsd:sequence>
+					<xsd:element name="Matches" type="VideoTranscodingMatcherType" maxOccurs="unbounded" minOccurs="1"/>
+				</xsd:sequence>
+			</xsd:extension>		
+		</xsd:complexContent>	
+	</xsd:complexType>
+	
+	<xsd:complexType name="OnlineVideoTranscodingType">
+		<xsd:complexContent>
+			<xsd:extension base="AbstractVideoTranscodingType">
+				<xsd:sequence>
+					<xsd:element name="Matches" type="OnlineVideoTranscodingMatcherType" maxOccurs="unbounded" minOccurs="1"/>
+				</xsd:sequence>
+			</xsd:extension>		
+		</xsd:complexContent>	
+	</xsd:complexType>
+		
+	<xsd:complexType name="AbstractAudioTranscodingType" abstract="true">
+		<xsd:attributeGroup ref="transcodingAttributes"/>
+		<xsd:attribute name="targetContainer" type="targetAudioContainerEnumType" use="required"/>		
+	</xsd:complexType>
+		
+	<xsd:complexType name="LocalAudioTranscodingType">
+		<xsd:complexContent>
+			<xsd:extension base="AbstractAudioTranscodingType">
+				<xsd:sequence>
+					<xsd:element name="Matches" type="AudioTranscodingMatcherType" maxOccurs="unbounded" minOccurs="1"/>
+				</xsd:sequence>
+			</xsd:extension>		
+		</xsd:complexContent>	
+	</xsd:complexType>
+
+	<xsd:complexType name="OnlineAudioTranscodingType">
+		<xsd:complexContent>
+			<xsd:extension base="AbstractAudioTranscodingType">
+				<xsd:sequence>
+					<xsd:element name="Matches" type="OnlineAudioTranscodingMatcherType" maxOccurs="unbounded" minOccurs="1"/>
+				</xsd:sequence>
+			</xsd:extension>		
+		</xsd:complexContent>	
+	</xsd:complexType>
+
+	<xsd:complexType name="ImageTranscodingType">
+		<xsd:sequence>
+			<xsd:element name="Matches" type="ImageTranscodingMatcherType" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>		
+		<xsd:attribute name="forceInheritance" type="xsd:boolean"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="VideoTranscodingMatcherType">
+		<xsd:attribute name="container" type="containerEnumType" use="required"/>
+		<xsd:attribute name="vCodec" type="videoCodecEnumType" use="optional"/>
+		<xsd:attribute name="aCodec" type="audioCodecEnumType" use="optional"/>
+		<xsd:attribute name="profile" type="h264ProfileEnumType" use="optional"/>
+		<xsd:attribute name="levelGreaterThan" type="xsd:float" use="optional"/>
+		<xsd:attribute name="ftypNotIn" type="xsd:string" use="optional"/>
+		<xsd:attribute name="vFourCC" type="xsd:string" use="optional"/>
+		<xsd:attribute name="squarePixels" type="xsd:boolean" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="OnlineVideoTranscodingMatcherType">
+		<xsd:complexContent>
+			<xsd:extension base="VideoTranscodingMatcherType">
+				<xsd:attribute name="contentType" type="onlineContentEnumType" use="optional" default="any"/>
+			</xsd:extension>		
+		</xsd:complexContent>		
+	</xsd:complexType>
+	
+	<xsd:complexType name="AudioTranscodingMatcherType">
+		<xsd:attribute name="container" type="audioContainerEnumType" use="required"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="OnlineAudioTranscodingMatcherType">
+		<xsd:complexContent>
+			<xsd:extension base="AudioTranscodingMatcherType">
+				<xsd:attribute name="contentType" type="onlineContentEnumType" use="optional" default="any"/>
+			</xsd:extension>		
+		</xsd:complexContent>		
+	</xsd:complexType>
+	
+	<xsd:complexType name="ImageTranscodingMatcherType">
+		<xsd:attribute name="container" type="imageContainerEnumType" use="required"/>
+		<xsd:attribute name="subsampling" type="chromaSubsamplingEnumType" use="optional"/>		
+	</xsd:complexType>
+
+	<xsd:simpleType name="onlineContentEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="live"/>
+			<xsd:enumeration value="vod"/>
+			<xsd:enumeration value="any"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="h264ProfileEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="baseline"/>
+			<xsd:enumeration value="main"/>
+			<xsd:enumeration value="extended"/>
+			<xsd:enumeration value="high"/>
+			<xsd:enumeration value="high_10"/>
+			<xsd:enumeration value="high_422"/>
+			<xsd:enumeration value="high_444"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="containerEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="*"/>
+			<xsd:enumeration value="mp4"/>
+			<xsd:enumeration value="asf"/>
+			<xsd:enumeration value="mpegvideo"/>
+			<xsd:enumeration value="mpeg"/>
+			<xsd:enumeration value="mpegts"/>
+			<xsd:enumeration value="matroska"/>
+			<xsd:enumeration value="avi"/>
+			<xsd:enumeration value="flv"/>
+			<xsd:enumeration value="wtv"/>
+			<xsd:enumeration value="ogg"/>
+			<xsd:enumeration value="3gp"/>
+			<xsd:enumeration value="rtp"/>
+			<xsd:enumeration value="rtsp"/>
+			<xsd:enumeration value="applehttp"/>
+			<xsd:enumeration value="rm"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="imageContainerEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="jpeg"/>
+			<xsd:enumeration value="raw"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="chromaSubsamplingEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="YUV444"/>
+			<xsd:enumeration value="YUV422"/>
+			<xsd:enumeration value="YUV420"/>
+			<xsd:enumeration value="YUV411"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+		
+	<xsd:simpleType name="audioContainerEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="*"/>			
+			<xsd:enumeration value="mp4"/>
+			<xsd:enumeration value="asf"/>
+			<xsd:enumeration value="mp3"/>
+			<xsd:enumeration value="lpcm"/>
+			<xsd:enumeration value="flac"/>
+			<xsd:enumeration value="ogg"/>
+			<xsd:enumeration value="flv"/>
+			<xsd:enumeration value="rtp"/>
+			<xsd:enumeration value="rtsp"/>
+			<xsd:enumeration value="adts"/>				
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="targetContainerEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="asf"/>
+			<xsd:enumeration value="mpegvideo"/>
+			<xsd:enumeration value="mpeg"/>
+			<xsd:enumeration value="mpegts"/>
+			<xsd:enumeration value="m2ts"/>
+			<xsd:enumeration value="flv"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="darEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="16:9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="audioCodecEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="mp3"/>
+			<xsd:enumeration value="mp2"/>
+			<xsd:enumeration value="ac3"/>
+			<xsd:enumeration value="aac"/>
+			<xsd:enumeration value="dca"/>
+			<xsd:enumeration value="wmav2"/>
+			<xsd:enumeration value="wmapro"/>
+			<xsd:enumeration value="lpcm"/>
+			<xsd:enumeration value="flac"/>
+			<xsd:enumeration value="vorbis"/>
+			<xsd:enumeration value="truehd"/>
+			<xsd:enumeration value="amrnb"/>
+			<xsd:enumeration value="real"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="targetAudioCodecEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="mp2"/>
+			<xsd:enumeration value="mp3"/>
+			<xsd:enumeration value="ac3"/>
+			<xsd:enumeration value="aac"/>
+			<xsd:enumeration value="wmav2"/>
+			<xsd:enumeration value="lpcm"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="targetAudioContainerEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="mp3"/>
+			<xsd:enumeration value="lpcm"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="videoCodecEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="vc1"/>
+			<xsd:enumeration value="mpeg4"/>
+			<xsd:enumeration value="msmpeg4"/>
+			<xsd:enumeration value="mpeg2video"/>
+			<xsd:enumeration value="mpeg1video"/>
+			<xsd:enumeration value="h264"/>
+			<xsd:enumeration value="h263"/>
+			<xsd:enumeration value="wmv2"/>
+			<xsd:enumeration value="mjpeg"/>
+			<xsd:enumeration value="flv"/>
+			<xsd:enumeration value="vp6"/>
+			<xsd:enumeration value="vp8"/>
+			<xsd:enumeration value="theora"/>
+			<xsd:enumeration value="dvvideo"/>
+			<xsd:enumeration value="rv"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="targetVideoCodecEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="mpeg2video"/>
+			<xsd:enumeration value="wmv2"/>
+			<xsd:enumeration value="flv"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="qualityTypeEnumType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="MEDIUM"/>
+			<xsd:enumeration value="LOW"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+    <xsd:complexType name="DetectionType">
+    	<xsd:all>
+    		<xsd:element name="UPnPSearch" type="UPnPSearchType" minOccurs="0" />
+    		<xsd:element name="HttpHeaders" type="HttpHeadersType" minOccurs="0" />
+    	</xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="UPnPSearchType">
+    	<xsd:sequence>
+    		<xsd:element name="FriendlyName" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+    		<xsd:element name="ModelName" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="ModelNumber" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="Manufacturer" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="ProductNumber" type="xsd:string"	maxOccurs="1" minOccurs="0"/>
+			<xsd:element name="Server" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+	 <xsd:complexType name="HttpHeadersType">
+    	<xsd:sequence>
+    		<xsd:any minOccurs="1" maxOccurs="1" processContents="skip"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

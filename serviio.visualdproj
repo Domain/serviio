@@ -1,0 +1,1205 @@
+<DProject>
+ <ProjectGuid>{2185D12B-2E23-491E-8DAF-5B9E30A7476E}</ProjectGuid>
+ <Config name="Debug" platform="Win32">
+  <obj>0</obj>
+  <link>0</link>
+  <lib>0</lib>
+  <subsystem>0</subsystem>
+  <multiobj>0</multiobj>
+  <singleFileCompilation>0</singleFileCompilation>
+  <oneobj>0</oneobj>
+  <trace>0</trace>
+  <quiet>0</quiet>
+  <verbose>0</verbose>
+  <vtls>0</vtls>
+  <symdebug>1</symdebug>
+  <optimize>0</optimize>
+  <cpu>0</cpu>
+  <isX86_64>0</isX86_64>
+  <isLinux>0</isLinux>
+  <isOSX>0</isOSX>
+  <isWindows>0</isWindows>
+  <isFreeBSD>0</isFreeBSD>
+  <isSolaris>0</isSolaris>
+  <scheduler>0</scheduler>
+  <useDeprecated>0</useDeprecated>
+  <useAssert>0</useAssert>
+  <useInvariants>0</useInvariants>
+  <useIn>0</useIn>
+  <useOut>0</useOut>
+  <useArrayBounds>0</useArrayBounds>
+  <noboundscheck>0</noboundscheck>
+  <useSwitchError>0</useSwitchError>
+  <useUnitTests>0</useUnitTests>
+  <useInline>0</useInline>
+  <release>0</release>
+  <preservePaths>0</preservePaths>
+  <warnings>0</warnings>
+  <infowarnings>0</infowarnings>
+  <checkProperty>0</checkProperty>
+  <genStackFrame>0</genStackFrame>
+  <pic>0</pic>
+  <cov>0</cov>
+  <nofloat>0</nofloat>
+  <Dversion>2</Dversion>
+  <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
+  <compiler>0</compiler>
+  <otherDMD>0</otherDMD>
+  <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
+  <imppath>$(SolutionDir)\java\java $(ProjectDir)\external</imppath>
+  <fileImppath />
+  <outdir>$(ConfigurationName)</outdir>
+  <objdir>$(OutDir)</objdir>
+  <objname />
+  <libname />
+  <doDocComments>0</doDocComments>
+  <docdir />
+  <docname />
+  <modules_ddoc />
+  <ddocfiles />
+  <doHdrGeneration>0</doHdrGeneration>
+  <hdrdir />
+  <hdrname />
+  <doXGeneration>1</doXGeneration>
+  <xfilename>$(IntDir)\$(TargetName).json</xfilename>
+  <debuglevel>0</debuglevel>
+  <debugids />
+  <versionlevel>0</versionlevel>
+  <versionids />
+  <dump_source>0</dump_source>
+  <mapverbosity>0</mapverbosity>
+  <createImplib>0</createImplib>
+  <defaultlibname />
+  <debuglibname />
+  <moduleDepsFile />
+  <run>0</run>
+  <runargs />
+  <runCv2pdb>1</runCv2pdb>
+  <pathCv2pdb>$(VisualDInstallDir)cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
+  <objfiles />
+  <linkswitches />
+  <libfiles />
+  <libpaths />
+  <deffile />
+  <resfile />
+  <exefile>$(OutDir)\$(ProjectName).exe</exefile>
+  <useStdLibPath>1</useStdLibPath>
+  <additionalOptions />
+  <preBuildCommand />
+  <postBuildCommand />
+  <filesToClean>*.obj;*.cmd;*.build;*.json;*.dep</filesToClean>
+ </Config>
+ <Config name="Release" platform="Win32">
+  <obj>0</obj>
+  <link>0</link>
+  <lib>0</lib>
+  <subsystem>0</subsystem>
+  <multiobj>0</multiobj>
+  <singleFileCompilation>0</singleFileCompilation>
+  <oneobj>0</oneobj>
+  <trace>0</trace>
+  <quiet>0</quiet>
+  <verbose>0</verbose>
+  <vtls>0</vtls>
+  <symdebug>0</symdebug>
+  <optimize>0</optimize>
+  <cpu>0</cpu>
+  <isX86_64>0</isX86_64>
+  <isLinux>0</isLinux>
+  <isOSX>0</isOSX>
+  <isWindows>0</isWindows>
+  <isFreeBSD>0</isFreeBSD>
+  <isSolaris>0</isSolaris>
+  <scheduler>0</scheduler>
+  <useDeprecated>0</useDeprecated>
+  <useAssert>0</useAssert>
+  <useInvariants>0</useInvariants>
+  <useIn>0</useIn>
+  <useOut>0</useOut>
+  <useArrayBounds>0</useArrayBounds>
+  <noboundscheck>0</noboundscheck>
+  <useSwitchError>0</useSwitchError>
+  <useUnitTests>0</useUnitTests>
+  <useInline>0</useInline>
+  <release>1</release>
+  <preservePaths>0</preservePaths>
+  <warnings>0</warnings>
+  <infowarnings>0</infowarnings>
+  <checkProperty>0</checkProperty>
+  <genStackFrame>0</genStackFrame>
+  <pic>0</pic>
+  <cov>0</cov>
+  <nofloat>0</nofloat>
+  <Dversion>2.043</Dversion>
+  <ignoreUnsupportedPragmas>0</ignoreUnsupportedPragmas>
+  <compiler>0</compiler>
+  <otherDMD>0</otherDMD>
+  <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
+  <imppath />
+  <fileImppath />
+  <outdir>$(ConfigurationName)</outdir>
+  <objdir>$(OutDir)</objdir>
+  <objname />
+  <libname />
+  <doDocComments>0</doDocComments>
+  <docdir />
+  <docname />
+  <modules_ddoc />
+  <ddocfiles />
+  <doHdrGeneration>0</doHdrGeneration>
+  <hdrdir />
+  <hdrname />
+  <doXGeneration>1</doXGeneration>
+  <xfilename>$(IntDir)\$(TargetName).json</xfilename>
+  <debuglevel>0</debuglevel>
+  <debugids />
+  <versionlevel>0</versionlevel>
+  <versionids />
+  <dump_source>0</dump_source>
+  <mapverbosity>0</mapverbosity>
+  <createImplib>0</createImplib>
+  <defaultlibname />
+  <debuglibname />
+  <moduleDepsFile />
+  <run>0</run>
+  <runargs />
+  <runCv2pdb>0</runCv2pdb>
+  <pathCv2pdb>$(VisualDInstallDir)cv2pdb\cv2pdb.exe</pathCv2pdb>
+  <cv2pdbPre2043>0</cv2pdbPre2043>
+  <cv2pdbNoDemangle>0</cv2pdbNoDemangle>
+  <cv2pdbEnumType>0</cv2pdbEnumType>
+  <cv2pdbOptions />
+  <objfiles />
+  <linkswitches />
+  <libfiles />
+  <libpaths />
+  <deffile />
+  <resfile />
+  <exefile>$(OutDir)\$(ProjectName).exe</exefile>
+  <useStdLibPath>1</useStdLibPath>
+  <additionalOptions />
+  <preBuildCommand />
+  <postBuildCommand />
+  <filesToClean>*.obj;*.cmd;*.build;*.json;*.dep</filesToClean>
+ </Config>
+ <Folder name="serviio">
+  <Folder name="org">
+   <Folder name="serviio">
+    <Folder name="cache">
+     <File path="org\serviio\cache\AbstractCacheDecorator.d" />
+     <File path="org\serviio\cache\all.d" />
+     <File path="org\serviio\cache\CacheDecorator.d" />
+    </Folder>
+    <Folder name="config">
+     <Folder name="dao">
+      <File path="org\serviio\config\dao\all.d" />
+      <File path="org\serviio\config\dao\ConfigEntryDAO.d" />
+      <File path="org\serviio\config\dao\ConfigEntryDAOImpl.d" />
+     </Folder>
+     <Folder name="entities">
+      <File path="org\serviio\config\entities\all.d" />
+      <File path="org\serviio\config\entities\ConfigEntry.d" />
+     </Folder>
+     <File path="org\serviio\config\all.d" />
+     <File path="org\serviio\config\ConfigStorage.d" />
+     <File path="org\serviio\config\Configuration.d" />
+     <File path="org\serviio\config\JDBCConfigStorage.d" />
+     <File path="org\serviio\config\PropertiesFileConfigStorage.d" />
+    </Folder>
+    <Folder name="db">
+     <Folder name="dao">
+      <File path="org\serviio\db\dao\all.d" />
+      <File path="org\serviio\db\dao\DAOFactory.d" />
+      <File path="org\serviio\db\dao\GenericDAO.d" />
+      <File path="org\serviio\db\dao\InvalidArgumentException.d" />
+      <File path="org\serviio\db\dao\PersistenceException.d" />
+     </Folder>
+     <Folder name="entities">
+      <File path="org\serviio\db\entities\all.d" />
+      <File path="org\serviio\db\entities\PersistedEntity.d" />
+     </Folder>
+     <File path="org\serviio\db\all.d" />
+     <File path="org\serviio\db\DatabaseManager.d" />
+     <File path="org\serviio\db\DBConnectionPool.d" />
+     <File path="org\serviio\db\JdbcExecutor.d" />
+    </Folder>
+    <Folder name="delivery">
+     <Folder name="resource">
+      <Folder name="transcode">
+       <File path="org\serviio\delivery\resource\transcode\AbstractTranscodingDefinition.d" />
+       <File path="org\serviio\delivery\resource\transcode\AbstractTranscodingDeliveryEngine.d" />
+       <File path="org\serviio\delivery\resource\transcode\AbstractTranscodingDeliveryStrategy.d" />
+       <File path="org\serviio\delivery\resource\transcode\all.d" />
+       <File path="org\serviio\delivery\resource\transcode\AudioTranscodingDefinition.d" />
+       <File path="org\serviio\delivery\resource\transcode\AudioTranscodingMatch.d" />
+       <File path="org\serviio\delivery\resource\transcode\FileBasedTranscodingDeliveryStrategy.d" />
+       <File path="org\serviio\delivery\resource\transcode\ImageTranscodingDefinition.d" />
+       <File path="org\serviio\delivery\resource\transcode\ImageTranscodingMatch.d" />
+       <File path="org\serviio\delivery\resource\transcode\ImageTranscodingProfilesProvider.d" />
+       <File path="org\serviio\delivery\resource\transcode\StreamBasedTranscodingDeliveryStrategy.d" />
+       <File path="org\serviio\delivery\resource\transcode\StreamDescriptor.d" />
+       <File path="org\serviio\delivery\resource\transcode\TranscodeInputStream.d" />
+       <File path="org\serviio\delivery\resource\transcode\TranscodingCache.d" />
+       <File path="org\serviio\delivery\resource\transcode\TranscodingConfiguration.d" />
+       <File path="org\serviio\delivery\resource\transcode\TranscodingDefinition.d" />
+       <File path="org\serviio\delivery\resource\transcode\TranscodingDeliveryStrategy.d" />
+       <File path="org\serviio\delivery\resource\transcode\TranscodingJobListener.d" />
+       <File path="org\serviio\delivery\resource\transcode\VideoTranscodingDefinition.d" />
+       <File path="org\serviio\delivery\resource\transcode\VideoTranscodingMatch.d" />
+      </Folder>
+      <File path="org\serviio\delivery\resource\AbstractDeliveryEngine.d" />
+      <File path="org\serviio\delivery\resource\all.d" />
+      <File path="org\serviio\delivery\resource\AudioDeliveryEngine.d" />
+      <File path="org\serviio\delivery\resource\DeliveryEngine.d" />
+      <File path="org\serviio\delivery\resource\ImageDeliveryEngine.d" />
+      <File path="org\serviio\delivery\resource\VideoDeliveryEngine.d" />
+     </Folder>
+     <File path="org\serviio\delivery\all.d" />
+     <File path="org\serviio\delivery\AudioMediaInfo.d" />
+     <File path="org\serviio\delivery\Client.d" />
+     <File path="org\serviio\delivery\CoverImageRetrievalStrategy.d" />
+     <File path="org\serviio\delivery\DeliveryContainer.d" />
+     <File path="org\serviio\delivery\DeliveryContext.d" />
+     <File path="org\serviio\delivery\DeliveryListener.d" />
+     <File path="org\serviio\delivery\HttpDeliveryContainer.d" />
+     <File path="org\serviio\delivery\HttpResponseCodeException.d" />
+     <File path="org\serviio\delivery\ImageMediaInfo.d" />
+     <File path="org\serviio\delivery\MediaFormatProfileResource.d" />
+     <File path="org\serviio\delivery\MediaResourceRetrievalStrategy.d" />
+     <File path="org\serviio\delivery\NonClosingPipedInputStream.d" />
+     <File path="org\serviio\delivery\OnlineInputStream.d" />
+     <File path="org\serviio\delivery\RangeHeaders.d" />
+     <File path="org\serviio\delivery\RangeNotSupportedException.d" />
+     <File path="org\serviio\delivery\ResourceDeliveryProcessor.d" />
+     <File path="org\serviio\delivery\ResourceInfo.d" />
+     <File path="org\serviio\delivery\ResourceRetrievalStrategy.d" />
+     <File path="org\serviio\delivery\ResourceRetrievalStrategyFactory.d" />
+     <File path="org\serviio\delivery\StreamDeliveryContainer.d" />
+     <File path="org\serviio\delivery\SubtitlesInfo.d" />
+     <File path="org\serviio\delivery\SubtitlesRetrievalStrategy.d" />
+     <File path="org\serviio\delivery\VideoMediaInfo.d" />
+    </Folder>
+    <Folder name="dlna">
+     <File path="org\serviio\dlna\all.d" />
+     <File path="org\serviio\dlna\AudioCodec.d" />
+     <File path="org\serviio\dlna\AudioContainer.d" />
+     <File path="org\serviio\dlna\DisplayAspectRatio.d" />
+     <File path="org\serviio\dlna\DLNAConstants.d" />
+     <File path="org\serviio\dlna\H264Profile.d" />
+     <File path="org\serviio\dlna\ImageContainer.d" />
+     <File path="org\serviio\dlna\MediaFormatProfile.d" />
+     <File path="org\serviio\dlna\MediaFormatProfileResolver.d" />
+     <File path="org\serviio\dlna\SamplingMode.d" />
+     <File path="org\serviio\dlna\UnsupportedDLNAMediaFileFormatException.d" />
+     <File path="org\serviio\dlna\VideoCodec.d" />
+     <File path="org\serviio\dlna\VideoContainer.d" />
+    </Folder>
+    <Folder name="external">
+     <Folder name="io">
+      <File path="org\serviio\external\io\all.d" />
+      <File path="org\serviio\external\io\OutputBytesReader.d" />
+      <File path="org\serviio\external\io\OutputReader.d" />
+      <File path="org\serviio\external\io\OutputTextReader.d" />
+      <File path="org\serviio\external\io\PipedOutputBytesReader.d" />
+     </Folder>
+     <File path="org\serviio\external\AbstractCLBuilder.d" />
+     <File path="org\serviio\external\AbstractExecutableWrapper.d" />
+     <File path="org\serviio\external\all.d" />
+     <File path="org\serviio\external\DCRawCLBuilder.d" />
+     <File path="org\serviio\external\DCRawWrapper.d" />
+     <File path="org\serviio\external\FFmpegCLBuilder.d" />
+     <File path="org\serviio\external\FFMPEGConstants.d" />
+     <File path="org\serviio\external\FFMPEGWrapper.d" />
+     <File path="org\serviio\external\ProcessExecutor.d" />
+     <File path="org\serviio\external\ProcessListener.d" />
+     <File path="org\serviio\external\ResizeDefinition.d" />
+    </Folder>
+    <Folder name="i18n">
+     <File path="org\serviio\i18n\all.d" />
+     <File path="org\serviio\i18n\GetLocalizationMessageBundleControl.d" />
+     <File path="org\serviio\i18n\Language.d" />
+    </Folder>
+    <Folder name="library">
+     <Folder name="dao">
+      <File path="org\serviio\library\dao\AbstractAccessibleDao.d" />
+      <File path="org\serviio\library\dao\AbstractSortableItemDao.d" />
+      <File path="org\serviio\library\dao\AccessGroupDAO.d" />
+      <File path="org\serviio\library\dao\AccessGroupDAOImpl.d" />
+      <File path="org\serviio\library\dao\all.d" />
+      <File path="org\serviio\library\dao\CoverImageDAO.d" />
+      <File path="org\serviio\library\dao\CoverImageDAOImpl.d" />
+      <File path="org\serviio\library\dao\FolderDAO.d" />
+      <File path="org\serviio\library\dao\FolderDAOImpl.d" />
+      <File path="org\serviio\library\dao\GenreDAO.d" />
+      <File path="org\serviio\library\dao\GenreDAOImpl.d" />
+      <File path="org\serviio\library\dao\ImageDAO.d" />
+      <File path="org\serviio\library\dao\ImageDAOImpl.d" />
+      <File path="org\serviio\library\dao\MediaItemDAO.d" />
+      <File path="org\serviio\library\dao\MediaItemDAOImpl.d" />
+      <File path="org\serviio\library\dao\MetadataDescriptorDAO.d" />
+      <File path="org\serviio\library\dao\MetadataDescriptorDAOImpl.d" />
+      <File path="org\serviio\library\dao\MetadataExtractorConfigDAO.d" />
+      <File path="org\serviio\library\dao\MetadataExtractorConfigDAOImpl.d" />
+      <File path="org\serviio\library\dao\MusicAlbumDAO.d" />
+      <File path="org\serviio\library\dao\MusicAlbumDAOImpl.d" />
+      <File path="org\serviio\library\dao\MusicTrackDAO.d" />
+      <File path="org\serviio\library\dao\MusicTrackDAOImpl.d" />
+      <File path="org\serviio\library\dao\OnlineRepositoryDAO.d" />
+      <File path="org\serviio\library\dao\OnlineRepositoryDAOImpl.d" />
+      <File path="org\serviio\library\dao\PersonDAO.d" />
+      <File path="org\serviio\library\dao\PersonDAOImpl.d" />
+      <File path="org\serviio\library\dao\PlaylistDAO.d" />
+      <File path="org\serviio\library\dao\PlaylistDAOImpl.d" />
+      <File path="org\serviio\library\dao\RepositoryDAO.d" />
+      <File path="org\serviio\library\dao\RepositoryDAOImpl.d" />
+      <File path="org\serviio\library\dao\SeriesDAO.d" />
+      <File path="org\serviio\library\dao\SeriesDAOImpl.d" />
+      <File path="org\serviio\library\dao\VideoDAO.d" />
+      <File path="org\serviio\library\dao\VideoDAOImpl.d" />
+     </Folder>
+     <Folder name="entities">
+      <File path="org\serviio\library\entities\AccessGroup.d" />
+      <File path="org\serviio\library\entities\all.d" />
+      <File path="org\serviio\library\entities\CoverImage.d" />
+      <File path="org\serviio\library\entities\Folder.d" />
+      <File path="org\serviio\library\entities\Genre.d" />
+      <File path="org\serviio\library\entities\Image.d" />
+      <File path="org\serviio\library\entities\MediaItem.d" />
+      <File path="org\serviio\library\entities\MetadataDescriptor.d" />
+      <File path="org\serviio\library\entities\MetadataExtractorConfig.d" />
+      <File path="org\serviio\library\entities\MusicAlbum.d" />
+      <File path="org\serviio\library\entities\MusicTrack.d" />
+      <File path="org\serviio\library\entities\OnlineRepository.d" />
+      <File path="org\serviio\library\entities\Person.d" />
+      <File path="org\serviio\library\entities\Playlist.d" />
+      <File path="org\serviio\library\entities\Repository.d" />
+      <File path="org\serviio\library\entities\Series.d" />
+      <File path="org\serviio\library\entities\Video.d" />
+     </Folder>
+     <Folder name="local">
+      <Folder name="metadata">
+       <Folder name="extractor">
+        <Folder name="embedded">
+         <Folder name="h264">
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\AbstractBufferWrapper.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\all.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\AnnexBNALUnitReader.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\AspectRatio.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\BitstreamElement.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\BitstreamReader.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\BTree.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\BufferWrapper.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\BufferWrapperImpl.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\CAVLCReader.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\CharCache.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\ChromaFormat.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\HRDParameters.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\NALUnit.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\NALUnitReader.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\NALUnitType.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\ScalingList.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\ScalingMatrix.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\SeqParameterSet.d" />
+          <File path="org\serviio\library\local\metadata\extractor\embedded\h264\VUIParameters.d" />
+         </Folder>
+         <File path="org\serviio\library\local\metadata\extractor\embedded\all.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\AudioExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\AVCHeader.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\EmbeddedMetadataExtractor.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\FLACExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\GIFExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\ImageExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\JPEGExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\JPEGSamplingTypeReader.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\LPCMExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\MP3ExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\MP4ExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\OGGExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\PNGExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\VideoExtractionStrategy.d" />
+         <File path="org\serviio\library\local\metadata\extractor\embedded\WMAExtractionStrategy.d" />
+        </Folder>
+        <Folder name="video">
+         <File path="org\serviio\library\local\metadata\extractor\video\all.d" />
+         <File path="org\serviio\library\local\metadata\extractor\video\FileNameParser.d" />
+         <File path="org\serviio\library\local\metadata\extractor\video\MetadataLanguages.d" />
+         <File path="org\serviio\library\local\metadata\extractor\video\OnlineVideoSourcesMetadataExtractor.d" />
+         <File path="org\serviio\library\local\metadata\extractor\video\SearchSourceAdaptor.d" />
+         <File path="org\serviio\library\local\metadata\extractor\video\SearchSourceFactory.d" />
+         <File path="org\serviio\library\local\metadata\extractor\video\TheMovieDBSourceAdaptor.d" />
+         <File path="org\serviio\library\local\metadata\extractor\video\TheTVDBSourceAdaptor.d" />
+         <File path="org\serviio\library\local\metadata\extractor\video\VideoDescription.d" />
+        </Folder>
+        <File path="org\serviio\library\local\metadata\extractor\AbstractLocalFileExtractor.d" />
+        <File path="org\serviio\library\local\metadata\extractor\all.d" />
+        <File path="org\serviio\library\local\metadata\extractor\CoverImageInFolderExtractor.d" />
+        <File path="org\serviio\library\local\metadata\extractor\ExtractorType.d" />
+        <File path="org\serviio\library\local\metadata\extractor\InvalidMediaFormatException.d" />
+        <File path="org\serviio\library\local\metadata\extractor\MetadataExtractor.d" />
+        <File path="org\serviio\library\local\metadata\extractor\MetadataExtractorFactory.d" />
+        <File path="org\serviio\library\local\metadata\extractor\MetadataFile.d" />
+        <File path="org\serviio\library\local\metadata\extractor\MyMoviesExtractor.d" />
+        <File path="org\serviio\library\local\metadata\extractor\SwissCenterExtractor.d" />
+        <File path="org\serviio\library\local\metadata\extractor\XBMCExtractor.d" />
+       </Folder>
+       <File path="org\serviio\library\local\metadata\all.d" />
+       <File path="org\serviio\library\local\metadata\AudioMetadata.d" />
+       <File path="org\serviio\library\local\metadata\CDSLibraryIndexingListener.d" />
+       <File path="org\serviio\library\local\metadata\ImageDescriptor.d" />
+       <File path="org\serviio\library\local\metadata\ImageMetadata.d" />
+       <File path="org\serviio\library\local\metadata\LibraryAdditionsCheckerThread.d" />
+       <File path="org\serviio\library\local\metadata\LibraryUpdatesCheckerThread.d" />
+       <File path="org\serviio\library\local\metadata\LocalItemMetadata.d" />
+       <File path="org\serviio\library\local\metadata\MetadataFactory.d" />
+       <File path="org\serviio\library\local\metadata\PlaylistMaintainerThread.d" />
+       <File path="org\serviio\library\local\metadata\TransportStreamTimestamp.d" />
+       <File path="org\serviio\library\local\metadata\VideoMetadata.d" />
+      </Folder>
+      <Folder name="service">
+       <File path="org\serviio\library\local\service\all.d" />
+       <File path="org\serviio\library\local\service\AudioService.d" />
+       <File path="org\serviio\library\local\service\CoverImageService.d" />
+       <File path="org\serviio\library\local\service\FolderService.d" />
+       <File path="org\serviio\library\local\service\GenreService.d" />
+       <File path="org\serviio\library\local\service\ImageService.d" />
+       <File path="org\serviio\library\local\service\MediaService.d" />
+       <File path="org\serviio\library\local\service\PersonService.d" />
+       <File path="org\serviio\library\local\service\PlaylistService.d" />
+       <File path="org\serviio\library\local\service\RepositoryService.d" />
+       <File path="org\serviio\library\local\service\SubtitlesService.d" />
+       <File path="org\serviio\library\local\service\VideoService.d" />
+      </Folder>
+      <File path="org\serviio\library\local\all.d" />
+      <File path="org\serviio\library\local\ContentType.d" />
+      <File path="org\serviio\library\local\EnumMapConverter.d" />
+      <File path="org\serviio\library\local\H264LevelType.d" />
+      <File path="org\serviio\library\local\LibraryManager.d" />
+      <File path="org\serviio\library\local\OnlineDBIdentifier.d" />
+     </Folder>
+     <Folder name="metadata">
+      <File path="org\serviio\library\metadata\AbstractCDSLibraryIndexingListener.d" />
+      <File path="org\serviio\library\metadata\AbstractLibraryCheckerThread.d" />
+      <File path="org\serviio\library\metadata\all.d" />
+      <File path="org\serviio\library\metadata\DCRawMetadataRetriever.d" />
+      <File path="org\serviio\library\metadata\FFmpegMetadataRetriever.d" />
+      <File path="org\serviio\library\metadata\ImageMetadataRetriever.d" />
+      <File path="org\serviio\library\metadata\InvalidMetadataException.d" />
+      <File path="org\serviio\library\metadata\ItemMetadata.d" />
+      <File path="org\serviio\library\metadata\LibraryIndexingListener.d" />
+      <File path="org\serviio\library\metadata\MediaFileType.d" />
+      <File path="org\serviio\library\metadata\SanselanMetadataRetriever.d" />
+     </Folder>
+     <Folder name="online">
+      <Folder name="feed">
+       <Folder name="modules">
+        <Folder name="gametrailers">
+         <File path="org\serviio\library\online\feed\modules\gametrailers\all.d" />
+         <File path="org\serviio\library\online\feed\modules\gametrailers\GameTrailersExModule.d" />
+         <File path="org\serviio\library\online\feed\modules\gametrailers\GameTrailersExModuleImpl.d" />
+         <File path="org\serviio\library\online\feed\modules\gametrailers\GameTrailersExModuleParser.d" />
+        </Folder>
+        <Folder name="itunes">
+         <File path="org\serviio\library\online\feed\modules\itunes\all.d" />
+         <File path="org\serviio\library\online\feed\modules\itunes\Image.d" />
+         <File path="org\serviio\library\online\feed\modules\itunes\ITunesRssModule.d" />
+         <File path="org\serviio\library\online\feed\modules\itunes\ITunesRssModuleImpl.d" />
+         <File path="org\serviio\library\online\feed\modules\itunes\ITunesRssModuleParser.d" />
+        </Folder>
+       </Folder>
+       <File path="org\serviio\library\online\feed\all.d" />
+       <File path="org\serviio\library\online\feed\BasicFeedEntryParser.d" />
+       <File path="org\serviio\library\online\feed\FeedEntryParser.d" />
+       <File path="org\serviio\library\online\feed\FeedParser.d" />
+       <File path="org\serviio\library\online\feed\GameTrailersExFeedEntryParser.d" />
+       <File path="org\serviio\library\online\feed\ITunesPodcastFeedEntryParser.d" />
+       <File path="org\serviio\library\online\feed\ITunesRssFeedEntryParser.d" />
+       <File path="org\serviio\library\online\feed\MediaFeedEntryParser.d" />
+       <File path="org\serviio\library\online\feed\PluginCompilerThread.d" />
+      </Folder>
+      <Folder name="metadata">
+       <File path="org\serviio\library\online\metadata\all.d" />
+       <File path="org\serviio\library\online\metadata\Feed.d" />
+       <File path="org\serviio\library\online\metadata\FeedItem.d" />
+       <File path="org\serviio\library\online\metadata\FeedUpdaterThread.d" />
+       <File path="org\serviio\library\online\metadata\NamedOnlineResource.d" />
+       <File path="org\serviio\library\online\metadata\OnlineCachable.d" />
+       <File path="org\serviio\library\online\metadata\OnlineCDSLibraryIndexingListener.d" />
+       <File path="org\serviio\library\online\metadata\OnlineContainerItem.d" />
+       <File path="org\serviio\library\online\metadata\OnlineItem.d" />
+       <File path="org\serviio\library\online\metadata\OnlineResourceContainer.d" />
+       <File path="org\serviio\library\online\metadata\SingleURLItem.d" />
+       <File path="org\serviio\library\online\metadata\TechnicalMetadata.d" />
+       <File path="org\serviio\library\online\metadata\WebResource.d" />
+       <File path="org\serviio\library\online\metadata\WebResourceItem.d" />
+      </Folder>
+      <Folder name="service">
+       <File path="org\serviio\library\online\service\all.d" />
+       <File path="org\serviio\library\online\service\OnlineRepositoryService.d" />
+      </Folder>
+      <File path="org\serviio\library\online\AbstractOnlineItemParser.d" />
+      <File path="org\serviio\library\online\AbstractUrlExtractor.d" />
+      <File path="org\serviio\library\online\all.d" />
+      <File path="org\serviio\library\online\CannotRetrieveThumbnailException.d" />
+      <File path="org\serviio\library\online\ContentURLContainer.d" />
+      <File path="org\serviio\library\online\FeedItemUrlExtractor.d" />
+      <File path="org\serviio\library\online\OnlineCacheDecorator.d" />
+      <File path="org\serviio\library\online\OnlineContentCacheDecorator.d" />
+      <File path="org\serviio\library\online\OnlineItemId.d" />
+      <File path="org\serviio\library\online\OnlineItemService.d" />
+      <File path="org\serviio\library\online\OnlineLibraryManager.d" />
+      <File path="org\serviio\library\online\PluginExecutionProcessor.d" />
+      <File path="org\serviio\library\online\PreferredQuality.d" />
+      <File path="org\serviio\library\online\SingleURLParser.d" />
+      <File path="org\serviio\library\online\TechnicalMetadataCacheDecorator.d" />
+      <File path="org\serviio\library\online\ThumbnailCacheDecorator.d" />
+      <File path="org\serviio\library\online\WebResourceContainer.d" />
+      <File path="org\serviio\library\online\WebResourceItem.d" />
+      <File path="org\serviio\library\online\WebResourceParser.d" />
+      <File path="org\serviio\library\online\WebResourceUrlExtractor.d" />
+     </Folder>
+     <Folder name="playlist">
+      <File path="org\serviio\library\playlist\AbstractPlaylistParserStrategy.d" />
+      <File path="org\serviio\library\playlist\all.d" />
+      <File path="org\serviio\library\playlist\AsxIniParserStrategy.d" />
+      <File path="org\serviio\library\playlist\AsxParserStrategy.d" />
+      <File path="org\serviio\library\playlist\CannotParsePlaylistException.d" />
+      <File path="org\serviio\library\playlist\M3UParserStrategy.d" />
+      <File path="org\serviio\library\playlist\ParsedPlaylist.d" />
+      <File path="org\serviio\library\playlist\PlaylistItem.d" />
+      <File path="org\serviio\library\playlist\PlaylistParser.d" />
+      <File path="org\serviio\library\playlist\PlaylistParserStrategy.d" />
+      <File path="org\serviio\library\playlist\PlaylistStrategyFactory.d" />
+      <File path="org\serviio\library\playlist\PlaylistType.d" />
+      <File path="org\serviio\library\playlist\PlsParserStrategy.d" />
+      <File path="org\serviio\library\playlist\WplParserStrategy.d" />
+     </Folder>
+     <Folder name="service">
+      <File path="org\serviio\library\service\AccessGroupService.d" />
+      <File path="org\serviio\library\service\all.d" />
+      <File path="org\serviio\library\service\Service.d" />
+     </Folder>
+     <File path="org\serviio\library\AbstractLibraryManager.d" />
+     <File path="org\serviio\library\all.d" />
+    </Folder>
+    <Folder name="licensing">
+     <File path="org\serviio\licensing\all.d" />
+     <File path="org\serviio\licensing\BundledLicenseProvider.d" />
+     <File path="org\serviio\licensing\CustomerLicenseProvider.d" />
+     <File path="org\serviio\licensing\InvalidLicenseException.d" />
+     <File path="org\serviio\licensing\LicenseProperties.d" />
+     <File path="org\serviio\licensing\LicenseProvider.d" />
+     <File path="org\serviio\licensing\LicenseValidator.d" />
+     <File path="org\serviio\licensing\LicensingManager.d" />
+     <File path="org\serviio\licensing\ServiioLicense.d" />
+     <File path="org\serviio\licensing\VersionValidatorPlugin.d" />
+    </Folder>
+    <Folder name="mediabrowser">
+     <Folder name="css">
+      <Folder name="css_pirobox">
+       <Folder name="style_serviio">
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\bottom_nav.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\caption.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\close.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\close_h.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\cursors.gif" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\dislarge.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\enlarge.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\loader_nav.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\loadinfo.gif" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\new_skin.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\new_skin_left.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\new_skin_top.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\next.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\next_fake.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\prev.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\prev_fake.png" />
+        <File path="org\serviio\mediabrowser\css\css_pirobox\style_serviio\style.css" />
+       </Folder>
+      </Folder>
+      <File path="org\serviio\mediabrowser\css\browser.css" />
+      <File path="org\serviio\mediabrowser\css\jquery-ui-1.8.17.custom.css" />
+      <File path="org\serviio\mediabrowser\css\jquery.qtip.css" />
+     </Folder>
+     <Folder name="images">
+      <File path="org\serviio\mediabrowser\images\audio_placeholder.jpg" />
+      <File path="org\serviio\mediabrowser\images\background-bottom.jpg" />
+      <File path="org\serviio\mediabrowser\images\background-top.png" />
+      <File path="org\serviio\mediabrowser\images\big_logo.png" />
+      <File path="org\serviio\mediabrowser\images\breadcrumb_arrow.png" />
+      <File path="org\serviio\mediabrowser\images\close_button.png" />
+      <File path="org\serviio\mediabrowser\images\favicon.ico" />
+      <File path="org\serviio\mediabrowser\images\home.png" />
+      <File path="org\serviio\mediabrowser\images\image_placeholder.jpg" />
+      <File path="org\serviio\mediabrowser\images\logo.png" />
+      <File path="org\serviio\mediabrowser\images\play_icon_large.png" />
+      <File path="org\serviio\mediabrowser\images\play_icon_small.png" />
+      <File path="org\serviio\mediabrowser\images\scroller-down.png" />
+      <File path="org\serviio\mediabrowser\images\scroller-up.png" />
+      <File path="org\serviio\mediabrowser\images\top_nav.jpg" />
+      <File path="org\serviio\mediabrowser\images\video_placeholder.jpg" />
+      <File path="org\serviio\mediabrowser\images\x.png" />
+     </Folder>
+     <Folder name="js">
+      <File path="org\serviio\mediabrowser\js\2.5.3-crypto-sha1-hmac.js" />
+      <File path="org\serviio\mediabrowser\js\date.format.js" />
+      <File path="org\serviio\mediabrowser\js\flowplayer-3.2.8.min.js" />
+      <File path="org\serviio\mediabrowser\js\jquery-1.8.3.min.js" />
+      <File path="org\serviio\mediabrowser\js\jquery-ui-1.9.2.custom.min.js" />
+      <File path="org\serviio\mediabrowser\js\jquery.cookie.js" />
+      <File path="org\serviio\mediabrowser\js\jquery.qtip.js" />
+      <File path="org\serviio\mediabrowser\js\jquery.timer.js" />
+      <File path="org\serviio\mediabrowser\js\jquery.ui.touch-punch.min.js" />
+      <File path="org\serviio\mediabrowser\js\media-browser.js" />
+      <File path="org\serviio\mediabrowser\js\pirobox_extended_feb_2011.js" />
+      <File path="org\serviio\mediabrowser\js\slimScroll.js" />
+     </Folder>
+     <Folder name="rest">
+      <Folder name="resources">
+       <Folder name="server">
+        <File path="org\serviio\mediabrowser\rest\resources\server\all.d" />
+        <File path="org\serviio\mediabrowser\rest\resources\server\MediaBrowserServerResource.d" />
+       </Folder>
+       <File path="org\serviio\mediabrowser\rest\resources\all.d" />
+       <File path="org\serviio\mediabrowser\rest\resources\MediaBrowserResource.d" />
+      </Folder>
+      <File path="org\serviio\mediabrowser\rest\all.d" />
+      <File path="org\serviio\mediabrowser\rest\MediaBrowserRestletApplication.d" />
+     </Folder>
+     <Folder name="swf">
+      <File path="org\serviio\mediabrowser\swf\flowplayer-3.2.9.swf" />
+      <File path="org\serviio\mediabrowser\swf\flowplayer.audio-3.2.8.swf" />
+      <File path="org\serviio\mediabrowser\swf\flowplayer.bitrateselect-3.2.8.swf" />
+      <File path="org\serviio\mediabrowser\swf\flowplayer.captions-3.2.8.swf" />
+      <File path="org\serviio\mediabrowser\swf\flowplayer.content-3.2.8.swf" />
+      <File path="org\serviio\mediabrowser\swf\flowplayer.controls-3.2.9.swf" />
+      <File path="org\serviio\mediabrowser\swf\flowplayer.menu-3.2.8.swf" />
+      <File path="org\serviio\mediabrowser\swf\flowplayer.serviiostreaming-1.0.10.swf" />
+      <File path="org\serviio\mediabrowser\swf\LICENSE.txt" />
+     </Folder>
+     <File path="org\serviio\mediabrowser\index.html" />
+    </Folder>
+    <Folder name="profile">
+     <File path="org\serviio\profile\all.d" />
+     <File path="org\serviio\profile\DeliveryQuality.d" />
+     <File path="org\serviio\profile\DetectionDefinition.d" />
+     <File path="org\serviio\profile\H264LevelCheckType.d" />
+     <File path="org\serviio\profile\OnlineContentType.d" />
+     <File path="org\serviio\profile\Profile.d" />
+     <File path="org\serviio\profile\ProfileManager.d" />
+     <File path="org\serviio\profile\Profiles.xsd" />
+     <File path="org\serviio\profile\ProfilesDefinitionException.d" />
+     <File path="org\serviio\profile\ProfilesDefinitionParser.d" />
+    </Folder>
+    <Folder name="renderer">
+     <Folder name="dao">
+      <File path="org\serviio\renderer\dao\all.d" />
+      <File path="org\serviio\renderer\dao\RendererDAO.d" />
+      <File path="org\serviio\renderer\dao\RendererDAOImpl.d" />
+     </Folder>
+     <Folder name="entities">
+      <File path="org\serviio\renderer\entities\all.d" />
+      <File path="org\serviio\renderer\entities\Renderer.d" />
+     </Folder>
+     <File path="org\serviio\renderer\ActiveRenderer.d" />
+     <File path="org\serviio\renderer\all.d" />
+     <File path="org\serviio\renderer\CannotResolveRendererProfileException.d" />
+     <File path="org\serviio\renderer\RendererExpirationChecker.d" />
+     <File path="org\serviio\renderer\RendererManager.d" />
+    </Folder>
+    <Folder name="restlet">
+     <File path="org\serviio\restlet\AbstractProEditionServerResource.d" />
+     <File path="org\serviio\restlet\AbstractRestfulException.d" />
+     <File path="org\serviio\restlet\AbstractServerResource.d" />
+     <File path="org\serviio\restlet\all.d" />
+     <File path="org\serviio\restlet\AuthenticationException.d" />
+     <File path="org\serviio\restlet\HttpCodeException.d" />
+     <File path="org\serviio\restlet\ModelError.d" />
+     <File path="org\serviio\restlet\OperationException.d" />
+     <File path="org\serviio\restlet\RestletConstants.d" />
+     <File path="org\serviio\restlet\RestletServer.d" />
+     <File path="org\serviio\restlet\ResultRepresentation.d" />
+     <File path="org\serviio\restlet\ServerUnavailableException.d" />
+     <File path="org\serviio\restlet\ServiioStatusService.d" />
+     <File path="org\serviio\restlet\ServiioXstreamConverter.d" />
+     <File path="org\serviio\restlet\ServiioXstreamRepresentation.d" />
+     <File path="org\serviio\restlet\ValidationException.d" />
+    </Folder>
+    <Folder name="ui">
+     <Folder name="representation">
+      <File path="org\serviio\ui\representation\ActionRepresentation.d" />
+      <File path="org\serviio\ui\representation\all.d" />
+      <File path="org\serviio\ui\representation\ApplicationRepresentation.d" />
+      <File path="org\serviio\ui\representation\BrowsingCategory.d" />
+      <File path="org\serviio\ui\representation\ConsoleSettingsRepresentation.d" />
+      <File path="org\serviio\ui\representation\DataValue.d" />
+      <File path="org\serviio\ui\representation\LibraryStatusRepresentation.d" />
+      <File path="org\serviio\ui\representation\LicenseRepresentation.d" />
+      <File path="org\serviio\ui\representation\MetadataRepresentation.d" />
+      <File path="org\serviio\ui\representation\OnlinePlugin.d" />
+      <File path="org\serviio\ui\representation\OnlinePluginsRepresentation.d" />
+      <File path="org\serviio\ui\representation\OnlineRepository.d" />
+      <File path="org\serviio\ui\representation\PresentationRepresentation.d" />
+      <File path="org\serviio\ui\representation\ReferenceDataRepresentation.d" />
+      <File path="org\serviio\ui\representation\RemoteAccessRepresentation.d" />
+      <File path="org\serviio\ui\representation\RendererRepresentation.d" />
+      <File path="org\serviio\ui\representation\RepositoryRepresentation.d" />
+      <File path="org\serviio\ui\representation\ServiceStatusRepresentation.d" />
+      <File path="org\serviio\ui\representation\SharedFolder.d" />
+      <File path="org\serviio\ui\representation\StatusRepresentation.d" />
+      <File path="org\serviio\ui\representation\TranscodingRepresentation.d" />
+      <File path="org\serviio\ui\representation\WithAccessGroups.d" />
+     </Folder>
+     <Folder name="resources">
+      <Folder name="server">
+       <File path="org\serviio\ui\resources\server\AboutServerResource.d" />
+       <File path="org\serviio\ui\resources\server\ActionsServerResource.d" />
+       <File path="org\serviio\ui\resources\server\all.d" />
+       <File path="org\serviio\ui\resources\server\ApplicationServerResource.d" />
+       <File path="org\serviio\ui\resources\server\ConsoleSettingsServerResource.d" />
+       <File path="org\serviio\ui\resources\server\LibraryStatusServerResource.d" />
+       <File path="org\serviio\ui\resources\server\LicenseUploadServerResource.d" />
+       <File path="org\serviio\ui\resources\server\MetadataServerResource.d" />
+       <File path="org\serviio\ui\resources\server\OnlinePluginsServerResource.d" />
+       <File path="org\serviio\ui\resources\server\PingServerResource.d" />
+       <File path="org\serviio\ui\resources\server\PresentationServerResource.d" />
+       <File path="org\serviio\ui\resources\server\ReferenceDataServerResource.d" />
+       <File path="org\serviio\ui\resources\server\RemoteAccessServerResource.d" />
+       <File path="org\serviio\ui\resources\server\RepositoryServerResource.d" />
+       <File path="org\serviio\ui\resources\server\ServiceStatusServerResource.d" />
+       <File path="org\serviio\ui\resources\server\StatusServerResource.d" />
+       <File path="org\serviio\ui\resources\server\TranscodingServerResource.d" />
+      </Folder>
+      <File path="org\serviio\ui\resources\AboutResource.d" />
+      <File path="org\serviio\ui\resources\ActionsResource.d" />
+      <File path="org\serviio\ui\resources\all.d" />
+      <File path="org\serviio\ui\resources\ApplicationResource.d" />
+      <File path="org\serviio\ui\resources\ConsoleSettingsResource.d" />
+      <File path="org\serviio\ui\resources\LibraryStatusResource.d" />
+      <File path="org\serviio\ui\resources\LicenseUploadResource.d" />
+      <File path="org\serviio\ui\resources\MetadataResource.d" />
+      <File path="org\serviio\ui\resources\OnlinePluginsResource.d" />
+      <File path="org\serviio\ui\resources\PingResource.d" />
+      <File path="org\serviio\ui\resources\PresentationResource.d" />
+      <File path="org\serviio\ui\resources\ReferenceDataResource.d" />
+      <File path="org\serviio\ui\resources\RemoteAccessResource.d" />
+      <File path="org\serviio\ui\resources\RepositoryResource.d" />
+      <File path="org\serviio\ui\resources\ServiceStatusResource.d" />
+      <File path="org\serviio\ui\resources\StatusResource.d" />
+      <File path="org\serviio\ui\resources\TranscodingResource.d" />
+     </Folder>
+     <File path="org\serviio\ui\all.d" />
+     <File path="org\serviio\ui\ApiRestletApplication.d" />
+    </Folder>
+    <Folder name="update">
+     <Folder name="dao">
+      <File path="org\serviio\update\dao\all.d" />
+      <File path="org\serviio\update\dao\DBLogDAO.d" />
+      <File path="org\serviio\update\dao\DBLogDAOImpl.d" />
+     </Folder>
+     <Folder name="entities">
+      <File path="org\serviio\update\entities\all.d" />
+      <File path="org\serviio\update\entities\DBLog.d" />
+     </Folder>
+     <File path="org\serviio\update\all.d" />
+     <File path="org\serviio\update\DBSchemaUpdateExecutor.d" />
+     <File path="org\serviio\update\UpdateChecker.d" />
+    </Folder>
+    <Folder name="upnp">
+     <Folder name="addressing">
+      <File path="org\serviio\upnp\addressing\all.d" />
+      <File path="org\serviio\upnp\addressing\LocalAddressResolverStrategy.d" />
+     </Folder>
+     <Folder name="discovery">
+      <File path="org\serviio\upnp\discovery\AbstractSSDPMessageListener.d" />
+      <File path="org\serviio\upnp\discovery\all.d" />
+      <File path="org\serviio\upnp\discovery\DiscoveryAdvertisementNotifier.d" />
+      <File path="org\serviio\upnp\discovery\DiscoveryManager.d" />
+      <File path="org\serviio\upnp\discovery\DiscoverySearchResponder.d" />
+      <File path="org\serviio\upnp\discovery\DiscoverySSDPMessageListener.d" />
+      <File path="org\serviio\upnp\discovery\MediaServerConstants.d" />
+      <File path="org\serviio\upnp\discovery\Multicaster.d" />
+      <File path="org\serviio\upnp\discovery\RendererAdvertisementProcessor.d" />
+      <File path="org\serviio\upnp\discovery\RendererSearchResponseProcessor.d" />
+      <File path="org\serviio\upnp\discovery\RendererSearchSender.d" />
+     </Folder>
+     <Folder name="eventing">
+      <File path="org\serviio\upnp\eventing\all.d" />
+      <File path="org\serviio\upnp\eventing\EventDispatcher.d" />
+      <File path="org\serviio\upnp\eventing\EventSubscriptionExpirationChecker.d" />
+      <File path="org\serviio\upnp\eventing\Subscription.d" />
+     </Folder>
+     <Folder name="protocol">
+      <Folder name="http">
+       <Folder name="transport">
+        <File path="org\serviio\upnp\protocol\http\transport\AbstractProtocolHandler.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\all.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\CDSProtocolHandler.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\DLNAProtocolHandler.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\InvalidResourceRequestException.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\LGProtocolHandler.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\RequestedResourceDescriptor.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\ResourceTransportProtocolHandler.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\SamsungWiseLinkProtocolHandler.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\TransferMode.d" />
+        <File path="org\serviio\upnp\protocol\http\transport\XBox360ProtocolHandler.d" />
+       </Folder>
+       <File path="org\serviio\upnp\protocol\http\all.d" />
+       <File path="org\serviio\upnp\protocol\http\HttpMessageBuilder.d" />
+       <File path="org\serviio\upnp\protocol\http\HttpMessageParser.d" />
+       <File path="org\serviio\upnp\protocol\http\RequestExecutor.d" />
+       <File path="org\serviio\upnp\protocol\http\StreamSessionInputBuffer.d" />
+       <File path="org\serviio\upnp\protocol\http\StreamSessionOutputBuffer.d" />
+       <File path="org\serviio\upnp\protocol\http\UniversalHttpRequestFactory.d" />
+       <File path="org\serviio\upnp\protocol\http\UniversalHttpServerConnection.d" />
+      </Folder>
+      <Folder name="soap">
+       <File path="org\serviio\upnp\protocol\soap\all.d" />
+       <File path="org\serviio\upnp\protocol\soap\InvocationError.d" />
+       <File path="org\serviio\upnp\protocol\soap\OperationResult.d" />
+       <File path="org\serviio\upnp\protocol\soap\ServiceInvocationException.d" />
+       <File path="org\serviio\upnp\protocol\soap\ServiceInvoker.d" />
+       <File path="org\serviio\upnp\protocol\soap\SOAPParameter.d" />
+       <File path="org\serviio\upnp\protocol\soap\SOAPParameters.d" />
+      </Folder>
+      <Folder name="ssdp">
+       <File path="org\serviio\upnp\protocol\ssdp\all.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\DeviceAliveMessageBuilder.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\DeviceUnavailableMessageBuilder.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\InsufficientInformationException.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\RendererSearchMessageBuilder.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\SearchResponseMessageBuilder.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\SSDPConstants.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\SSDPMessageBuilder.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\SSDPMessageBuilderFactory.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\SSDPRequestMessageBuilder.d" />
+       <File path="org\serviio\upnp\protocol\ssdp\SSDPResponseMessageBuilder.d" />
+      </Folder>
+      <Folder name="templates">
+       <File path="org\serviio\upnp\protocol\templates\deviceDescription.ftl" />
+       <File path="org\serviio\upnp\protocol\templates\eventNotification.ftl" />
+       <File path="org\serviio\upnp\protocol\templates\serviceDescription-ConnectionManager.ftl" />
+       <File path="org\serviio\upnp\protocol\templates\serviceDescription-ContentDirectory.ftl" />
+       <File path="org\serviio\upnp\protocol\templates\serviceDescription-MediaReceiverRegistrar.ftl" />
+      </Folder>
+      <File path="org\serviio\upnp\protocol\all.d" />
+      <File path="org\serviio\upnp\protocol\TemplateApplicator.d" />
+      <File path="org\serviio\upnp\protocol\Templates.d" />
+     </Folder>
+     <Folder name="service">
+      <Folder name="connectionmanager">
+       <File path="org\serviio\upnp\service\connectionmanager\all.d" />
+       <File path="org\serviio\upnp\service\connectionmanager\ConnectionManager.d" />
+      </Folder>
+      <Folder name="contentdirectory">
+       <Folder name="classes">
+        <File path="org\serviio\upnp\service\contentdirectory\classes\Album.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\all.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\AudioItem.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\ClassProperties.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\Container.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\DirectoryObject.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\DirectoryObjectBuilder.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\Genre.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\ImageItem.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\InvalidResourceException.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\Item.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\Movie.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\MusicAlbum.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\MusicArtist.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\MusicGenre.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\MusicTrack.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\ObjectClassType.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\Person.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\Photo.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\PlaylistContainer.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\PlaylistItem.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\Resource.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\StorageFolder.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\classes\VideoItem.d" />
+       </Folder>
+       <Folder name="command">
+        <Folder name="audio">
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\AbstractAlbumsRetrievalCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\AbstractSongsForRoleAndAlbumRetrievalCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\AbstractSongsRetrievalCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\all.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAlbumsForAlbumArtistCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAlbumsForArtistCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAlbumsForComposerCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAllAlbumsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAllSongsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAudioFoldersByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAudioGenresByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAudioOnlineContentCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListAudioPlaylistsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListFlatAudioFoldersByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListRandomSongsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongsForAlbumCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongsForArtistAndAlbumCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongsForArtistCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongsForComposerAndAlbumCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongsForFolderCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongsForGenreCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongsForInitialCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\audio\ListSongsForPlaylistCommand.d" />
+        </Folder>
+        <Folder name="image">
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\AbstractImagesRetrievalCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\all.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListAllImagesCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListFlatImageFoldersByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImageFoldersByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImageOnlineContentCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImagePlaylistsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImagesCreationMonthsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImagesCreationYearsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImagesForCreationMonthAndYearCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImagesForCreationYearCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImagesForFolderCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\image\ListImagesForPlaylistCommand.d" />
+        </Folder>
+        <Folder name="person">
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\AbstractListPersonInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\AbstractListPersonsForInitialCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\AbstractPersonsRetrievalCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\all.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListActorInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListActorsForInitialCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListAlbumArtistInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListAlbumArtistsForInitialCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListArtistInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListArtistsByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListArtistsForInitialCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListComposerInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListComposersForInitialCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListDirectorInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListDirectorsForInitialCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListProducerInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\person\ListProducersForInitialCommand.d" />
+        </Folder>
+        <Folder name="video">
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\AbstractVideosRetrievalCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\all.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListEpisodesForSeriesSeasonCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListFlatVideoFoldersByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListLastAddedVideosCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListLastViewedVideosCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListMovieVideosByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListSeasonsForSeriesCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListSeriesByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideoFoldersByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideoGenresByNameCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideoInitialsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideoOnlineContentCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideoPlaylistsCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideosForActorCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideosForDirectorCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideosForFolderCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideosForGenreCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideosForInitialCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideosForPlaylistCommand.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\command\video\ListVideosForProducerCommand.d" />
+        </Folder>
+        <File path="org\serviio\upnp\service\contentdirectory\command\AbstractCommand.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\AbstractEntityContainerCommand.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\AbstractEntityItemCommand.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\AbstractListFlatFoldersByNameCommand.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\AbstractListInitialsCommand.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\AbstractListObjectsByFSHierarchyCommand.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\AbstractListOnlineObjectsByHierarchyCommand.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\AbstractListPlaylistsCommand.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\all.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\Command.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\CommandExecutionException.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\ObjectValuesBuilder.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\command\ResourceValuesBuilder.d" />
+       </Folder>
+       <Folder name="definition">
+        <Folder name="i18n">
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\all.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_ar.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_bg.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_ca.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_cs.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_da.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_de.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_el.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_en.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_es-419.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_es.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_et-EE.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_fi.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_fr.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_gsw-CH.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_he.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_hr.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_hu.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_id.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_it.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_ja-JP.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_ko.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_lt.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_lv.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_nl-BE.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_nl.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_no.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_pl.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_pt-BR.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_pt-PT.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_ro.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_ru.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_sk.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_sl.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_sr.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_sv.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_tr.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_uk.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_zh-CN.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\browsingCategories_zh-HK.properties" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\BrowsingCategoriesLanguages.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\definition\i18n\BrowsingCategoriesMessages.d" />
+        </Folder>
+        <File path="org\serviio\upnp\service\contentdirectory\definition\ActionNode.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\all.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\ContainerNode.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\ContainerVisibilityType.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\contentDirectoryDef.xml" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\ContentDirectoryDef.xsd" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\ContentDirectoryDefinitionException.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\ContentDirectoryDefinitionFilter.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\ContentDirectoryDefinitionParser.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\Definition.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\DefinitionNode.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\SamsungContentDirectoryDefinitionFilter.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\StaticContainerNode.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\StaticDefinitionNode.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\WMPContentDirectoryDefinitionFilter.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\definition\XBox360ContentDirectoryDefinitionFilter.d" />
+       </Folder>
+       <Folder name="rest">
+        <Folder name="representation">
+         <File path="org\serviio\upnp\service\contentdirectory\rest\representation\all.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\representation\ClosingInputRepresentation.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\representation\ContentDirectoryRepresentation.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\representation\ContentURLRepresentation.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\representation\DirectoryObjectRepresentation.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\representation\OnlineIdentifierRepresentation.d" />
+        </Folder>
+        <Folder name="resources">
+         <Folder name="server">
+          <File path="org\serviio\upnp\service\contentdirectory\rest\resources\server\AbstractCDSServerResource.d" />
+          <File path="org\serviio\upnp\service\contentdirectory\rest\resources\server\AbstractRestrictedCDSServerResource.d" />
+          <File path="org\serviio\upnp\service\contentdirectory\rest\resources\server\all.d" />
+          <File path="org\serviio\upnp\service\contentdirectory\rest\resources\server\CDSBrowseServerResource.d" />
+          <File path="org\serviio\upnp\service\contentdirectory\rest\resources\server\CDSRetrieveMediaServerResource.d" />
+          <File path="org\serviio\upnp\service\contentdirectory\rest\resources\server\LoginServerResource.d" />
+          <File path="org\serviio\upnp\service\contentdirectory\rest\resources\server\LogoutServerResource.d" />
+         </Folder>
+         <File path="org\serviio\upnp\service\contentdirectory\rest\resources\all.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\resources\CDSBrowseResource.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\resources\CDSRetrieveMediaResource.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\resources\LoginResource.d" />
+         <File path="org\serviio\upnp\service\contentdirectory\rest\resources\LogoutResource.d" />
+        </Folder>
+        <File path="org\serviio\upnp\service\contentdirectory\rest\all.d" />
+        <File path="org\serviio\upnp\service\contentdirectory\rest\ContentDirectoryRestletApplication.d" />
+       </Folder>
+       <File path="org\serviio\upnp\service\contentdirectory\all.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\BrowseItemsHolder.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\CDSCacheDecorator.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\ContentDirectory.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\ContentDirectoryEngine.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\ContentDirectoryMessageBuilder.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\DLNAProtocolAdditionalInfo.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\GenericDLNAMessageBuilder.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\HostInfo.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\InvalidBrowseFlagException.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\LocalContentCacheDecorator.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\NoCacheDecorator.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\ObjectNotFoundException.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\ObjectType.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\PacketVideoDLNAMessageBuilder.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\ProtocolAdditionalInfo.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\ProtocolInfo.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\SamsungDLNAMessageBuilder.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\SimpleProtocolInfo.d" />
+       <File path="org\serviio\upnp\service\contentdirectory\SonyDLNAMessageBuilder.d" />
+      </Folder>
+      <Folder name="microsoft">
+       <File path="org\serviio\upnp\service\microsoft\all.d" />
+       <File path="org\serviio\upnp\service\microsoft\MediaReceiverRegistrar.d" />
+      </Folder>
+      <File path="org\serviio\upnp\service\all.d" />
+      <File path="org\serviio\upnp\service\Service.d" />
+      <File path="org\serviio\upnp\service\StateVariable.d" />
+     </Folder>
+     <Folder name="webserver">
+      <File path="org\serviio\upnp\webserver\AbstractDescriptionRequestHandler.d" />
+      <File path="org\serviio\upnp\webserver\AbstractRequestHandler.d" />
+      <File path="org\serviio\upnp\webserver\all.d" />
+      <File path="org\serviio\upnp\webserver\DeviceDescriptionRequestHandler.d" />
+      <File path="org\serviio\upnp\webserver\HttpRequestHandlerRegexRegistry.d" />
+      <File path="org\serviio\upnp\webserver\ResourceTransportRequestHandler.d" />
+      <File path="org\serviio\upnp\webserver\ServiceControlRequestHandler.d" />
+      <File path="org\serviio\upnp\webserver\ServiceDescriptionRequestHandler.d" />
+      <File path="org\serviio\upnp\webserver\ServiceEventSubscriptionRequestHandler.d" />
+      <File path="org\serviio\upnp\webserver\ServiioHttpService.d" />
+      <File path="org\serviio\upnp\webserver\UPnPIconRequestHandler.d" />
+      <File path="org\serviio\upnp\webserver\WebContexts.d" />
+      <File path="org\serviio\upnp\webserver\WebServer.d" />
+     </Folder>
+     <File path="org\serviio\upnp\all.d" />
+     <File path="org\serviio\upnp\Device.d" />
+     <File path="org\serviio\upnp\DeviceDescription.d" />
+     <File path="org\serviio\upnp\serviio-icon-large.jpg" />
+     <File path="org\serviio\upnp\serviio-icon-large.png" />
+     <File path="org\serviio\upnp\serviio-icon-small.jpg" />
+     <File path="org\serviio\upnp\serviio-icon-small.png" />
+    </Folder>
+    <Folder name="util">
+     <File path="org\serviio\util\AES.d" />
+     <File path="org\serviio\util\all.d" />
+     <File path="org\serviio\util\CaseInsensitiveMap.d" />
+     <File path="org\serviio\util\CollectionUtils.d" />
+     <File path="org\serviio\util\DateUtils.d" />
+     <File path="org\serviio\util\FileUtils.d" />
+     <File path="org\serviio\util\HttpClient.d" />
+     <File path="org\serviio\util\HttpUtils.d" />
+     <File path="org\serviio\util\IcyInputStream.d" />
+     <File path="org\serviio\util\ImageUtils.d" />
+     <File path="org\serviio\util\JdbcUtils.d" />
+     <File path="org\serviio\util\MediaUtils.d" />
+     <File path="org\serviio\util\MultiCastUtils.d" />
+     <File path="org\serviio\util\NetworkInterfaceComparator.d" />
+     <File path="org\serviio\util\NumberUtils.d" />
+     <File path="org\serviio\util\ObjectValidator.d" />
+     <File path="org\serviio\util\Platform.d" />
+     <File path="org\serviio\util\ProcessUtils.d" />
+     <File path="org\serviio\util\SecurityUtils.d" />
+     <File path="org\serviio\util\ServiioThreadFactory.d" />
+     <File path="org\serviio\util\StringComparators.d" />
+     <File path="org\serviio\util\StringUtils.d" />
+     <File path="org\serviio\util\ThreadExecutor.d" />
+     <File path="org\serviio\util\ThreadUtils.d" />
+     <File path="org\serviio\util\Tupple.d" />
+     <File path="org\serviio\util\UnicodeReader.d" />
+     <File path="org\serviio\util\XmlUtils.d" />
+     <File path="org\serviio\util\XPathUtil.d" />
+     <File path="org\serviio\util\ZipUtils.d" />
+    </Folder>
+    <File path="org\serviio\ApplicationInstanceListener.d" />
+    <File path="org\serviio\ApplicationInstanceManager.d" />
+    <File path="org\serviio\ApplicationSettings.d" />
+    <File path="org\serviio\MediaServer.d" />
+    <File path="org\serviio\SystemProperties.d" />
+    <File path="org\serviio\UPnPServerStatus.d" />
+   </Folder>
+  </Folder>
+  <File path="main.d" />
+ </Folder>
+</DProject>

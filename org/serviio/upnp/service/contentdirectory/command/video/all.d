@@ -1,0 +1,22 @@
+module org.serviio.upnp.service.contentdirectory.command.video.all;
+
+public import org.serviio.upnp.service.contentdirectory.command.video.AbstractVideosRetrievalCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListEpisodesForSeriesSeasonCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListFlatVideoFoldersByNameCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListLastAddedVideosCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListLastViewedVideosCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListMovieVideosByNameCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListSeasonsForSeriesCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListSeriesByNameCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideoFoldersByNameCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideoGenresByNameCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideoInitialsCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideoOnlineContentCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideoPlaylistsCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideosForActorCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideosForDirectorCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideosForFolderCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideosForGenreCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideosForInitialCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideosForPlaylistCommand;
+public import org.serviio.upnp.service.contentdirectory.command.video.ListVideosForProducerCommand;

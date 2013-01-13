@@ -1,0 +1,21 @@
+module org.serviio.library.online.all;
+
+public import org.serviio.library.online.AbstractOnlineItemParser;
+public import org.serviio.library.online.AbstractUrlExtractor;
+public import org.serviio.library.online.CannotRetrieveThumbnailException;
+public import org.serviio.library.online.ContentURLContainer;
+public import org.serviio.library.online.FeedItemUrlExtractor;
+public import org.serviio.library.online.OnlineCacheDecorator;
+public import org.serviio.library.online.OnlineContentCacheDecorator;
+public import org.serviio.library.online.OnlineItemId;
+public import org.serviio.library.online.OnlineItemService;
+public import org.serviio.library.online.OnlineLibraryManager;
+public import org.serviio.library.online.PluginExecutionProcessor;
+public import org.serviio.library.online.PreferredQuality;
+public import org.serviio.library.online.SingleURLParser;
+public import org.serviio.library.online.TechnicalMetadataCacheDecorator;
+public import org.serviio.library.online.ThumbnailCacheDecorator;
+public import org.serviio.library.online.WebResourceContainer;
+public import org.serviio.library.online.WebResourceItem;
+public import org.serviio.library.online.WebResourceParser;
+public import org.serviio.library.online.WebResourceUrlExtractor;

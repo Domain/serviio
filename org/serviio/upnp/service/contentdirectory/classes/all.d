@@ -1,0 +1,25 @@
+module org.serviio.upnp.service.contentdirectory.classes.all;
+
+public import org.serviio.upnp.service.contentdirectory.classes.Album;
+public import org.serviio.upnp.service.contentdirectory.classes.AudioItem;
+public import org.serviio.upnp.service.contentdirectory.classes.ClassProperties;
+public import org.serviio.upnp.service.contentdirectory.classes.Container;
+public import org.serviio.upnp.service.contentdirectory.classes.DirectoryObject;
+public import org.serviio.upnp.service.contentdirectory.classes.DirectoryObjectBuilder;
+public import org.serviio.upnp.service.contentdirectory.classes.Genre;
+public import org.serviio.upnp.service.contentdirectory.classes.ImageItem;
+public import org.serviio.upnp.service.contentdirectory.classes.InvalidResourceException;
+public import org.serviio.upnp.service.contentdirectory.classes.Item;
+public import org.serviio.upnp.service.contentdirectory.classes.Movie;
+public import org.serviio.upnp.service.contentdirectory.classes.MusicAlbum;
+public import org.serviio.upnp.service.contentdirectory.classes.MusicArtist;
+public import org.serviio.upnp.service.contentdirectory.classes.MusicGenre;
+public import org.serviio.upnp.service.contentdirectory.classes.MusicTrack;
+public import org.serviio.upnp.service.contentdirectory.classes.ObjectClassType;
+public import org.serviio.upnp.service.contentdirectory.classes.Person;
+public import org.serviio.upnp.service.contentdirectory.classes.Photo;
+public import org.serviio.upnp.service.contentdirectory.classes.PlaylistContainer;
+public import org.serviio.upnp.service.contentdirectory.classes.PlaylistItem;
+public import org.serviio.upnp.service.contentdirectory.classes.Resource;
+public import org.serviio.upnp.service.contentdirectory.classes.StorageFolder;
+public import org.serviio.upnp.service.contentdirectory.classes.VideoItem;

@@ -1,0 +1,653 @@
+html,body {
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
+body {
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	overflow-y: hidden;
+	padding: 0;
+	user-select: none;
+	width: 100%;
+}
+
+.background {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+#bottomNav {
+	background-color: #292929;
+	float: left;
+	height: 40px;
+	margin: 21px 0 0;
+	opacity: 0.3;
+	position: absolute;
+	width: 100%;
+}
+
+#mainContainer {
+	border: .1em solid #b4b4b4;
+	margin: 20px;
+	padding: 0;
+}
+
+#topNavDiv {
+	background-image: url(../images/top_nav.jpg);
+	height: 44px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+span.textShortening {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	width: 100%;
+}
+
+div.imageWrapper,a.imageWrapper {
+	background-color: #cccccc;
+	text-align: center;
+	height: 160px;
+	overflow: hidden;
+	width: 160px;
+	position: relative;
+}
+
+div.playlistImageWrapper,a.playlistImageWrapper {
+	background-color: #505050;
+	text-align: center;
+	height: 40px;
+	overflow: hidden;
+	width: 40px;
+	position: relative;
+	float:left;
+}
+
+div.lightbox {
+	background-color: #000;
+	height: 100%;
+	left: 0;
+	opacity: 0.95;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+div.lighboxMediaFrame {
+	background-color: #181818;
+	border: 1px solid #333;
+	color: #ccc;
+	font-family: verdana;
+	font-size: .8em;
+	font-stretch: narrower;
+	font-weight: 200;
+	left: 0;
+	line-height: 1.4em;
+	padding: 18px;
+	position: absolute;
+	text-indent: 0;
+	top: 0;
+	z-index: 110;
+}
+
+div.gridmessage {
+	color: #292929;
+	display: none;
+	font-family: verdana;
+	font-size: 1.2em;
+	font-stretch: narrower;
+	font-weight: 200;
+	opacity: 0.8;
+	position: absolute;
+	text-indent: 0;
+	text-align: center;
+	z-index: 500;
+}
+
+div.gridmessagesmall {
+	font-size: 0.8em;
+}
+
+div.lighboxMediaFrame div.metadata {
+	background-color: #050505;
+	border: 1px solid #333;
+	display: block;
+	font-family: verdana;
+	font-size: 1em;
+	font-stretch: narrower;
+	font-weight: 200;
+	line-height: 1.4em;
+	margin-bottom: 10px;
+	padding: 0 10px 10px;
+	text-align: left;
+	text-indent: 0;
+}
+
+div.lighboxMediaFrame div table {
+	width: 100%;
+	table-layout: fixed;
+}
+
+div.lighboxMediaFrame div td div.tdLabel {
+	font-weight: 100;
+	color: #aaaaaa;
+	float: left;
+	margin-right: 10px;
+}
+
+div.lighboxMediaFrame div td div.tdValue {
+	float: left;
+}
+
+#metadataSummary {
+	height: 80px;
+}
+
+div.lighboxMediaFrame div h4 {
+	font-size: 1.3em;
+}
+
+div.lighboxMediaFrame div td {
+	font-weight: 500; //
+	width: 100px;
+	vertical-align: top;
+}
+
+div.lighboxMediaFrame div img.closer {
+	cursor: pointer;
+}
+
+#thumbsGridViewPort {
+	float: left;
+	left: 240px;
+	margin: 8px 0 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	z-index: 11;
+}
+
+#thumbsGrid div.itemTitle {
+	height: 1.3em;
+	overflow: hidden;
+	width: 160px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+#thumbsGrid div.itemDuration {
+	height: 1.3em;
+	color: grey;
+}
+
+
+
+#folderNav {
+	background-color: #292929;
+	float: left;
+	height: 100%;
+	left: 22px;
+	margin: 8px 8px 0;
+	padding: inherit;
+	position: absolute;
+	width: 200px;
+	z-index: 20;
+}
+
+#folderScrollerTop,#folderScrollerBottom {
+	background-color: #292929;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: 17px;
+}
+
+#folderScrollBox {
+	height: 100%;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0;
+	width: 100%;
+}
+
+div.pagination {
+	color: #666;
+	float: right;
+	font-family: verdana;
+	font-size: .7em;
+	font-stretch: narrower;
+	font-weight: 600;
+	height: 20px;
+	max-width: 40%;
+	padding-right: 30px;
+	padding-top: 13px;
+	text-indent: 0;
+}
+
+div.pagination#pagination-bottom {
+	z-index: 400;
+}
+
+div.pagination span {
+	cursor: pointer;
+	margin: 0 3px;
+	padding: 0 3px;
+}
+
+div.pagination span.pagination_info {
+	cursor: default;
+	display: inline;
+	font-size: .9em;
+	font-weight: 400;
+}
+
+div.pagination span.pagination-current {
+	color: #454b5d;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+div.breadcrumbContainer {
+	float: left;
+	height: 20px;
+	max-width: 60%;
+	padding-left: 0;
+}
+
+#homebutton {
+	cursor: pointer;
+	float: left;
+	margin-left: 20px;
+	margin-top: 13px;
+	z-index: 200;
+}
+
+#homebutton img {
+	height: 18px;
+}
+
+#breadcrumbContainer {
+	float: left;
+	height: 18px;
+	margin-left: 0;
+}
+
+div#breadcrumbContainer ul {
+	list-style-type: none;
+	overflow: hidden;
+	padding: 0;
+}
+
+div#breadcrumbContainer li {
+	background-image: url(../images/breadcrumb_arrow.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	color: #666;
+	cursor: pointer;
+	float: left;
+	font-family: verdana;
+	font-size: .8em;
+	font-stretch: narrower;
+	font-weight: 300;
+	list-style-type: none;
+	margin-left: 20px;
+	max-width: 130px;
+	overflow-x: hidden;
+	padding-left: 20px;
+	text-indent: 0;
+}
+
+div#breadcrumbContainer li div.active {
+	color: #454b5d;
+	font-weight: 600;
+}
+
+#folderNav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#folderNav ul li div:hover {
+	background-color: #999;
+	color: #FFF;
+}
+
+#folderNav ul li div {
+	background-color: #666;
+	border: solid 1px #292929;
+	color: #ccc;
+	cursor: pointer;
+	display: block;
+	font-family: verdana;
+	font-size: .8em;
+	font-stretch: narrower;
+	font-weight: 200;
+	line-height: 1.4em;
+	margin-bottom: 0 0 0 0;
+	padding: 8px;
+	text-indent: 0;
+	word-spacing: inherit;
+}
+
+.brandedLoginBox {
+	height: 450px;
+	left: 450px;
+	position: absolute;
+	top: 80px;
+	width: 450px;
+	z-index: 21;
+}
+
+div.loginbox {
+	background-color: #303030;
+	color: #c9c9c9;
+	font-family: verdana;
+	font-size: .8em;
+	font-stretch: narrower;
+	font-weight: 200;
+	height: 244px;
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+	text-indent: 0;
+	width: 430px;
+}
+
+.brandedLoginBox button {
+	color: #303030;
+	height: 28px;
+	width: 100px;
+}
+
+.brandedLoginBox input {
+	background-color: #c9c9c9;
+	border-style: none;
+	color: #303030;
+	font-size: 1em;
+	height: 25px;
+	margin: 5px;
+	padding: 3px 5px;
+	width: 300px;
+}
+
+.brandedLoginBox h1 {
+	color: #FFF;
+	font-size: 2em;
+	font-stretch: narrower;
+	font-weight: 200;
+	margin-bottom: 40px;
+}
+
+div.loginBackdrop {
+	background-color: #000;
+	height: 264px;
+	margin: 20px 0 0;
+	padding: 8px 0;
+	width: 450px;
+}
+
+#messageBox {
+	height: 100px;
+	position: absolute;
+	z-index: 999;
+	width: 450px;
+}
+
+#logoDiv {
+	width: 100%;
+}
+
+#logoutDiv {
+	float: right;
+	width: 100px;
+}
+
+#logoutDiv a {
+	color: #292929;
+	font-family: verdana;
+	font-size: .8em;
+	font-stretch: narrower;
+	font-weight: 200;
+	list-style-type: none;
+	text-decoration: none;
+	text-indent: 0;
+}
+
+.loginRibbon {
+	background-color: #ddddde;
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #000;
+	height: 150px;
+	left: 0;
+	padding: 5px 0;
+	position: absolute;
+	top: 300px;
+	width: 100%;
+	z-index: 20;
+}
+
+.loginRibbon div {
+	background-color: #78797a;
+	height: 100%;
+	width: 100%;
+}
+
+
+
+.thumbsGrid {
+	float: left;
+	overflow-x: hidden;
+	padding: inherit;
+	position: relative;
+	z-index: 10;
+}
+
+#thumbsGrid div.thumbPanel {
+	cursor: pointer;
+	float: left;
+	font-family: verdana;
+	font-size: .6em;
+	height: 200px;
+	margin: 0 3px 10px 6px;
+	overflow: hidden;
+	text-align: left;
+	width: 160px;
+	-ms-touch-action: none; // enable drag&drop on MS touch devices
+}
+
+#playlistDiv {
+	width: 230px;
+	position: absolute;
+	top: 200px;
+	right: -230px;
+	z-index: 1200;
+	overflow:hidden;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	display:none;
+}
+
+#playlistHiddenClue{
+	width: 30px;
+	height: 100px;
+	position: absolute;
+	top: 50%;
+	right: 0px;
+	z-index: 1200;
+	padding: 70px 0 0 0;
+	margin: 0 0 0 0;
+	color:white;
+	background-color: black;
+	opacity: 0.8;
+	font-size: 14px;
+	font-family: verdana;
+	font-stretch: narrower;
+	font-weight: bold;
+	
+}
+
+#playlistScrollBox {
+	position:absolute;
+	right:-230px;
+	z-index:1300;
+	height: 400px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0;
+	width: 230px;
+	background: none;
+	display:none;
+}
+
+#playlistScrollBoxTransparency {
+	height: 100px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding: 0;
+	width: 230px;
+	background-color: #292929;
+	overflow:hidden;
+}
+
+#playlistScrollBoxTransparency p{
+
+	font-size: 18px;
+	color:light-grey;	
+	font-family: verdana;
+	height: 130px;
+	padding-top:40px;
+	text-align: center;
+}
+
+
+
+#playlistScrollBox ul {
+	list-style: none;
+	height:100%; 
+	width: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	border: none;
+	background: none;
+}
+
+#playlistScrollBox li {
+	/* background-color: #292929; */
+	width: 100%;
+	font-family: verdana;
+	font-size: .6em;
+	overflow: hidden;
+	text-align: left;
+	color:white;
+	padding: 0 0 0 0;
+	margin: 0 0 3px 3px;
+}
+
+#playlistScrollBox li:hover {
+	background-color: #292929; 
+}
+
+
+#playlistScrollBox div.itemTitle {
+	height: 1.3em;
+	overflow: hidden;
+	width: 180px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 4px;
+	font-weight: bold;
+	float: left;
+	font-size: 10px;
+	font-family: verdana;
+}
+
+#playlistScrollBox div.itemDuration {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 4px;
+	font-weight: normal;
+	float: left;
+	font-size: 10px;
+	font-family: verdana;
+}
+
+.ui-sortable-helper {
+	list-style: none;
+}
+
+#playlistScrollerTop,#playlistScrollerBottom {
+	background-color: #292929;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: 17px;
+}
+
+
+#playlistControls {
+	position:absolute;
+	right:-230px;
+	top:100px;
+	width:130px;
+	height:33px;
+	z-index:1600;
+	display:none;
+	
+}
+
+
+.ui-draggable-dragging {
+	z-index: 1410;
+}
+
+li.highlighted{
+	
+	background-color: #205081;
+}
+
+.ui-draggable-dragging div.itemDuration{
+	display: none;
+}
+
+.ui-draggable-dragging div.itemTitle {
+	display: none;
+}
+
+.rotate {
+
+/* Safari */
+-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
