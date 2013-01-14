@@ -1,5 +1,6 @@
 module org.serviio.library.local.H264LevelType;
 
+import java.lang.String;
 import java.util.Map;
 
 public class H264LevelType

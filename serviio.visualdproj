@@ -46,7 +46,7 @@
   <compiler>0</compiler>
   <otherDMD>0</otherDMD>
   <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
-  <imppath>$(SolutionDir)\java\java $(ProjectDir)\external</imppath>
+  <imppath>$(SolutionDir)\java\java $(ProjectDir)\external $(SolutionDir)\java\slf4j</imppath>
   <fileImppath />
   <outdir>$(ConfigurationName)</outdir>
   <objdir>$(OutDir)</objdir>

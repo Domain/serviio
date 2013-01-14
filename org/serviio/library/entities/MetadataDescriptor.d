@@ -1,5 +1,7 @@
 module org.serviio.library.entities.MetadataDescriptor;
 
+import java.lang.Long;
+import java.lang.String;
 import java.util.Date;
 import org.serviio.db.entities.PersistedEntity;
 import org.serviio.library.local.metadata.extractor.ExtractorType;

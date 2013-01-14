@@ -1,5 +1,7 @@
 module org.serviio.library.local.metadata.VideoMetadata;
 
+import java.lang.Integer;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,6 +16,8 @@ import org.serviio.library.local.H264LevelType;
 import org.serviio.library.local.OnlineDBIdentifier;
 import org.serviio.library.metadata.InvalidMetadataException;
 import org.serviio.util.ObjectValidator;
+import org.serviio.library.local.metadata.LocalItemMetadata;
+import org.serviio.library.local.metadata.TransportStreamTimestamp;
 
 public class VideoMetadata : LocalItemMetadata
 {
@@ -50,7 +54,7 @@ public class VideoMetadata : LocalItemMetadata
   private ContentType contentType;
   private Map!(OnlineDBIdentifier, String) onlineIdentifiers = new HashMap!(OnlineDBIdentifier, String)();
 
-  public void merge(LocalItemMetadata additionalMetadata)
+  override public void merge(LocalItemMetadata additionalMetadata)
   {
     if (( cast(VideoMetadata)additionalMetadata !is null )) {
       VideoMetadata additionalVideoMetadata = cast(VideoMetadata)additionalMetadata;
@@ -151,7 +155,7 @@ public class VideoMetadata : LocalItemMetadata
     }
   }
 
-  public void fillInUnknownEntries()
+  override public void fillInUnknownEntries()
   {
     super.fillInUnknownEntries();
 
@@ -171,7 +175,7 @@ public class VideoMetadata : LocalItemMetadata
       setActors(Arrays.asList(cast(String[])[ "Unknown" ]));
   }
 
-  public void validateMetadata()
+  override public void validateMetadata()
   {
     super.validateMetadata();
     if (contentType is null)
@@ -412,7 +416,7 @@ public class VideoMetadata : LocalItemMetadata
     this.videoFourCC = videoFourCC;
   }
 
-  public String toString()
+  override public String toString()
   {
     StringBuilder builder = new StringBuilder();
     builder.append("VideoMetadata [title=").append(title).append(", filePath=").append(filePath).append(", fileSize=").append(fileSize).append(", audioBitrate=").append(audioBitrate).append(", audioCodec=").append(audioCodec).append(", audioStreamIndex=").append(audioStreamIndex).append(", bitrate=").append(bitrate).append(", channels=").append(channels).append(", container=").append(container).append(", contentType=").append(contentType).append(", duration=").append(duration).append(", episodeNumber=").append(episodeNumber).append(", fps=").append(fps).append(", frequency=").append(frequency).append(", h264Levels=").append(h264Levels).append(", h264Profile=").append(h264Profile).append(", ftyp=").append(ftyp).append(", height=").append(height).append(", seasonNumber=").append(seasonNumber).append(", seriesName=").append(seriesName).append(", timestampType=").append(timestampType).append(", videoBitrate=").append(videoBitrate).append(", videoCodec=").append(videoCodec).append(", videoFourCC=").append(videoFourCC).append(", videoStreamIndex=").append(videoStreamIndex).append(", width=").append(width).append("]");

@@ -10,6 +10,12 @@ import org.serviio.library.entities.MediaItem;
 import org.serviio.library.entities.MusicTrack;
 import org.serviio.library.entities.Video;
 import org.serviio.library.local.metadata.TransportStreamTimestamp;
+import org.serviio.dlna.MediaFormatProfile;
+import org.serviio.dlna.ImageContainer;
+import org.serviio.dlna.AudioContainer;
+import org.serviio.dlna.VideoContainer;
+import org.serviio.dlna.VideoCodec;
+import org.serviio.dlna.AudioCodec;
 
 public class MediaFormatProfileResolver
 {

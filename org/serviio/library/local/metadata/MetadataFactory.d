@@ -1,6 +1,7 @@
 module org.serviio.library.local.metadata.MetadataFactory;
 
 import org.serviio.library.metadata.MediaFileType;
+import org.serviio.library.local.metadata.LocalItemMetadata;
 
 public class MetadataFactory
 {

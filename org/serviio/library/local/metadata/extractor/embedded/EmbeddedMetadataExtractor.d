@@ -34,12 +34,12 @@ import org.serviio.util.ObjectValidator;
 
 public class EmbeddedMetadataExtractor : MetadataExtractor
 {
-  public ExtractorType getExtractorType()
+  override public ExtractorType getExtractorType()
   {
     return ExtractorType.EMBEDDED;
   }
 
-  public bool isMetadataUpdated(File mediaFile, MediaItem mediaItem, MetadataDescriptor metadataDescriptor)
+  override public bool isMetadataUpdated(File mediaFile, MediaItem mediaItem, MetadataDescriptor metadataDescriptor)
   {
     if ((mediaFile !is null) && (mediaFile.exists()) && (metadataDescriptor !is null)) {
       Date mediaFileDate = FileUtils.getLastModifiedDate(mediaFile);
@@ -54,7 +54,7 @@ public class EmbeddedMetadataExtractor : MetadataExtractor
     return false;
   }
 
-  protected MetadataFile getMetadataFile(File mediaFile, MediaFileType fileType, Repository repository)
+  override protected MetadataFile getMetadataFile(File mediaFile, MediaFileType fileType, Repository repository)
   {
     if ((mediaFile.exists()) && (mediaFile.canRead())) {
       return new MetadataFile(getExtractorType(), FileUtils.getLastModifiedDate(mediaFile), null, mediaFile);
@@ -62,7 +62,7 @@ public class EmbeddedMetadataExtractor : MetadataExtractor
     throw new IOException(String.format("File %s cannot be read to extract metadata", cast(Object[])[ mediaFile.getAbsolutePath() ]));
   }
 
-  protected void retrieveMetadata(MetadataFile metadataDescriptor, LocalItemMetadata metadata)
+  override protected void retrieveMetadata(MetadataFile metadataDescriptor, LocalItemMetadata metadata)
   {
     File mediaFile = cast(File)metadataDescriptor.getExtractable();
     if (( cast(AudioMetadata)metadata !is null ))

@@ -1,8 +1,12 @@
 module org.serviio.library.entities.MusicTrack;
 
+import java.lang.Integer;
+import java.lang.Long;
 import java.util.Date;
+import java.lang.String;
 import org.serviio.dlna.AudioContainer;
 import org.serviio.library.metadata.MediaFileType;
+import org.serviio.library.entities.MediaItem;
 
 public class MusicTrack : MediaItem
 {

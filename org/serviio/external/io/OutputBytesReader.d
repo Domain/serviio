@@ -20,7 +20,7 @@ public class OutputBytesReader : OutputReader
     outputStream = new ByteArrayOutputStream();
   }
 
-  protected void processOutput()
+  override protected void processOutput()
   {
     try
     {
@@ -34,11 +34,11 @@ public class OutputBytesReader : OutputReader
     }
   }
 
-  public ByteArrayOutputStream getOutputStream() {
+  override public ByteArrayOutputStream getOutputStream() {
     return outputStream;
   }
 
-  public List!(String) getResults() {
+  override public List!(String) getResults() {
     return null;
   }
 }

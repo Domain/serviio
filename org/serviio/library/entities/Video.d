@@ -1,5 +1,8 @@
 module org.serviio.library.entities.Video;
 
+import java.lang.String;
+import java.lang.Integer;
+import java.lang.Long;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +16,7 @@ import org.serviio.library.local.OnlineDBIdentifier;
 import org.serviio.library.local.metadata.TransportStreamTimestamp;
 import org.serviio.library.metadata.MediaFileType;
 import org.serviio.util.ObjectValidator;
+import org.serviio.library.entities.MediaItem;
 
 public class Video : MediaItem
 {

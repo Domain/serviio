@@ -8,6 +8,8 @@ import org.serviio.library.entities.Repository;
 import org.serviio.library.local.metadata.LocalItemMetadata;
 import org.serviio.library.local.metadata.MetadataFactory;
 import org.serviio.library.metadata.MediaFileType;
+import org.serviio.library.local.metadata.extractor.ExtractorType;
+import org.serviio.library.local.metadata.extractor.MetadataFile;
 
 public abstract class MetadataExtractor
 {

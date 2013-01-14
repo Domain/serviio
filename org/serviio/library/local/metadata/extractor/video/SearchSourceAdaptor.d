@@ -1,7 +1,9 @@
 module org.serviio.library.local.metadata.extractor.video.SearchSourceAdaptor;
 
+import java.lang.String;
 import java.io.IOException;
 import org.serviio.library.local.metadata.VideoMetadata;
+import org.serviio.library.local.metadata.extractor.video.VideoDescription;
 
 public abstract interface SearchSourceAdaptor
 {

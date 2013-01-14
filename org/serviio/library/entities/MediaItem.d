@@ -1,5 +1,8 @@
 module org.serviio.library.entities.MediaItem;
 
+import java.lang.String;
+import java.lang.Long;
+import java.lang.Integer;
 import java.util.Date;
 import org.serviio.db.entities.PersistedEntity;
 import org.serviio.delivery.DeliveryContext;
@@ -10,8 +13,8 @@ import org.serviio.library.online.metadata.OnlineItem;
 
 public class MediaItem : PersistedEntity
 {
-  public static final int TITLE_MAX_LENGTH = 128;
-  public static final int FOURCC_MAX_LENGTH = 6;
+  public static const int TITLE_MAX_LENGTH = 128;
+  public static const int FOURCC_MAX_LENGTH = 6;
   protected String title;
   protected String sortTitle;
   protected Long fileSize;

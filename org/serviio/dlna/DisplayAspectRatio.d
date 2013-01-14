@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 
 public class DisplayAspectRatio
 {
-	enum DisplayAspectRatioEnum
+	enum DisplayAspectRatioEnum : int[]
 	{
 		DAR_16_9 = [16, 9],
 	}

@@ -1,5 +1,8 @@
 module org.serviio.library.local.service.MediaService;
 
+import java.lang.String;
+import java.lang.Long;
+import java.lang.Integer;
 import java.io.File;
 import java.util.List;
 import org.serviio.db.dao.DAOFactory;

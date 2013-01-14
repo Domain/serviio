@@ -1,5 +1,6 @@
 module org.serviio.library.metadata.ImageMetadataRetriever;
 
+import java.lang.String;
 import java.io.IOException;
 import org.serviio.external.DCRawWrapper;
 import org.serviio.library.local.metadata.ImageMetadata;
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class ImageMetadataRetriever
 {
-  private static final Logger log = LoggerFactory.getLogger!(ImageMetadataRetriever);
+  private static immutable Logger log = LoggerFactory.getLogger!(ImageMetadataRetriever);
 
   public static void retrieveImageMetadata(ImageMetadata md, String imageLocation, bool local)
   {

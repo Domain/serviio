@@ -14,19 +14,20 @@ import org.serviio.library.local.metadata.extractor.InvalidMediaFormatException;
 import org.serviio.library.local.metadata.extractor.MetadataExtractor;
 import org.serviio.library.local.metadata.extractor.MetadataFile;
 import org.serviio.library.metadata.MediaFileType;
+import org.serviio.library.local.metadata.extractor.video.SearchSourceAdaptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class OnlineVideoSourcesMetadataExtractor : MetadataExtractor
 {
-  private static final Logger log = LoggerFactory.getLogger!(OnlineVideoSourcesMetadataExtractor);
+  private static immutable Logger log = LoggerFactory.getLogger!(OnlineVideoSourcesMetadataExtractor);
 
-  public ExtractorType getExtractorType()
+  override public ExtractorType getExtractorType()
   {
     return ExtractorType.ONLINE_VIDEO_SOURCES;
   }
 
-  protected MetadataFile getMetadataFile(File mediaFile, MediaFileType fileType, Repository repository)
+  override protected MetadataFile getMetadataFile(File mediaFile, MediaFileType fileType, Repository repository)
   {
     VideoDescription videoDescription = FileNameParser.parse(mediaFile, repository);
     if ((videoDescription.isSearchRecommended()) && (videoDescription.getType() != VideoDescription.VideoType.SPECIAL) && (fileType == MediaFileType.VIDEO)) {
@@ -47,7 +48,7 @@ public class OnlineVideoSourcesMetadataExtractor : MetadataExtractor
     return null;
   }
 
-  public bool isMetadataUpdated(File mediaFile, MediaItem mediaItem, MetadataDescriptor metadataDescriptor)
+  override public bool isMetadataUpdated(File mediaFile, MediaItem mediaItem, MetadataDescriptor metadataDescriptor)
   {
     if (metadataDescriptor !is null) {
       return false;
@@ -55,7 +56,7 @@ public class OnlineVideoSourcesMetadataExtractor : MetadataExtractor
     return true;
   }
 
-  protected void retrieveMetadata(MetadataFile metadataDescriptor, LocalItemMetadata metadata)
+  override protected void retrieveMetadata(MetadataFile metadataDescriptor, LocalItemMetadata metadata)
   {
     SearchSourceAdaptor adaptor = cast(SearchSourceAdaptor)metadataDescriptor.getExtractable();
     adaptor.retrieveMetadata(metadataDescriptor.getIdentifier(), cast(VideoMetadata)metadata);

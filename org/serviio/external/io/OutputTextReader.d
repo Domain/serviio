@@ -12,6 +12,7 @@ import java.util.List;
 import org.serviio.external.ProcessExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.serviio.external.io.OutputReader;
 
 public class OutputTextReader : OutputReader
 {
@@ -28,7 +29,7 @@ public class OutputTextReader : OutputReader
     this.executor = executor;
   }
 
-  protected void processOutput()
+  override protected void processOutput()
   {
     BufferedReader br = null;
     try {
@@ -53,11 +54,11 @@ public class OutputTextReader : OutputReader
     }
   }
 
-  public ByteArrayOutputStream getOutputStream() {
+  override public ByteArrayOutputStream getOutputStream() {
     return null;
   }
 
-  public List!(String) getResults() {
+  override public List!(String) getResults() {
     List!(String) clonedResults = new ArrayList!(String)();
     synchronized (linesLock) {
       clonedResults.addAll(lines);

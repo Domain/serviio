@@ -1,5 +1,6 @@
 module org.serviio.library.online.ContentURLContainer;
 
+import java.lang.String;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Date;
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class ContentURLContainer
 {
-  private static final Logger log = LoggerFactory.getLogger!(ContentURLContainer);
+  private static immutable Logger log = LoggerFactory.getLogger!(ContentURLContainer);
   private String contentUrl;
   private String thumbnailUrl;
   private MediaFileType fileType = MediaFileType.VIDEO;
@@ -89,7 +90,7 @@ public class ContentURLContainer
     this.userAgent = userAgent;
   }
 
-  public String toString()
+  override public String toString()
   {
     StringBuilder builder = new StringBuilder();
     builder.append("ContentURLContainer [");

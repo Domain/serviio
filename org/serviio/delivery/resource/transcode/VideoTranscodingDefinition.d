@@ -8,6 +8,8 @@ import org.serviio.dlna.DisplayAspectRatio;
 import org.serviio.dlna.VideoCodec;
 import org.serviio.dlna.VideoContainer;
 import org.serviio.delivery.resource.transcode.AbstractTranscodingDefinition;
+import org.serviio.delivery.resource.transcode.VideoTranscodingMatch;
+import org.serviio.delivery.resource.transcode.TranscodingConfiguration;
 
 public class VideoTranscodingDefinition : AbstractTranscodingDefinition
 {

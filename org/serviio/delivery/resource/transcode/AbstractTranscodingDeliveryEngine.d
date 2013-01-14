@@ -29,7 +29,7 @@ import org.serviio.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class AbstractTranscodingDeliveryEngine(e, MI : MediaItem) : AbstractDeliveryEngine!(RI, MI)
+public abstract class AbstractTranscodingDeliveryEngine(RI : MediaFormatProfileResource, MI : MediaItem) : AbstractDeliveryEngine!(RI, MI)
   , DeliveryListener
 {
   private static const String TRANSCODING_SUBFOLDER_NAME = "Serviio";

@@ -2,6 +2,8 @@ module org.serviio.external.ProcessExecutor;
 
 import java.lang.String;
 import java.lang.Long;
+import java.lang.Thread;
+import java.lang.Process;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Collections;
@@ -64,7 +66,7 @@ public class ProcessExecutor : Thread
     this.useStdOutForTextOutput = useStdOutForTextOutput;
   }
 
-  public void run()
+  override public void run()
   {
     Thread faisafeThread = null;
     try {
@@ -212,7 +214,7 @@ public class ProcessExecutor : Thread
     return newEnv;
   }
 
-  private Thread makeFailSafe(final Long timeout) {
+  private Thread makeFailSafe(const Long timeout) {
     Runnable r = new class() Runnable {
       public void run() {
         try {
@@ -227,9 +229,9 @@ public class ProcessExecutor : Thread
     return failsafe;
   }
 
-  private void notifyListenersEnd(Boolean success) {
+  private void notifyListenersEnd(bool success) {
     foreach (ProcessListener listener ; listeners)
-      listener.processEnded(success.boolValue());
+      listener.processEnded(success);
   }
 
   private void closeStreams()

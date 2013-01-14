@@ -1,5 +1,8 @@
 module org.serviio.util.ProcessUtils;
 
+import java.lang.Integer;
+import java.lang.String;
+import java.lang.Process;
 import java.lang.reflect.Field;
 import org.jvnet.winp.WinProcess;
 import org.serviio.external.ProcessExecutor;
@@ -9,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 public class ProcessUtils
 {
-  private static final Logger log = LoggerFactory.getLogger!(ProcessUtils);
+  private static immutable Logger log = LoggerFactory.getLogger!(ProcessUtils);
 
   public static void destroy(Process p)
   {
@@ -64,7 +67,7 @@ public class ProcessUtils
       this.p = p;
     }
 
-    public void processEnded(bool success)
+    override public void processEnded(bool success)
     {
       if (!success)
       {
@@ -72,11 +75,11 @@ public class ProcessUtils
       }
     }
 
-    public void outputUpdated(String updatedLine)
+    override public void outputUpdated(String updatedLine)
     {
     }
 
-    public void releaseResources()
+    override public void releaseResources()
     {
     }
   }

@@ -2,18 +2,27 @@ module org.serviio.util.Platform;
 
 public class Platform
 {
-  private static final String OS = System.getProperty("os.name");
+  //private static final String OS = System.getProperty("os.name");
 
   public static bool isWindows() {
-    return OS.startsWith("Windows");
+	  version(Windows)
+		  return true;
+	  else
+		  return false;
   }
 
   public static bool isLinux() {
-    return (OS.startsWith("Linux")) || (OS.startsWith("Unix")) || (OS.startsWith("FreeBSD"));
+	  version(linux)
+		  return true;
+	  else
+		  return false;
   }
 
   public static bool isMac() {
-    return OS.startsWith("Mac");
+	  version(OSX)
+		  return true;
+	  else
+		  return false;
   }
 }
 

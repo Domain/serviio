@@ -1,6 +1,8 @@
 module org.serviio.delivery.resource.AbstractDeliveryEngine;
 
 import java.lang.String;
+import java.lang.Double;
+import java.lang.Long;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,21 +32,22 @@ import org.serviio.library.online.AbstractUrlExtractor;
 import org.serviio.library.online.ContentURLContainer;
 import org.serviio.profile.DeliveryQuality;
 import org.serviio.profile.Profile;
+import org.serviio.delivery.resource.DeliveryEngine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class AbstractDeliveryEngine(RI : MediaFormatProfileResource, MI : MediaItem)
   : DeliveryEngine!(RI, MI)
 {
-  protected immutable Logger log = LoggerFactory.getLogger(getClass());
+  protected immutable Logger log = LoggerFactory.getLogger!(AbstractDeliveryEngine);
 
   public List!(RI) getMediaInfoForProfile(MI mediaItem, Profile rendererProfile)
   {
     log.debug_(String.format("Retrieving resource information for item %s and profile %s", cast(Object[])[ mediaItem.getId(), rendererProfile.getName() ]));
-    Map!(QualityType, List!(RI)) infos = new LinkedHashMap!(QualityType, List!(RI))();
+    Map!(DeliveryQuality.QualityType, List!(RI)) infos = new LinkedHashMap!(DeliveryQuality.QualityType, List!(RI))();
     try
     {
-      LinkedHashMap!(QualityType, List!(RI)) originalMediaInfos = retrieveOriginalMediaInfo(mediaItem, rendererProfile);
+      LinkedHashMap!(DeliveryQuality.QualityType, List!(RI)) originalMediaInfos = retrieveOriginalMediaInfo(mediaItem, rendererProfile);
       if (originalMediaInfos !is null) {
         infos.putAll(originalMediaInfos);
       }
@@ -77,8 +80,8 @@ public abstract class AbstractDeliveryEngine(RI : MediaFormatProfileResource, MI
     if (fileWillBeTranscoded(mediaItem, selectedVersion, selectedQuality, rendererProfile)) {
       return retrieveTranscodedMediaInfoForVersion(mediaItem, selectedVersion, selectedQuality, rendererProfile);
     }
-    LinkedHashMap!(QualityType, List!(RI)) originalMediaInfos = retrieveOriginalMediaInfo(mediaItem, rendererProfile);
-    return findMediaInfoForFileProfile(cast(Collection!(RI))originalMediaInfos.get(QualityType.ORIGINAL), selectedVersion);
+    LinkedHashMap!(DeliveryQuality.QualityType, List!(RI)) originalMediaInfos = retrieveOriginalMediaInfo(mediaItem, rendererProfile);
+    return findMediaInfoForFileProfile(cast(Collection!(RI))originalMediaInfos.get(DeliveryQuality.QualityType.ORIGINAL), selectedVersion);
   }
 
   protected abstract bool fileCanBeTranscoded(MI paramMI, Profile paramProfile);
@@ -97,7 +100,7 @@ public abstract class AbstractDeliveryEngine(RI : MediaFormatProfileResource, MI
 
   protected Map!(DeliveryQuality.QualityType, TranscodingDefinition) getMatchingTranscodingDefinitions(MI mediaItem, Profile rendererProfile)
   {
-    Map!(QualityType, TranscodingDefinition) defs = new LinkedHashMap!(QualityType, TranscodingDefinition)();
+    Map!(DeliveryQuality.QualityType, TranscodingDefinition) defs = new LinkedHashMap!(DeliveryQuality.QualityType, TranscodingDefinition)();
     TranscodingDefinition defaultDefinition = getMatchingTransodingDefinitionForQuality(rendererProfile.getDefaultDeliveryQuality(), mediaItem);
     if (defaultDefinition !is null) {
       defs.put(DeliveryQuality.QualityType.ORIGINAL, defaultDefinition);
@@ -137,7 +140,7 @@ protected DeliveryContainer retrieveOriginalFileContainer(MI mediaItem, MediaFor
     } else {
       fis = getOnlineInputStream(mediaItem);
     }
-    LinkedHashMap!(QualityType, List!(RI)) mediaInfos = retrieveOriginalMediaInfo(mediaItem, client.getRendererProfile());
+    LinkedHashMap!(DeliveryQuality.QualityType, List!(RI)) mediaInfos = retrieveOriginalMediaInfo(mediaItem, client.getRendererProfile());
     return new StreamDeliveryContainer(fis, findMediaInfoForFileProfile(cast(Collection!(RI))mediaInfos.get(DeliveryQuality.QualityType.ORIGINAL), selectedVersion)); 
   } 
   protected InputStream getOnlineInputStream(MI mediaItem)
@@ -185,9 +188,9 @@ protected RI findMediaInfoForFileProfile(Collection!(RI) infos, MediaFormatProfi
     return new URL(mediaItem.getFileName());
   }
 
-  private List!(RI) flattenMediaInfoMap(Map!(QualityType, List!(RI)) map) {
+  private List!(RI) flattenMediaInfoMap(Map!(DeliveryQuality.QualityType, List!(RI)) map) {
     List!(RI) result = new ArrayList!(RI)();
-    foreach (Entry!(QualityType, List!(RI)) entry ; map.entrySet()) {
+    foreach (Entry!(DeliveryQuality.QualityType, List!(RI)) entry ; map.entrySet()) {
       result.addAll(cast(Collection!(RI))entry.getValue());
     }
     return result;

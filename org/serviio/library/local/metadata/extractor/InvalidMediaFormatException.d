@@ -1,8 +1,10 @@
 module org.serviio.library.local.metadata.extractor.InvalidMediaFormatException;
 
+import java.lang.String;
+
 public class InvalidMediaFormatException : Exception
 {
-  private static final long serialVersionUID = -313705664295140245L;
+  private static const long serialVersionUID = -313705664295140245L;
 
   public this()
   {

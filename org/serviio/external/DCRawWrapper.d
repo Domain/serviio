@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.serviio.external.DCRawCLBuilder;
 import org.serviio.external.AbstractExecutableWrapper;
+import org.serviio.external.ProcessExecutor;
 
 public class DCRawWrapper : AbstractExecutableWrapper
 {

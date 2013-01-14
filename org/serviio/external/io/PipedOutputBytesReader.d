@@ -20,7 +20,7 @@ public class PipedOutputBytesReader : OutputReader
     outputStream = new PipedOutputStream();
   }
 
-  protected void processOutput()
+  override protected void processOutput()
   {
     try
     {
@@ -38,11 +38,11 @@ public class PipedOutputBytesReader : OutputReader
     }
   }
 
-  public PipedOutputStream getOutputStream() {
+  override public PipedOutputStream getOutputStream() {
     return outputStream;
   }
 
-  public List!(String) getResults() {
+  override public List!(String) getResults() {
     return null;
   }
 }

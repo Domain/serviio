@@ -2,6 +2,7 @@ module org.serviio.library.local.metadata.extractor.ExtractorType;
 
 import org.serviio.library.local.metadata.extractor.embedded.EmbeddedMetadataExtractor;
 import org.serviio.library.local.metadata.extractor.video.OnlineVideoSourcesMetadataExtractor;
+import org.serviio.library.local.metadata.extractor.MetadataExtractor;
 
 public class ExtractorType
 {

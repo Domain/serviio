@@ -17,7 +17,7 @@ public abstract class OutputReader : Thread
     this.inputStream = new BufferedInputStream(inputStream);
   }
 
-  public final void run()
+  override public final void run()
   {
     try
     {
