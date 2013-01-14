@@ -1,6 +1,8 @@
 module org.serviio.library.local.metadata.extractor.MetadataFile;
 
+import java.lang.String;
 import java.util.Date;
+import org.serviio.library.local.metadata.extractor.ExtractorType;
 
 public class MetadataFile
 {

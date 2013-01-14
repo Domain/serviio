@@ -1,12 +1,13 @@
 module org.serviio.library.metadata.ItemMetadata;
 
+import java.lang.String;
 import java.util.Date;
 import org.serviio.util.ObjectValidator;
 import org.serviio.util.StringUtils;
 
 public abstract class ItemMetadata
 {
-  public static final String UNKNOWN_ENTITY = "Unknown";
+  public static const String UNKNOWN_ENTITY = "Unknown";
   protected String title;
   protected String author;
   protected Date date;

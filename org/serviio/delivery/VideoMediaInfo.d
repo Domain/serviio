@@ -1,5 +1,6 @@
 module org.serviio.delivery.VideoMediaInfo;
 
+import java.lang.String;
 import java.lang.Integer;
 import java.lang.Long;
 import org.serviio.dlna.MediaFormatProfile;

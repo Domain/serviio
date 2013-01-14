@@ -1,6 +1,7 @@
 module org.serviio.delivery.DeliveryContainer;
 
 import org.serviio.delivery.resource.transcode.TranscodingJobListener;
+import org.serviio.delivery.ResourceInfo;
 
 public abstract class DeliveryContainer
 {

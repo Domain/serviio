@@ -1,5 +1,7 @@
 module org.serviio.library.local.metadata.ImageDescriptor;
 
+import java.lang.String;
+import java.lang.Integer;
 import java.net.URL;
 
 public class ImageDescriptor

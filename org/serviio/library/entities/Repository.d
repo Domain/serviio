@@ -1,5 +1,7 @@
 module org.serviio.library.entities.Repository;
 
+import java.lang.String;
+import java.lang.Long;
 import java.io.File;
 import java.util.Date;
 import java.util.List;
@@ -57,7 +59,7 @@ public class Repository : PersistedEntity
     this.accessGroupIds = accessGroupIds;
   }
 
-  public String toString()
+  override public String toString()
   {
     StringBuilder builder = new StringBuilder();
     builder.append("Repository [id=").append(id).append(", folder=").append(folder).append(", keepScanningForUpdates=").append(keepScanningForUpdates).append(", lastScanned=").append(lastScanned).append(", supportedFileTypes=").append(supportedFileTypes).append(", supportsOnlineMetadata=").append(supportsOnlineMetadata).append("]");

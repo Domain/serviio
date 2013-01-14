@@ -1,5 +1,6 @@
 module org.serviio.util.HttpUtils;
 
+import java.lang.String;
 import com.sun.syndication.io.impl.Base64;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -16,9 +17,9 @@ import org.apache.http.HttpResponse;
 
 public class HttpUtils
 {
-  private static final Pattern maxAgePattern = Pattern.compile("([\\d]+)");
-  private static final Pattern uriPattern = Pattern.compile("^.+?://.+");
-  private static final Pattern urlPattern = Pattern.compile("(.*)://(\\S+):(\\S+)@(.*)?");
+  private static enum maxAgePattern = Pattern.compile("([\\d]+)");
+  private static enum uriPattern = Pattern.compile("^.+?://.+");
+  private static enum urlPattern = Pattern.compile("(.*)://(\\S+):(\\S+)@(.*)?");
 
   public static bool isHttpUrl(String url) {
     String lowercaseUrl = StringUtils.localeSafeToLowercase(url);

@@ -1,8 +1,12 @@
 module org.serviio.library.local.metadata.AudioMetadata;
 
+import java.lang.String;
+import java.lang.Integer;
 import org.serviio.dlna.AudioContainer;
 import org.serviio.library.metadata.InvalidMetadataException;
 import org.serviio.util.ObjectValidator;
+import org.serviio.library.local.metadata.LocalItemMetadata;
+import org.serviio.library.local.metadata.ImageDescriptor;
 
 public class AudioMetadata : LocalItemMetadata
 {
@@ -19,7 +23,7 @@ public class AudioMetadata : LocalItemMetadata
   private Integer sampleFrequency;
   private ImageDescriptor coverImage;
 
-  public void merge(LocalItemMetadata additionalMetadata)
+  override public void merge(LocalItemMetadata additionalMetadata)
   {
     if (( cast(AudioMetadata)additionalMetadata !is null )) {
       AudioMetadata additionalAudioMetadata = cast(AudioMetadata)additionalMetadata;
@@ -64,7 +68,7 @@ public class AudioMetadata : LocalItemMetadata
     }
   }
 
-  public void fillInUnknownEntries()
+  override public void fillInUnknownEntries()
   {
     super.fillInUnknownEntries();
 
@@ -81,7 +85,7 @@ public class AudioMetadata : LocalItemMetadata
       setAlbumArtist("Unknown");
   }
 
-  public void validateMetadata()
+  override public void validateMetadata()
   {
     super.validateMetadata();
 
@@ -149,11 +153,11 @@ public class AudioMetadata : LocalItemMetadata
     this.bitrate = bitrate;
   }
 
-  public ImageDescriptor getCoverImage() {
+  override public ImageDescriptor getCoverImage() {
     return coverImage;
   }
 
-  public void setCoverImage(ImageDescriptor coverImage) {
+  override public void setCoverImage(ImageDescriptor coverImage) {
     this.coverImage = coverImage;
   }
 
@@ -189,7 +193,7 @@ public class AudioMetadata : LocalItemMetadata
     this.artist = artist;
   }
 
-  public String toString()
+  override public String toString()
   {
     StringBuilder builder = new StringBuilder();
     builder.append("AudioMetadata [album=").append(album).append(", title=").append(title).append(", albumArtist=").append(albumArtist).append(", artist=").append(artist).append(", genre=").append(genre).append(", releaseYear=").append(releaseYear).append(", trackNumber=").append(trackNumber).append(", container=").append(container).append(", duration=").append(duration).append(", bitrate=").append(bitrate).append(", channels=").append(channels).append(", sampleFrequency=").append(sampleFrequency).append("]");

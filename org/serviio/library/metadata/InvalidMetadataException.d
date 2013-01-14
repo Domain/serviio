@@ -1,8 +1,10 @@
 module org.serviio.library.metadata.InvalidMetadataException;
 
+import java.lang.String;
+
 public class InvalidMetadataException : Exception
 {
-  private static final long serialVersionUID = -4813485118718894106L;
+  private static const long serialVersionUID = -4813485118718894106L;
 
   public this()
   {

@@ -1,5 +1,6 @@
 module org.serviio.delivery.OnlineInputStream;
 
+import java.lang.String;
 import java.lang.Long;
 import java.io.IOException;
 import java.io.InputStream;
@@ -53,7 +54,7 @@ public class OnlineInputStream : InputStream
     this.chunkSize = chunkSize;
   }
 
-  public int read()
+  override public int read()
   {
     if ((supportsRange) || ((!supportsRange) && (wholeStream is null))) {
       try {
@@ -77,7 +78,7 @@ public class OnlineInputStream : InputStream
     return wholeStream.read();
   }
 
-  public long skip(long n)
+  override public long skip(long n)
   {
     if (supportsRange) {
       pos += n;
@@ -93,7 +94,7 @@ public class OnlineInputStream : InputStream
     return wholeStream !is null ? wholeStream.skip(n) : 0L;
   }
 
-  public int available()
+  override public int available()
   {
     if (supportsRange) {
       if (onlineBuffer !is null) {
@@ -105,7 +106,7 @@ public class OnlineInputStream : InputStream
     return wholeStream !is null ? wholeStream.available() : 0;
   }
 
-  public void close()
+  override public void close()
   {
     log.debug_("Closing stream");
     try {

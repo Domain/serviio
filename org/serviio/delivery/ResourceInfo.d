@@ -51,7 +51,7 @@ public abstract class ResourceInfo
     return live;
   }
 
-  public String toString()
+  override public String toString()
   {
     StringBuilder builder = new StringBuilder();
     builder.append("ResourceInfo [resourceId=").append(resourceId).append(", fileSize=").append(fileSize).append(", duration=").append(duration).append(", mimeType=").append(mimeType).append(", transcoded=").append(transcoded).append("]");

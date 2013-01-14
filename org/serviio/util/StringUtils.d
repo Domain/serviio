@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.text.Normalizer;
-import java.text.Normalizer : Form;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
@@ -29,7 +28,7 @@ public class StringUtils
 
   public static String removeAccents(String value)
   {
-    String result = Normalizer.normalize(value, Form.NFD);
+    String result = Normalizer.normalize(value, Normalizer.Form.NFD);
     return result.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
   }
 

@@ -1,11 +1,13 @@
 module org.serviio.library.local.metadata.LocalItemMetadata;
 
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 import org.serviio.library.local.metadata.extractor.MetadataFile;
 import org.serviio.library.metadata.InvalidMetadataException;
 import org.serviio.library.metadata.ItemMetadata;
 import org.serviio.util.ObjectValidator;
+import org.serviio.library.local.metadata.ImageDescriptor;
 
 public abstract class LocalItemMetadata : ItemMetadata
 {
@@ -40,7 +42,7 @@ public abstract class LocalItemMetadata : ItemMetadata
     metadataFiles.addAll(additionalMetadata.getMetadataFiles());
   }
 
-  public void validateMetadata()
+  override public void validateMetadata()
   {
     super.validateMetadata();
     if (fileSize == 0L) {

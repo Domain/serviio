@@ -1,5 +1,7 @@
 module org.serviio.util.HttpClient;
 
+import java.lang.String;
+import java.lang.Integer;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,8 +11,8 @@ import java.net.URLConnection;
 
 public class HttpClient
 {
-  private static final int CONNECT_TIMEOUT = 20000;
-  private static final int READ_TIMEOUT = 30000;
+  private static const int CONNECT_TIMEOUT = 20000;
+  private static const int READ_TIMEOUT = 30000;
 
   public static String retrieveTextFileFromURL(String url, String encoding)
   {

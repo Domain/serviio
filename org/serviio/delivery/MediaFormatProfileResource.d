@@ -1,8 +1,11 @@
 module org.serviio.delivery.MediaFormatProfileResource;
 
+import java.lang.String;
 import java.lang.Long;
+import java.lang.Integer;
 import org.serviio.dlna.MediaFormatProfile;
 import org.serviio.profile.DeliveryQuality;
+import org.serviio.delivery.ResourceInfo;
 
 public abstract class MediaFormatProfileResource : ResourceInfo
 {

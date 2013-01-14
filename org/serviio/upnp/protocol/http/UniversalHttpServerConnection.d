@@ -1,5 +1,6 @@
 module org.serviio.upnp.protocol.http.UniversalHttpServerConnection;
 
+import java.lang.String;
 import java.io.IOException;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpException;
@@ -11,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 public class UniversalHttpServerConnection : DefaultHttpServerConnection
 {
-  private static final Logger log = LoggerFactory.getLogger!(UniversalHttpServerConnection);
+  private static immutable Logger log = LoggerFactory.getLogger!(UniversalHttpServerConnection);
   private String connectionId;
   private HttpEntity streamedEntity;
 
