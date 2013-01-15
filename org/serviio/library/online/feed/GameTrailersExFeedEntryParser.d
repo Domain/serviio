@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 public class GameTrailersExFeedEntryParser
   : FeedEntryParser
 {
-  private static final Logger log = LoggerFactory.getLogger!(GameTrailersExFeedEntryParser);
+  private static final Logger log = LoggerFactory.getLogger!(GameTrailersExFeedEntryParser)();
 
   public void parseFeedEntry(SyndEntry entry, FeedItem item)
   {

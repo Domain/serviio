@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class TranscodingCache
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(TranscodingCache);
+  private static immutable Logger log = LoggerFactory.getLogger!(TranscodingCache)();
   private Long mediaItemId;
   private MediaFormatProfile transcodedProfile;
   private byte[] transcodedData;

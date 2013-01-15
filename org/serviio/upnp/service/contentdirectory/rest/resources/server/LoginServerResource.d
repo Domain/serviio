@@ -23,7 +23,7 @@ public class LoginServerResource : AbstractCDSServerResource
   private static final String AUTH_HEADER = "Authorization";
   private static final Pattern authHeaderPattern = Pattern.compile("Serviio\\s(.*)$", 2);
 
-  private static final Logger log = LoggerFactory.getLogger!(LoginServerResource);
+  private static final Logger log = LoggerFactory.getLogger!(LoginServerResource)();
 
   private static Map!(String, Date) storedTokens = new HashMap!(String, Date)();
 

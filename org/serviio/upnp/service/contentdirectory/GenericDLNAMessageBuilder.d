@@ -25,7 +25,7 @@ import org.w3c.dom.Node;
 public class GenericDLNAMessageBuilder
   : ContentDirectoryMessageBuilder
 {
-  private static final Logger log = LoggerFactory.getLogger!(GenericDLNAMessageBuilder);
+  private static final Logger log = LoggerFactory.getLogger!(GenericDLNAMessageBuilder)();
   private static DocumentBuilder xmlBuilder;
   private Set!(String) includedFields;
 

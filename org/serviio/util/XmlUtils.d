@@ -23,7 +23,7 @@ import org.xml.sax.SAXException;
 
 public class XmlUtils
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(XmlUtils);
+  private static immutable Logger log = LoggerFactory.getLogger!(XmlUtils)();
 
   public static String objectToXMLType(Object object)
   {

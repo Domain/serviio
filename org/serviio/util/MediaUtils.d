@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class MediaUtils
 {
-  private static final Logger log = LoggerFactory.getLogger!(MediaUtils);
+  private static final Logger log = LoggerFactory.getLogger!(MediaUtils)();
 
   public static Integer convertBitrateFromKbpsToByPS(Integer bitrate)
   {

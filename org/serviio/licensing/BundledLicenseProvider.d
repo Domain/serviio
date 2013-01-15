@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 public class BundledLicenseProvider
   : LicenseProvider
 {
-  private static final Logger log = LoggerFactory.getLogger!(BundledLicenseProvider);
+  private static final Logger log = LoggerFactory.getLogger!(BundledLicenseProvider)();
 
   private static final String BUNDLED_LICENSE_CONTENT = readBundledLicense();
 

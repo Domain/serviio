@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 public class TemplateApplicator
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(TemplateApplicator);
+  private static immutable Logger log = LoggerFactory.getLogger!(TemplateApplicator)();
 
   private static Configuration cfg = new Configuration();
 

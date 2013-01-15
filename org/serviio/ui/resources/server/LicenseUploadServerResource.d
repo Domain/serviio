@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class LicenseUploadServerResource : AbstractServerResource
   , LicenseUploadResource
 {
-  private static final Logger log = LoggerFactory.getLogger!(LicenseUploadServerResource);
+  private static final Logger log = LoggerFactory.getLogger!(LicenseUploadServerResource)();
 
   public ResultRepresentation save(InputRepresentation rep)
   {

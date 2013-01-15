@@ -17,7 +17,7 @@ import org.serviio.delivery.resource.transcode.TranscodingDeliveryStrategy;
 public class FileBasedTranscodingDeliveryStrategy : AbstractTranscodingDeliveryStrategy
   , TranscodingDeliveryStrategy!(File)
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(FileBasedTranscodingDeliveryStrategy);
+  private static immutable Logger log = LoggerFactory.getLogger!(FileBasedTranscodingDeliveryStrategy)();
 
   public StreamDescriptor createInputStream(TranscodingJobListener jobListener, Client client)
   {

@@ -1,5 +1,6 @@
 module org.serviio.library.local.EnumMapConverter;
 
+import java.lang.String;
 import java.util.HashMap;
 import java.util.Map;
 import org.serviio.util.CollectionUtils;

@@ -19,7 +19,7 @@ import org.serviio.library.dao.AccessGroupDAO;
 public class AccessGroupDAOImpl
   : AccessGroupDAO
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(AccessGroupDAOImpl);
+  private static immutable Logger log = LoggerFactory.getLogger!(AccessGroupDAOImpl)();
 
   public long create(AccessGroup newInstance)
   {

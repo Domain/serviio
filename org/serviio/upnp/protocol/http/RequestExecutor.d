@@ -24,7 +24,7 @@ public class RequestExecutor
 {
   private static HttpParams params = new BasicHttpParams();
 
-  private static immutable Logger log = LoggerFactory.getLogger!(RequestExecutor);
+  private static immutable Logger log = LoggerFactory.getLogger!(RequestExecutor)();
 
   public static HttpResponse send(HttpRequest request, URL deliveryURL)
   {

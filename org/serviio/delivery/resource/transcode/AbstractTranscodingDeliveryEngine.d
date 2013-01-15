@@ -28,6 +28,8 @@ import org.serviio.profile.Profile;
 import org.serviio.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.serviio.delivery.resource.transcode.TranscodingJobListener;
+import org.serviio.delivery.resource.transcode.TranscodingDeliveryStrategy;
 
 public abstract class AbstractTranscodingDeliveryEngine(RI : MediaFormatProfileResource, MI : MediaItem) : AbstractDeliveryEngine!(RI, MI)
   , DeliveryListener
@@ -38,7 +40,7 @@ public abstract class AbstractTranscodingDeliveryEngine(RI : MediaFormatProfileR
   private static TranscodingDeliveryStrategy!(File) fileBasedStrategy = new FileBasedTranscodingDeliveryStrategy();
   private static TranscodingDeliveryStrategy!(OutputStream) streamBasedStrategy = new StreamBasedTranscodingDeliveryStrategy();
 
-  private static immutable Logger log = LoggerFactory.getLogger!(AbstractTranscodingDeliveryEngine);
+  private static immutable Logger log = LoggerFactory.getLogger!(AbstractTranscodingDeliveryEngine)();
 
   public static void cleanupTranscodingEngine()
   {

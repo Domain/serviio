@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 public class SeriesDAOImpl : AbstractSortableItemDao
   , SeriesDAO
 {
-  private static final Logger log = LoggerFactory.getLogger!(SeriesDAOImpl);
+  private static final Logger log = LoggerFactory.getLogger!(SeriesDAOImpl)();
 
   public long create(Series newInstance)
   {

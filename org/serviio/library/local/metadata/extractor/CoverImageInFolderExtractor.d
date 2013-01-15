@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 
 public class CoverImageInFolderExtractor : AbstractLocalFileExtractor
 {
-  private static final Logger log = LoggerFactory.getLogger!(CoverImageInFolderExtractor);
+  private static final Logger log = LoggerFactory.getLogger!(CoverImageInFolderExtractor)();
 
   private static final String[] AUDIO_FILES = { "folder.jpg", "cover.jpg", "front_cover.jpg", ".*\\[front\\].jpg", "albumart.jpg" };
 

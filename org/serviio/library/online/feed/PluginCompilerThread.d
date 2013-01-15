@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 
 public class PluginCompilerThread : Thread
 {
-  private static final Logger log = LoggerFactory.getLogger!(PluginCompilerThread);
+  private static final Logger log = LoggerFactory.getLogger!(PluginCompilerThread)();
   private static final int PLUGIN_COMPILER_CHECK_INTERVAL = 10;
   private File pluginsFolder;
   private Map!(AbstractUrlExtractor, OnlineRepositoryType) urlExtractors = new HashMap!(AbstractUrlExtractor, OnlineRepositoryType)();

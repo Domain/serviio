@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class OnlineRepositoryService
   : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(OnlineRepositoryService);
+  private static final Logger log = LoggerFactory.getLogger!(OnlineRepositoryService)();
 
   public static List!(OnlineRepository) getAllRepositories()
   {

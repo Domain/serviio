@@ -34,7 +34,7 @@ public class RendererManager
   private static final String UNKNOWN_DEVICE_NAME = "Unrecognized device";
   private static final bool RENDERER_ENABLED_BY_DEFAULT = true;
   private static RendererManager instance;
-  private static final Logger log = LoggerFactory.getLogger!(RendererManager);
+  private static final Logger log = LoggerFactory.getLogger!(RendererManager)();
 
   private static final UPnPDeviceNamespaceContext nsContext = new UPnPDeviceNamespaceContext();
 

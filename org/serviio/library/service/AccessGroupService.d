@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class AccessGroupService
 {
-  private static final Logger log = LoggerFactory.getLogger!(AccessGroupService);
+  private static final Logger log = LoggerFactory.getLogger!(AccessGroupService)();
 
   public static AccessGroup getAccessGroupForRenderer(Renderer renderer)
   {

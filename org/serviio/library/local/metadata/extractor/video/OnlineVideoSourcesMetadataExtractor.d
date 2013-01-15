@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 
 public class OnlineVideoSourcesMetadataExtractor : MetadataExtractor
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(OnlineVideoSourcesMetadataExtractor);
+  private static immutable Logger log = LoggerFactory.getLogger!(OnlineVideoSourcesMetadataExtractor)();
 
   override public ExtractorType getExtractorType()
   {

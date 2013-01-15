@@ -39,7 +39,13 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractDeliveryEngine(RI : MediaFormatProfileResource, MI : MediaItem)
   : DeliveryEngine!(RI, MI)
 {
-  protected immutable Logger log = LoggerFactory.getLogger!(AbstractDeliveryEngine);
+  protected Logger log = null;
+
+
+    public this()
+    {
+        log = LoggerFactory.getLogger!(AbstractDeliveryEngine)();
+    }
 
   public List!(RI) getMediaInfoForProfile(MI mediaItem, Profile rendererProfile)
   {
@@ -155,7 +161,7 @@ protected DeliveryContainer retrieveOriginalFileContainer(MI mediaItem, MediaFor
   
   
 protected RI findMediaInfoForFileProfile(Collection!(RI) infos, MediaFormatProfile selectedVersion) { 
-	  foreach (MediaFormatProfileResource mi ; infos) {
+      foreach (MediaFormatProfileResource mi ; infos) {
       if (mi.getFormatProfile() == selectedVersion) {
         return cast(RI) mi;
       }

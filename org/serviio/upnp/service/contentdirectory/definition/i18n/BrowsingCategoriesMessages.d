@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 public class BrowsingCategoriesMessages
 {
-  private static final Logger log = LoggerFactory.getLogger!(BrowsingCategoriesMessages);
+  private static final Logger log = LoggerFactory.getLogger!(BrowsingCategoriesMessages)();
   private static ResourceBundle selectedRb;
   private static ResourceBundle defaultRb;
   private static Locale defaultLocale = Locale.ENGLISH;

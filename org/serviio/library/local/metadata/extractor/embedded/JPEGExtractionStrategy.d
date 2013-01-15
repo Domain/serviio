@@ -23,7 +23,7 @@ public class JPEGExtractionStrategy : ImageExtractionStrategy
 {
   private static DateFormat exifDF = new SimpleDateFormat("''yyyy:MM:dd HH:mm:ss''");
 
-  private static final Logger log = LoggerFactory.getLogger!(JPEGExtractionStrategy);
+  private static final Logger log = LoggerFactory.getLogger!(JPEGExtractionStrategy)();
 
   public void extractMetadata(ImageMetadata metadata, ByteSource f)
   {

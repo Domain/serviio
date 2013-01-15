@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 public class PlaylistParser
 {
-  private static final Logger log = LoggerFactory.getLogger!(PlaylistParser);
+  private static final Logger log = LoggerFactory.getLogger!(PlaylistParser)();
   private static final int ONLINE_MAX_BYTES_TO_READ = 102400;
   private static PlaylistParser instance;
 

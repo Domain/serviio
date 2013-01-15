@@ -30,7 +30,7 @@ import org.serviio.delivery.ResourceRetrievalStrategy;
 public class MediaResourceRetrievalStrategy
   : ResourceRetrievalStrategy
 {
-  private static final Logger log = LoggerFactory.getLogger!(MediaResourceRetrievalStrategy);
+  private static final Logger log = LoggerFactory.getLogger!(MediaResourceRetrievalStrategy)();
 
   public static List/*!(? : ResourceInfo)*/ getMediaInfoForAvailableProfiles(MediaItem mediaItem, Profile rendererProfile)
   {

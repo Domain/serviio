@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 public abstract class ContainerNode : DefinitionNode
 {
-  private static final Logger log = LoggerFactory.getLogger!(ContainerNode);
+  private static final Logger log = LoggerFactory.getLogger!(ContainerNode)();
 
   protected List!(DefinitionNode) childNodes = new ArrayList!(DefinitionNode)();
 

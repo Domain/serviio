@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 public class BasicFeedEntryParser
   : FeedEntryParser
 {
-  private static final Logger log = LoggerFactory.getLogger!(BasicFeedEntryParser);
+  private static final Logger log = LoggerFactory.getLogger!(BasicFeedEntryParser)();
 
   public void parseFeedEntry(SyndEntry entry, FeedItem item)
   {

@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 public class MetadataServerResource : AbstractServerResource
   , MetadataResource
 {
-  private static final Logger log = LoggerFactory.getLogger!(MetadataServerResource);
+  private static final Logger log = LoggerFactory.getLogger!(MetadataServerResource)();
   private static final String DESCRIPTIVE_METADATA_EXTRACTOR_NONE = "NONE";
 
   public MetadataRepresentation load()

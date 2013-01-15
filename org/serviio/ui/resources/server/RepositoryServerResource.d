@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
 public class RepositoryServerResource : AbstractServerResource
   , RepositoryResource
 {
-  private static final Logger log = LoggerFactory.getLogger!(RepositoryServerResource);
+  private static final Logger log = LoggerFactory.getLogger!(RepositoryServerResource)();
 
   public RepositoryRepresentation load()
   {

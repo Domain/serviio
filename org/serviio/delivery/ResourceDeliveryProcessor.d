@@ -28,7 +28,7 @@ public class ResourceDeliveryProcessor
   private static const Long TRANSCODED_AUDIO_CONTENT_LENGTH = new Long(900000000L);
   private static const Long TRANSCODED_IMAGE_CONTENT_LENGTH = new Long(9000000L);
 
-  private static immutable Logger log = LoggerFactory.getLogger!(ResourceDeliveryProcessor);
+  private static immutable Logger log = LoggerFactory.getLogger!(ResourceDeliveryProcessor)();
   private ResourceRetrievalStrategyFactory resourceRetrievalStrategyFactory;
 
   public this(ResourceRetrievalStrategyFactory resourceRetrievalStrategyFactory)

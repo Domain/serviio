@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
 
 public abstract class AbstractListOnlineObjectsByHierarchyCommand : AbstractCommand!(DirectoryObject)
 {
-  private static final Logger log = LoggerFactory.getLogger!(AbstractListOnlineObjectsByHierarchyCommand);
+  private static final Logger log = LoggerFactory.getLogger!(AbstractListOnlineObjectsByHierarchyCommand)();
   private static final String FOLDER_PREFIX = "FD";
   private static final String ITEM_PREFIX = "OI";
   protected MediaFileType fileType;

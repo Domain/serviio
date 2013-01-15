@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 
 public class RendererSearchSender : Multicaster
 {
-  private static final Logger log = LoggerFactory.getLogger!(RendererSearchSender);
+  private static final Logger log = LoggerFactory.getLogger!(RendererSearchSender)();
   private int mx;
   private int searchSendCount;
 

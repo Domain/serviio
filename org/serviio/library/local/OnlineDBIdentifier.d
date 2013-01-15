@@ -2,16 +2,17 @@ module org.serviio.library.local.OnlineDBIdentifier;
 
 import java.lang.String;
 import java.util.Map;
+import org.serviio.library.local.EnumMapConverter;
 
 public class OnlineDBIdentifier
 {
-	enum OnlineDBIdentifierEnum
-	{
-		IMDB, TVDB, TMDB
-	}
+    enum OnlineDBIdentifierEnum
+    {
+        IMDB, TVDB, TMDB
+    }
 
-	OnlineDBIdentifierEnum onlineDBIdentifier;
-	alias onlineDBIdentifier this;
+    OnlineDBIdentifierEnum onlineDBIdentifier;
+    alias onlineDBIdentifier this;
 
   private static EnumMapConverter!(OnlineDBIdentifier) converter = new class() EnumMapConverter!(OnlineDBIdentifier)
   {

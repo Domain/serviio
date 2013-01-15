@@ -36,7 +36,7 @@ import org.w3c.dom.Node;
 
 public class ServiceInvoker
 {
-  private static final Logger log = LoggerFactory.getLogger!(ServiceInvoker);
+  private static final Logger log = LoggerFactory.getLogger!(ServiceInvoker)();
   private static MessageFactory messageFactory;
   private static final String QUERY_STATE_VARIABLE = "QueryStateVariable";
 

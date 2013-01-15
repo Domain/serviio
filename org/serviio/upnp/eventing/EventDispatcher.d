@@ -29,7 +29,7 @@ import org.serviio.upnp.eventing.Subscription;
 public class EventDispatcher
   : Runnable
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(EventDispatcher);
+  private static immutable Logger log = LoggerFactory.getLogger!(EventDispatcher)();
   private static const int RESPONSE_TIMEOUT = 500;
   private static Map!(Service, Queue!(EventContainer)) eventQueues = new HashMap!(Service, Queue!(EventContainer))();
   private bool workerRunning;

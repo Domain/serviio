@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 public class MediaItemDAOImpl
   : MediaItemDAO
 {
-  private static final Logger log = LoggerFactory.getLogger!(MediaItemDAOImpl);
+  private static final Logger log = LoggerFactory.getLogger!(MediaItemDAOImpl)();
 
   public bool isMediaItemPresent(File mediaFile)
   {

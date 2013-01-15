@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 public class SubtitlesService
   : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(SubtitlesService);
+  private static final Logger log = LoggerFactory.getLogger!(SubtitlesService)();
 
   private static final String[] subtitleFileExtensions = { "srt" };
 

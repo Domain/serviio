@@ -22,7 +22,7 @@ public class ProfileManager
   public static final String DEFAULT_PROFILE_ID = "1";
   private static final String PROFILES_XML_PATH = "/profiles.xml";
   private static final String APP_PROFILES_XML_PATH = "/application-profiles.xml";
-  private static final Logger log = LoggerFactory.getLogger!(ProfileManager);
+  private static final Logger log = LoggerFactory.getLogger!(ProfileManager)();
 
   public static Profile getProfile(InetAddress clientIPAddress)
   {

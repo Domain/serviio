@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 public class VideoExtractionStrategy
 {
-  private static final Logger log = LoggerFactory.getLogger!(VideoExtractionStrategy);
+  private static final Logger log = LoggerFactory.getLogger!(VideoExtractionStrategy)();
 
   public void extractMetadata(VideoMetadata metadata, File f)
   {

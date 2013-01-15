@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 
 public class JdbcUtils
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(JdbcUtils);
+  private static immutable Logger log = LoggerFactory.getLogger!(JdbcUtils)();
 
   public static void executeBatchStatement(String sqlFile)
   {

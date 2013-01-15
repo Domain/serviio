@@ -21,7 +21,7 @@ import org.serviio.config.dao.ConfigEntryDAO;
 public class ConfigEntryDAOImpl
   : ConfigEntryDAO
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(ConfigEntryDAOImpl);
+  private static immutable Logger log = LoggerFactory.getLogger!(ConfigEntryDAOImpl)();
 
   public long create(ConfigEntry newInstance)
   {

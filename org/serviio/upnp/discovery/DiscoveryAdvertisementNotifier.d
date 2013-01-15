@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 public class DiscoveryAdvertisementNotifier : Multicaster
   , Runnable
 {
-  private static final Logger log = LoggerFactory.getLogger!(DiscoveryAdvertisementNotifier);
+  private static final Logger log = LoggerFactory.getLogger!(DiscoveryAdvertisementNotifier)();
   private static final int INITIAL_ADV_DELAY = 10000;
   private int advertisementDuration;
   private int advertisementSendCount;

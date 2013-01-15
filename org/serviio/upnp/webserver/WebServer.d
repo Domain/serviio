@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
 
 public class WebServer
 {
-	private static final Logger log = LoggerFactory.getLogger!(WebServer);
+	private static final Logger log = LoggerFactory.getLogger!(WebServer)();
 	private static RequestListenerThread webServerThread;
 	public static final Integer WEBSERVER_PORT = ApplicationSettings
 			.getIntegerProperty("webserver_port");

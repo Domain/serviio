@@ -19,7 +19,7 @@ import org.serviio.delivery.ResourceRetrievalStrategy;
 public class CoverImageRetrievalStrategy
   : ResourceRetrievalStrategy
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(CoverImageRetrievalStrategy);
+  private static immutable Logger log = LoggerFactory.getLogger!(CoverImageRetrievalStrategy)();
 
   public DeliveryContainer retrieveResource(Long coverImageId, MediaFormatProfile selectedVersion, QualityType selectedQuality, Double timeOffsetInSeconds, Double durationInSeconds, Client client, bool markAsRead)
   {

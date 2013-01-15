@@ -33,7 +33,7 @@ public class StatusServerResource : AbstractServerResource
 {
   static final Pattern ipAddressPattern = Pattern.compile("\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b");
 
-  private static final Logger log = LoggerFactory.getLogger!(StatusServerResource);
+  private static final Logger log = LoggerFactory.getLogger!(StatusServerResource)();
 
   public StatusRepresentation load()
   {

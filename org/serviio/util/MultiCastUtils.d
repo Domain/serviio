@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 
 public class MultiCastUtils
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(MultiCastUtils);
+  private static immutable Logger log = LoggerFactory.getLogger!(MultiCastUtils)();
 
   public static MulticastSocket startMultiCastSocketForListening(InetSocketAddress group, NetworkInterface networkInterface, int ttl)
   {

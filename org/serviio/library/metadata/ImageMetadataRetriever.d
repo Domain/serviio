@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class ImageMetadataRetriever
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(ImageMetadataRetriever);
+  private static immutable Logger log = LoggerFactory.getLogger!(ImageMetadataRetriever)();
 
   public static void retrieveImageMetadata(ImageMetadata md, String imageLocation, bool local)
   {

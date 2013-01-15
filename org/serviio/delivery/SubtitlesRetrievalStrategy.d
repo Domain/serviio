@@ -17,7 +17,7 @@ import org.serviio.delivery.ResourceRetrievalStrategy;
 public class SubtitlesRetrievalStrategy
   : ResourceRetrievalStrategy
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(SubtitlesRetrievalStrategy);
+  private static immutable Logger log = LoggerFactory.getLogger!(SubtitlesRetrievalStrategy)();
 
   public DeliveryContainer retrieveResource(Long mediaItemId, MediaFormatProfile selectedVersion, DeliveryQuality.QualityType selectedQuality, Double timeOffsetInSeconds, Double durationInSeconds, Client client, bool markAsRead)
   {

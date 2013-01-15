@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 
 public class FFmpegMetadataRetriever
 {
-  private static final Logger log = LoggerFactory.getLogger!(FFmpegMetadataRetriever);
+  private static final Logger log = LoggerFactory.getLogger!(FFmpegMetadataRetriever)();
 
   private static final Pattern streamIndexPattern = Pattern.compile("#[\\d][\\.:]([\\d]{1,2})");
   private static final String CONTAINER = "container";

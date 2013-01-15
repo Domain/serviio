@@ -23,7 +23,7 @@ public class LocalAddressResolverStrategy
 
   private static const List!(String) INVALID_NIC_NAMES = Arrays.asList(cast(String[])[ "vnic", "wmnet", "vmware", "bluetooth", "virtual" ]);
 
-  private static immutable Logger log = LoggerFactory.getLogger!(LocalAddressResolverStrategy);
+  private static immutable Logger log = LoggerFactory.getLogger!(LocalAddressResolverStrategy)();
 
   public InetAddress getHostIpAddress()
   {

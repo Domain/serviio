@@ -21,7 +21,7 @@ public class StreamBasedTranscodingDeliveryStrategy : AbstractTranscodingDeliver
 {
   private static immutable int PIPE_BUFFER_BYTES = ApplicationSettings.getIntegerProperty("live_stream_buffer").intValue();
 
-  private static immutable Logger log = LoggerFactory.getLogger!(StreamBasedTranscodingDeliveryStrategy);
+  private static immutable Logger log = LoggerFactory.getLogger!(StreamBasedTranscodingDeliveryStrategy)();
 
   public StreamDescriptor createInputStream(TranscodingJobListener jobListener, Client client)
   {

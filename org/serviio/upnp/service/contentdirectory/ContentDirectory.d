@@ -24,7 +24,7 @@ import org.w3c.dom.Document;
 
 public class ContentDirectory : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(ContentDirectory);
+  private static final Logger log = LoggerFactory.getLogger!(ContentDirectory)();
   private static final String VAR_A_ARG_TYPE_SortCriteria = "A_ARG_TYPE_SortCriteria";
   private static final String VAR_A_ARG_TYPE_UpdateID = "A_ARG_TYPE_UpdateID";
   private static final String VAR_A_ARG_TYPE_SearchCriteria = "A_ARG_TYPE_SearchCriteria";

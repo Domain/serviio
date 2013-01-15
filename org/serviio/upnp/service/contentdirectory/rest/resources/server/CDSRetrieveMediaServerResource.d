@@ -30,7 +30,7 @@ public class CDSRetrieveMediaServerResource : AbstractRestrictedCDSServerResourc
   , CDSRetrieveMediaResource
 {
   public static final String RESOURCE_CONTEXT = "/resource";
-  private static final Logger log = LoggerFactory.getLogger!(CDSRetrieveMediaServerResource);
+  private static final Logger log = LoggerFactory.getLogger!(CDSRetrieveMediaServerResource)();
 
   private static final ResourceRetrievalStrategyFactory resourceRetrievalStrategyFactory = new ResourceRetrievalStrategyFactory();
   private Profile profile;

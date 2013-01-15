@@ -2,16 +2,17 @@ module org.serviio.library.local.H264LevelType;
 
 import java.lang.String;
 import java.util.Map;
+import org.serviio.library.local.EnumMapConverter;
 
 public class H264LevelType
 {
-	enum H264LevelTypeEnum
-	{
-		H, RF
-	}
+    enum H264LevelTypeEnum
+    {
+        H, RF
+    }
 
-	H264LevelTypeEnum h264LevelType;
-	alias h264LevelType this;
+    H264LevelTypeEnum h264LevelType;
+    alias h264LevelType this;
 
   private static EnumMapConverter!(H264LevelType) converter = new class() EnumMapConverter!(H264LevelType)
   {

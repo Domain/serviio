@@ -28,7 +28,7 @@ public abstract class AbstractUrlExtractor
 {
   protected static final int ITEM_LIST_TIMEOUT_MS = 30000;
   protected static final int URL_EXTRACTION_TIMEOUT_MS = 30000;
-  protected static final Logger log = LoggerFactory.getLogger!(FeedItemUrlExtractor);
+  protected static final Logger log = LoggerFactory.getLogger!(FeedItemUrlExtractor)();
 
   private Client restletClient = new Client(Protocol.HTTP);
 

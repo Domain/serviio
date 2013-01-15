@@ -13,7 +13,7 @@ import org.serviio.external.ProcessExecutor;
 
 public class DCRawWrapper : AbstractExecutableWrapper
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(DCRawWrapper);
+  private static immutable Logger log = LoggerFactory.getLogger!(DCRawWrapper)();
 
   protected static AtomicReference!(Boolean) present = new AtomicReference!(Boolean)();
 

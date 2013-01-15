@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class DiscoverySearchResponder
   : Runnable
 {
-  private static final Logger log = LoggerFactory.getLogger!(DiscoverySearchResponder);
+  private static final Logger log = LoggerFactory.getLogger!(DiscoverySearchResponder)();
   private static final int MAX_MX = 120;
   private int advertisementDuration;
   private SocketAddress sourceAddress;

@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 public class TranscodingJobListener : ProcessListener
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(TranscodingJobListener);
+  private static immutable Logger log = LoggerFactory.getLogger!(TranscodingJobListener)();
   private String transcodingIdentifier;
   private File transcodedFile;
   private PipedInputStream transcodedStream;

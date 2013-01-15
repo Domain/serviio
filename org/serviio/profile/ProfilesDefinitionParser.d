@@ -51,7 +51,7 @@ import org.w3c.dom.NodeList;
 
 public class ProfilesDefinitionParser
 {
-  private static final Logger log = LoggerFactory.getLogger!(ProfilesDefinitionParser);
+  private static final Logger log = LoggerFactory.getLogger!(ProfilesDefinitionParser)();
   private static final String PROFILES_XSD = "Profiles.xsd";
   private static final String TAG_PROFILES = "Profiles";
   private static final String TAG_PROFILE = "Profile";

@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractCDSLibraryIndexingListener
   : LibraryIndexingListener
 {
-  private static final Logger log = LoggerFactory.getLogger!(AbstractCDSLibraryIndexingListener);
+  private static final Logger log = LoggerFactory.getLogger!(AbstractCDSLibraryIndexingListener)();
   private static final int UPDATE_THREAD_INTERVAL_SECONDS = 5;
   private int threadUpdateInterval = UPDATE_THREAD_INTERVAL_SECONDS;
 

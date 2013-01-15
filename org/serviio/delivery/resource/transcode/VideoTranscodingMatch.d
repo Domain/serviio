@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 
 public class VideoTranscodingMatch
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(VideoTranscodingMatch);
+  private static immutable Logger log = LoggerFactory.getLogger!(VideoTranscodingMatch)();
   private VideoContainer container;
   private VideoCodec videoCodec;
   private AudioCodec audioCodec;

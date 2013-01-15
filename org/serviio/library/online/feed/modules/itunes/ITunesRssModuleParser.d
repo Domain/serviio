@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 public class ITunesRssModuleParser
   : ModuleParser
 {
-  private static final Logger log = LoggerFactory.getLogger!(ITunesRssModuleParser);
+  private static final Logger log = LoggerFactory.getLogger!(ITunesRssModuleParser)();
 
   private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.UK);
   private static final Namespace NS = Namespace.getNamespace("http://itunes.apple.com/rss");

@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 public class MediaFeedEntryParser
   : FeedEntryParser
 {
-  private static final Logger log = LoggerFactory.getLogger!(MediaFeedEntryParser);
+  private static final Logger log = LoggerFactory.getLogger!(MediaFeedEntryParser)();
 
   public void parseFeedEntry(SyndEntry entry, FeedItem item)
   {

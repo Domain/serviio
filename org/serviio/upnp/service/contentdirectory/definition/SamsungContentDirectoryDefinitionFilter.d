@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 public class SamsungContentDirectoryDefinitionFilter
   : ContentDirectoryDefinitionFilter
 {
-  private static final Logger log = LoggerFactory.getLogger!(SamsungContentDirectoryDefinitionFilter);
+  private static final Logger log = LoggerFactory.getLogger!(SamsungContentDirectoryDefinitionFilter)();
 
   public String filterObjectId(String requestedNodeId, bool isSearch)
   {

@@ -11,7 +11,7 @@ import org.serviio.external.io.OutputReader;
 
 public class PipedOutputBytesReader : OutputReader
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(PipedOutputBytesReader);
+  private static immutable Logger log = LoggerFactory.getLogger!(PipedOutputBytesReader)();
   private PipedOutputStream outputStream;
 
   public this(InputStream inputStream)

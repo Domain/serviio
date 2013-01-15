@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 
 public class PlaylistMaintainerThread : AbstractLibraryCheckerThread
 {
-  private static final Logger log = LoggerFactory.getLogger!(PlaylistMaintainerThread);
+  private static final Logger log = LoggerFactory.getLogger!(PlaylistMaintainerThread)();
   private static final int REFRESH_INTERVAL_IN_MINUTES = 5;
 
   public void run()

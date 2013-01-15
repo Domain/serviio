@@ -22,10 +22,11 @@ import org.serviio.util.Platform;
 import org.serviio.util.ProcessUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.serviio.external.ProcessListener;
 
 public class ProcessExecutor : Thread
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(ProcessExecutor);
+  private static immutable Logger log = LoggerFactory.getLogger!(ProcessExecutor)();
   private static const int OUTPUT_STREAM_TIMEOUT = 5000;
   private String[] commandArguments;
   private bool destroyed = false;

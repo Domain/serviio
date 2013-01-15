@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 public class AudioService
   : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(AudioService);
+  private static final Logger log = LoggerFactory.getLogger!(AudioService)();
 
   public static void addMusicTrackToLibrary(AudioMetadata metadata, Repository repository)
   {

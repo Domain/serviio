@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 public class UniversalHttpServerConnection : DefaultHttpServerConnection
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(UniversalHttpServerConnection);
+  private static immutable Logger log = LoggerFactory.getLogger!(UniversalHttpServerConnection)();
   private String connectionId;
   private HttpEntity streamedEntity;
 

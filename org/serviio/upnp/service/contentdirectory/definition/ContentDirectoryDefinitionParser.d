@@ -12,7 +12,7 @@ import org.w3c.dom.NodeList;
 
 public class ContentDirectoryDefinitionParser
 {
-  private static final Logger log = LoggerFactory.getLogger!(ContentDirectoryDefinitionParser);
+  private static final Logger log = LoggerFactory.getLogger!(ContentDirectoryDefinitionParser)();
   private static final String TAG_ACTION = "action";
   private static final String TAG_CONTAINER = "container";
 

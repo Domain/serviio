@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 public class DiscoveryManager
 {
-  private static final Logger log = LoggerFactory.getLogger!(DiscoveryManager);
+  private static final Logger log = LoggerFactory.getLogger!(DiscoveryManager)();
   private static DiscoveryManager instance;
   private DiscoveryAdvertisementNotifier discoveryNotifier;
   private DiscoverySSDPMessageListener discoverySSDPMessageListener;

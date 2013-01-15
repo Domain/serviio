@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 public class ProcessUtils
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(ProcessUtils);
+  private static immutable Logger log = LoggerFactory.getLogger!(ProcessUtils)();
 
   public static void destroy(Process p)
   {

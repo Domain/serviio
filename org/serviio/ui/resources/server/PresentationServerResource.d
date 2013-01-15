@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 public class PresentationServerResource : AbstractServerResource
   , PresentationResource
 {
-  private static final Logger log = LoggerFactory.getLogger!(PresentationServerResource);
+  private static final Logger log = LoggerFactory.getLogger!(PresentationServerResource)();
 
   public PresentationRepresentation load()
   {

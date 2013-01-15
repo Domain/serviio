@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 public class ActionNode : ContainerNode
 {
-  private static final Logger log = LoggerFactory.getLogger!(ActionNode);
+  private static final Logger log = LoggerFactory.getLogger!(ActionNode)();
   private String commandClass;
   private String idPrefix;
   private bool recursive;

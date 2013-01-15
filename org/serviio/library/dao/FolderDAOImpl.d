@@ -27,7 +27,7 @@ import org.serviio.library.dao.FolderDAO;
 public class FolderDAOImpl : AbstractAccessibleDao
   , FolderDAO
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(FolderDAOImpl);
+  private static immutable Logger log = LoggerFactory.getLogger!(FolderDAOImpl)();
 
   public long create(Folder newInstance)
   {

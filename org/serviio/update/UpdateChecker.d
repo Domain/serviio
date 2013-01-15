@@ -20,7 +20,7 @@ import org.w3c.dom.Node;
 
 public class UpdateChecker
 {
-  private static final Logger log = LoggerFactory.getLogger!(UpdateChecker);
+  private static final Logger log = LoggerFactory.getLogger!(UpdateChecker)();
 
   private static final String XML_URL = ApplicationSettings.getStringProperty("update_url");
   private static final int VERSION_CHECKER_INTERVAL_HOURS = 24;

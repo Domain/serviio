@@ -13,7 +13,7 @@ public class DatabaseManager
 {
   private static const int MAX_POOL_CONNECTION = 20;
   private static const long CONNECTION_TIMEOUT = 2000L;
-  private static immutable Logger log = LoggerFactory.getLogger!(DatabaseManager);
+  private static immutable Logger log = LoggerFactory.getLogger!(DatabaseManager)();
   private static String DB_SCHEMA_URL;
   private static DBConnectionPool pool = new DBConnectionPool("Serviio DB Pool", DB_SCHEMA_URL, MAX_POOL_CONNECTION);
   

@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 public class Profile
   : Comparable!(Profile)
 {
-  private static final Logger log = LoggerFactory.getLogger!(Profile);
+  private static final Logger log = LoggerFactory.getLogger!(Profile)();
   public static final String DETECTION_FIELD_SERVER = "Server";
   public static final String DETECTION_FIELD_MODEL_NAME = "ModelName";
   public static final String DETECTION_FIELD_FRIENDLY_NAME = "FriendlyName";

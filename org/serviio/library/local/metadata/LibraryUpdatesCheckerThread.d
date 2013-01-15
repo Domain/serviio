@@ -31,7 +31,7 @@ public class LibraryUpdatesCheckerThread : AbstractLibraryCheckerThread
   private static final int THREAD_SLEEP_PERIOD = 3600000;
   private static List!(ExtractorType) automaticExtractors = Arrays.asList(cast(ExtractorType[])[ ExtractorType.EMBEDDED, ExtractorType.COVER_IMAGE_IN_FOLDER, ExtractorType.MYMOVIES, ExtractorType.SWISSCENTER, ExtractorType.XBMC ]);
 
-  private static final Logger log = LoggerFactory.getLogger!(LibraryUpdatesCheckerThread);
+  private static final Logger log = LoggerFactory.getLogger!(LibraryUpdatesCheckerThread)();
 
   public void run()
   {

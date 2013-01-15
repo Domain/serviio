@@ -1,10 +1,14 @@
 module org.serviio.delivery.resource.transcode.TranscodingDeliveryStrategy;
 
 import java.lang.String;
+import java.lang.Double;
 import java.io.IOException;
 import org.serviio.delivery.Client;
 import org.serviio.delivery.DeliveryListener;
 import org.serviio.library.entities.MediaItem;
+import org.serviio.delivery.resource.transcode.StreamDescriptor;
+import org.serviio.delivery.resource.transcode.TranscodingJobListener;
+import org.serviio.delivery.resource.transcode.TranscodingDefinition;
 
 public abstract interface TranscodingDeliveryStrategy(T)
 {

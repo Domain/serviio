@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 public class ImageService
   : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(ImageService);
+  private static final Logger log = LoggerFactory.getLogger!(ImageService)();
 
   public static void addImageToLibrary(ImageMetadata metadata, Repository repository)
   {

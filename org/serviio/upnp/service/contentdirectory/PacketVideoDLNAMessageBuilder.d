@@ -13,7 +13,7 @@ import org.w3c.dom.Node;
 
 public class PacketVideoDLNAMessageBuilder : GenericDLNAMessageBuilder
 {
-  private static final Logger log = LoggerFactory.getLogger!(SamsungDLNAMessageBuilder);
+  private static final Logger log = LoggerFactory.getLogger!(SamsungDLNAMessageBuilder)();
   private static final String PV_NAMESPACE_URL = "http://www.pv.com/pvns/";
 
   public this(String filter)

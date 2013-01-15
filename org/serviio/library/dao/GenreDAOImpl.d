@@ -24,7 +24,7 @@ import org.serviio.library.dao.GenreDAO;
 public class GenreDAOImpl
   : GenreDAO
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(GenreDAOImpl);
+  private static immutable Logger log = LoggerFactory.getLogger!(GenreDAOImpl)();
 
   public long create(Genre newInstance)
   {

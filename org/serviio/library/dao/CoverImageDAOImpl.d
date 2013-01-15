@@ -18,7 +18,7 @@ import org.serviio.library.dao.CoverImageDAO;
 public class CoverImageDAOImpl
   : CoverImageDAO
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(CoverImageDAOImpl);
+  private static immutable Logger log = LoggerFactory.getLogger!(CoverImageDAOImpl)();
 
   public long create(CoverImage newInstance)
   {

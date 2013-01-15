@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 public class VideoService
   : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(VideoService);
+  private static final Logger log = LoggerFactory.getLogger!(VideoService)();
 
   public static void addVideoToLibrary(VideoMetadata metadata, Repository repository)
   {

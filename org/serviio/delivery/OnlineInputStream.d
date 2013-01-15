@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 public class OnlineInputStream : InputStream
 {
   private static const int DEFAULT_CHUNK_SIZE = 1512000;
-  private static immutable Logger log = LoggerFactory.getLogger!(OnlineInputStream);
+  private static immutable Logger log = LoggerFactory.getLogger!(OnlineInputStream)();
   private URL contentURL;
   private String[] credentials;
   private Long contentSize;

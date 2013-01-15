@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 public class ActionsServerResource : AbstractServerResource
   , ActionsResource
 {
-  private static final Logger log = LoggerFactory.getLogger!(ActionsServerResource);
+  private static final Logger log = LoggerFactory.getLogger!(ActionsServerResource)();
 
   public ResultRepresentation execute(ActionRepresentation representation)
   {

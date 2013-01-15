@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 public class ApplicationInstanceManager
 {
-  private static immutable Logger log = LoggerFactory.getLogger!(ApplicationInstanceManager);
+  private static immutable Logger log = LoggerFactory.getLogger!(ApplicationInstanceManager)();
   private static ApplicationInstanceListener subListener;
   public static const int SINGLE_INSTANCE_NETWORK_SOCKET = 44331;
   public static const String SINGLE_INSTANCE_SHARED_KEY = "$$NewInstance$$\n";
