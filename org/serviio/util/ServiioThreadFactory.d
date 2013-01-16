@@ -2,6 +2,7 @@ module org.serviio.util.ServiioThreadFactory;
 
 import java.lang.String;
 import java.lang.Thread;
+import java.lang.ThreadGroup;
 import java.lang.Runnable;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

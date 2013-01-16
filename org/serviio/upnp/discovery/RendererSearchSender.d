@@ -21,6 +21,7 @@ import org.serviio.util.HttpUtils;
 import org.serviio.util.MultiCastUtils;
 import org.serviio.util.ServiioThreadFactory;
 import org.serviio.util.ThreadExecutor;
+import org.serviio.upnp.discovery.Multicaster;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

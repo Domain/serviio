@@ -37,19 +37,19 @@ public abstract class AbstractTranscodingDeliveryEngine(RI : MediaFormatProfileR
 {
     private static const String TRANSCODING_SUBFOLDER_NAME = "Serviio";
     private static const String TRANSCODED_FILE_EXTENSION = ".stf";
-	private static Map!(Client, TranscodingJobListener) transcodeJobs;
+    private static Map!(Client, TranscodingJobListener) transcodeJobs;
     private static TranscodingDeliveryStrategy!(File) fileBasedStrategy;
     private static TranscodingDeliveryStrategy!(OutputStream) streamBasedStrategy;
 
     private static immutable Logger log;
 
-	public static this()
-	{
-		transcodeJobs = Collections.synchronizedMap(new HashMap!(Client, TranscodingJobListener)());
-		fileBasedStrategy = new FileBasedTranscodingDeliveryStrategy();
-		streamBasedStrategy = new StreamBasedTranscodingDeliveryStrategy();
-		log = LoggerFactory.getLogger!(AbstractTranscodingDeliveryEngine)();
-	}
+    public static this()
+    {
+        transcodeJobs = Collections.synchronizedMap(new HashMap!(Client, TranscodingJobListener)());
+        fileBasedStrategy = new FileBasedTranscodingDeliveryStrategy();
+        streamBasedStrategy = new StreamBasedTranscodingDeliveryStrategy();
+        log = LoggerFactory.getLogger!(AbstractTranscodingDeliveryEngine)();
+    }
 
     public static void cleanupTranscodingEngine()
     {

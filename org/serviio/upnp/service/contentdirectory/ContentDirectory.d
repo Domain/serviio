@@ -1,5 +1,6 @@
 module org.serviio.upnp.service.contentdirectory.ContentDirectory;
 
+import java.lang.String;
 import java.lang.reflect.Constructor;
 import org.serviio.library.entities.AccessGroup;
 import org.serviio.library.entities.MediaItem;
@@ -18,28 +19,34 @@ import org.serviio.upnp.service.contentdirectory.classes.DirectoryObject;
 import org.serviio.upnp.service.contentdirectory.definition.ContainerNode;
 import org.serviio.upnp.service.contentdirectory.definition.Definition;
 import org.serviio.util.XmlUtils;
+import org.serviio.upnp.service.contentdirectory.ContentDirectoryEngine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 public class ContentDirectory : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(ContentDirectory)();
-  private static final String VAR_A_ARG_TYPE_SortCriteria = "A_ARG_TYPE_SortCriteria";
-  private static final String VAR_A_ARG_TYPE_UpdateID = "A_ARG_TYPE_UpdateID";
-  private static final String VAR_A_ARG_TYPE_SearchCriteria = "A_ARG_TYPE_SearchCriteria";
-  private static final String VAR_A_ARG_TYPE_Index = "A_ARG_TYPE_Index";
-  private static final String VAR_A_ARG_TYPE_TagValueList = "A_ARG_TYPE_TagValueList";
-  private static final String VAR_SortCapabilities = "SortCapabilities";
-  private static final String VAR_SearchCapabilities = "SearchCapabilities";
-  private static final String VAR_A_ARG_TYPE_Count = "A_ARG_TYPE_Count";
-  private static final String VAR_A_ARG_TYPE_BrowseFlag = "A_ARG_TYPE_BrowseFlag";
-  private static final String VAR_SystemUpdateID = "SystemUpdateID";
-  private static final String VAR_A_ARG_TYPE_BrowseLetter = "A_ARG_TYPE_BrowseLetter";
-  private static final String VAR_A_ARG_TYPE_URI = "A_ARG_TYPE_URI";
-  private static final String VAR_A_ARG_TYPE_Featurelist = "A_ARG_TYPE_Featurelist";
-  private static final int BOOKMARK_OFFSET = 10;
+  private static immutable Logger log;
+  private static const String VAR_A_ARG_TYPE_SortCriteria = "A_ARG_TYPE_SortCriteria";
+  private static const String VAR_A_ARG_TYPE_UpdateID = "A_ARG_TYPE_UpdateID";
+  private static const String VAR_A_ARG_TYPE_SearchCriteria = "A_ARG_TYPE_SearchCriteria";
+  private static const String VAR_A_ARG_TYPE_Index = "A_ARG_TYPE_Index";
+  private static const String VAR_A_ARG_TYPE_TagValueList = "A_ARG_TYPE_TagValueList";
+  private static const String VAR_SortCapabilities = "SortCapabilities";
+  private static const String VAR_SearchCapabilities = "SearchCapabilities";
+  private static const String VAR_A_ARG_TYPE_Count = "A_ARG_TYPE_Count";
+  private static const String VAR_A_ARG_TYPE_BrowseFlag = "A_ARG_TYPE_BrowseFlag";
+  private static const String VAR_SystemUpdateID = "SystemUpdateID";
+  private static const String VAR_A_ARG_TYPE_BrowseLetter = "A_ARG_TYPE_BrowseLetter";
+  private static const String VAR_A_ARG_TYPE_URI = "A_ARG_TYPE_URI";
+  private static const String VAR_A_ARG_TYPE_Featurelist = "A_ARG_TYPE_Featurelist";
+  private static const int BOOKMARK_OFFSET = 10;
   private ContentDirectoryEngine engine;
+  
+  static this()
+  {
+      log = LoggerFactory.getLogger!(ContentDirectory)();
+  }
 
   protected void setupService()
   {
