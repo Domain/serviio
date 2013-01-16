@@ -1,6 +1,7 @@
 module org.serviio.delivery.resource.transcode.AbstractTranscodingDeliveryEngine;
 
 import java.lang.String;
+import java.lang.Double;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FilenameFilter;
@@ -30,16 +31,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.serviio.delivery.resource.transcode.TranscodingJobListener;
 import org.serviio.delivery.resource.transcode.TranscodingDeliveryStrategy;
+import org.serviio.delivery.resource.transcode.TranscodingDefinition;
 
 public abstract class AbstractTranscodingDeliveryEngine(RI : MediaFormatProfileResource, MI : MediaItem) : AbstractDeliveryEngine!(RI, MI), DeliveryListener
 {
     private static const String TRANSCODING_SUBFOLDER_NAME = "Serviio";
     private static const String TRANSCODED_FILE_EXTENSION = ".stf";
-    private static Map!(Client, TranscodingJobListener) transcodeJobs = Collections.synchronizedMap(new HashMap!(Client, TranscodingJobListener)());
-    private static TranscodingDeliveryStrategy!(File) fileBasedStrategy = new FileBasedTranscodingDeliveryStrategy();
-    private static TranscodingDeliveryStrategy!(OutputStream) streamBasedStrategy = new StreamBasedTranscodingDeliveryStrategy();
+	private static Map!(Client, TranscodingJobListener) transcodeJobs;
+    private static TranscodingDeliveryStrategy!(File) fileBasedStrategy;
+    private static TranscodingDeliveryStrategy!(OutputStream) streamBasedStrategy;
 
-    private static immutable Logger log = LoggerFactory.getLogger!(AbstractTranscodingDeliveryEngine)();
+    private static immutable Logger log;
+
+	public static this()
+	{
+		transcodeJobs = Collections.synchronizedMap(new HashMap!(Client, TranscodingJobListener)());
+		fileBasedStrategy = new FileBasedTranscodingDeliveryStrategy();
+		streamBasedStrategy = new StreamBasedTranscodingDeliveryStrategy();
+		log = LoggerFactory.getLogger!(AbstractTranscodingDeliveryEngine)();
+	}
 
     public static void cleanupTranscodingEngine()
     {
@@ -65,7 +75,7 @@ public abstract class AbstractTranscodingDeliveryEngine(RI : MediaFormatProfileR
         }
     }
 
-    protected DeliveryContainer retrieveTranscodedResource(MI mediaItem, MediaFormatProfile selectedVersion, DeliveryQuality.QualityType selectedQuality, Double timeOffsetInSeconds, Double durationInSeconds, Client client)
+    override protected DeliveryContainer retrieveTranscodedResource(MI mediaItem, MediaFormatProfile selectedVersion, DeliveryQuality.QualityType selectedQuality, Double timeOffsetInSeconds, Double durationInSeconds, Client client)
     {
         Map!(DeliveryQuality.QualityType, TranscodingDefinition) trDefs = getMatchingTranscodingDefinitions(mediaItem, client.getRendererProfile());
         TranscodingDefinition trDef = cast(TranscodingDefinition)trDefs.get(selectedQuality);
@@ -88,14 +98,14 @@ public abstract class AbstractTranscodingDeliveryEngine(RI : MediaFormatProfileR
         throw new IOException(String.format("Cannot find transcoding definition for %s quality", cast(Object[])[ selectedQuality.toString() ]));
     }
 
-    protected RI retrieveTranscodedMediaInfoForVersion(MI mediaItem, MediaFormatProfile selectedVersion, DeliveryQuality.QualityType selectedQuality, Profile rendererProfile)
+    override protected RI retrieveTranscodedMediaInfoForVersion(MI mediaItem, MediaFormatProfile selectedVersion, DeliveryQuality.QualityType selectedQuality, Profile rendererProfile)
     {
         log.debug_(String.format("Getting media info for transcoded version of file %s", cast(Object[])[ mediaItem.getFileName() ]));
         LinkedHashMap!(DeliveryQuality.QualityType, List!(RI)) mediaInfos = retrieveTranscodedMediaInfo(mediaItem, rendererProfile, null);
         return findMediaInfoForFileProfile(cast(Collection!(RI))mediaInfos.get(selectedQuality), selectedVersion);
     }
 
-    protected bool fileCanBeTranscoded(MI mediaItem, Profile rendererProfile)
+    override protected bool fileCanBeTranscoded(MI mediaItem, Profile rendererProfile)
     {
         if (((mediaItem.isLocalMedia()) && ((Configuration.isTranscodingEnabled()) || (rendererProfile.isAlwaysEnableTranscoding())) && (rendererProfile.hasAnyTranscodingDefinitions())) || ((!mediaItem.isLocalMedia()) && (rendererProfile.hasAnyOnlineTranscodingDefinitions())))
         {
@@ -107,7 +117,7 @@ public abstract class AbstractTranscodingDeliveryEngine(RI : MediaFormatProfileR
         return false;
     }
 
-    protected bool fileWillBeTranscoded(MI mediaItem, MediaFormatProfile selectedVersion, DeliveryQuality.QualityType selectedQuality, Profile rendererProfile)
+    override protected bool fileWillBeTranscoded(MI mediaItem, MediaFormatProfile selectedVersion, DeliveryQuality.QualityType selectedQuality, Profile rendererProfile)
     {
         return (fileCanBeTranscoded(mediaItem, rendererProfile)) && (getMatchingTranscodingDefinitions(mediaItem, rendererProfile).get(selectedQuality) !is null);
     }

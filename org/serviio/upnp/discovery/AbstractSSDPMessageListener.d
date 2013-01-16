@@ -1,12 +1,13 @@
 module org.serviio.upnp.discovery.AbstractSSDPMessageListener;
 
+import java.lang.String;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.serviio.util.StringUtils;
 
 public abstract class AbstractSSDPMessageListener
 {
-  private static final Pattern usnPattern = Pattern.compile("uuid:(.+)::urn:.+", 2);
+  private static enum usnPattern = Pattern.compile("uuid:(.+)::urn:.+", 2);
 
   protected String getDeviceUuidFromUSN(String usn) {
     if (usn !is null) {

@@ -1,5 +1,6 @@
 module org.serviio.util.XPathUtil;
 
+import java.lang.String;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;

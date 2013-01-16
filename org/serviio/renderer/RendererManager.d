@@ -1,5 +1,6 @@
 module org.serviio.renderer.RendererManager;
 
+import java.lang.String;
 import java.io.IOException;
 import java.net.Inet4Address;
 import java.net.InetAddress;
@@ -31,12 +32,12 @@ import org.w3c.dom.Node;
 
 public class RendererManager
 {
-  private static final String UNKNOWN_DEVICE_NAME = "Unrecognized device";
-  private static final bool RENDERER_ENABLED_BY_DEFAULT = true;
+  private static const String UNKNOWN_DEVICE_NAME = "Unrecognized device";
+  private static const bool RENDERER_ENABLED_BY_DEFAULT = true;
   private static RendererManager instance;
-  private static final Logger log = LoggerFactory.getLogger!(RendererManager)();
+  private static const Logger log = LoggerFactory.getLogger!(RendererManager)();
 
-  private static final UPnPDeviceNamespaceContext nsContext = new UPnPDeviceNamespaceContext();
+  private static const UPnPDeviceNamespaceContext nsContext = new UPnPDeviceNamespaceContext();
 
   private Map!(String, ActiveRenderer) activeRenderers = Collections.synchronizedMap(new HashMap!(String, ActiveRenderer)());
   private RendererExpirationChecker expirationChecker;

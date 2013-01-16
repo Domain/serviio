@@ -1,5 +1,6 @@
 module org.serviio.upnp.protocol.http.HttpMessageParser;
 
+import java.lang.String;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import org.apache.http.HttpException;

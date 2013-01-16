@@ -1,5 +1,7 @@
 module org.serviio.library.metadata.LibraryIndexingListener;
 
+import java.lang.String;
+
 public abstract interface LibraryIndexingListener
 {
   public abstract void itemAdded(String paramString);

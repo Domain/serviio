@@ -2,6 +2,7 @@ module org.serviio.upnp.protocol.ssdp.SSDPMessageBuilderFactory;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.serviio.upnp.protocol.ssdp.SSDPRequestMessageBuilder;
 
 public class SSDPMessageBuilderFactory
 {

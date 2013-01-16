@@ -1,16 +1,19 @@
 module org.serviio.util.ServiioThreadFactory;
 
+import java.lang.String;
+import java.lang.Thread;
+import java.lang.Runnable;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ServiioThreadFactory
   : ThreadFactory
 {
-  private static final String GROUP_NAME = "ServioThreads";
-  private static final String THREAD_PREFIX = "ServioThread-";
+  private static const String GROUP_NAME = "ServioThreads";
+  private static const String THREAD_PREFIX = "ServioThread-";
   private static ServiioThreadFactory instance;
   private ThreadGroup group;
-  private final AtomicInteger threadNumber = new AtomicInteger(1);
+  private const AtomicInteger threadNumber = new AtomicInteger(1);
 
   private this()
   {

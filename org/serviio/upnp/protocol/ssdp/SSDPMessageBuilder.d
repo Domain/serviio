@@ -1,5 +1,7 @@
 module org.serviio.upnp.protocol.ssdp.SSDPMessageBuilder;
 
+import java.lang.String;
+import java.lang.Integer;
 import java.util.List;
 
 public abstract interface SSDPMessageBuilder

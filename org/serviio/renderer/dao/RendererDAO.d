@@ -1,5 +1,6 @@
 module org.serviio.renderer.dao.RendererDAO;
 
+import java.lang.String;
 import java.util.List;
 import org.serviio.db.dao.InvalidArgumentException;
 import org.serviio.db.dao.PersistenceException;

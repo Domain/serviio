@@ -1,7 +1,10 @@
 module org.serviio.library.metadata.AbstractLibraryCheckerThread;
 
+import java.lang.Thread;
+import java.lang.String;
 import java.util.HashSet;
 import java.util.Set;
+import org.serviio.library.metadata.LibraryIndexingListener;
 
 public abstract class AbstractLibraryCheckerThread : Thread
 {
