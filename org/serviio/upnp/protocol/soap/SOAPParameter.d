@@ -1,5 +1,6 @@
 module org.serviio.upnp.protocol.soap.SOAPParameter;
 
+import java.lang.String;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;

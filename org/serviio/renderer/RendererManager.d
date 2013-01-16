@@ -26,6 +26,8 @@ import org.serviio.util.HttpClient;
 import org.serviio.util.HttpUtils;
 import org.serviio.util.ServiioThreadFactory;
 import org.serviio.util.XPathUtil;
+import org.serviio.renderer.ActiveRenderer;
+import org.serviio.renderer.RendererExpirationChecker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;

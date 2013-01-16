@@ -1,5 +1,7 @@
 module org.serviio.upnp.protocol.soap.InvocationError;
 
+import java.lang.String;
+
 public class InvocationError
 {
 	enum InvocationErrorEnum

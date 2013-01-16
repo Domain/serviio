@@ -1,7 +1,9 @@
 module org.serviio.upnp.protocol.soap.OperationResult;
 
+import java.lang.String;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.serviio.upnp.protocol.soap.InvocationError;
 
 public class OperationResult
 {

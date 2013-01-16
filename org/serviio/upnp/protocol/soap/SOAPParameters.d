@@ -3,6 +3,7 @@ module org.serviio.upnp.protocol.soap.SOAPParameters;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import org.serviio.upnp.protocol.soap.SOAPParameter;
 
 /// FIXME:
 //@Retention(RetentionPolicy.RUNTIME)

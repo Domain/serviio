@@ -1,5 +1,7 @@
 module org.serviio.upnp.service.contentdirectory.classes.ObjectClassType;
 
+import java.lang.String;
+
 public class ObjectClassType
 {
 	enum ObjectClassTypeEnum : String

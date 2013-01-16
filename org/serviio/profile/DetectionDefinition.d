@@ -1,5 +1,6 @@
 module org.serviio.profile.DetectionDefinition;
 
+import java.lang.String;
 import java.util.HashMap;
 import java.util.Map;
 

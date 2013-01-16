@@ -1,8 +1,10 @@
 module org.serviio.upnp.service.contentdirectory.command.CommandExecutionException;
 
+import java.lang.String;
+
 public class CommandExecutionException : Exception
 {
-  private static final long serialVersionUID = -3387973648932886031L;
+  private static const long serialVersionUID = -3387973648932886031L;
 
   public this()
   {

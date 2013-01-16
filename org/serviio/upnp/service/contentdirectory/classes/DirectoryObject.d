@@ -1,7 +1,11 @@
 module org.serviio.upnp.service.contentdirectory.classes.DirectoryObject;
 
+import java.lang.String;
+import java.lang.Long;
 import java.util.ArrayList;
 import java.util.List;
+import org.serviio.upnp.service.contentdirectory.classes.Resource;
+import org.serviio.upnp.service.contentdirectory.classes.ObjectClassType;
 
 public abstract class DirectoryObject
 {
@@ -77,7 +81,7 @@ public abstract class DirectoryObject
     this.entityId = entityId;
   }
 
-  public String toString()
+  override public String toString()
   {
     StringBuilder builder = new StringBuilder();
     builder.append("DirectoryObject [creator=").append(creator).append(", id=").append(id).append(", parentID=").append(parentID).append(", resources=").append(resources).append(", restricted=").append(restricted).append(", title=").append(title).append(", writeStatus=").append(writeStatus).append("]");

@@ -1,5 +1,6 @@
 module org.serviio.upnp.service.contentdirectory.definition.DefinitionNode;
 
+import java.lang.String;
 import org.serviio.library.entities.AccessGroup;
 import org.serviio.profile.Profile;
 import org.serviio.upnp.service.contentdirectory.ObjectType;

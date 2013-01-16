@@ -1,5 +1,7 @@
 module org.serviio.upnp.service.contentdirectory.definition.ContainerNode;
 
+import java.lang.String;
+import java.lang.Integer;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +13,13 @@ import org.serviio.upnp.service.contentdirectory.classes.DirectoryObject;
 import org.serviio.upnp.service.contentdirectory.classes.ObjectClassType;
 import org.serviio.upnp.service.contentdirectory.command.Command;
 import org.serviio.upnp.service.contentdirectory.command.CommandExecutionException;
+import org.serviio.upnp.service.contentdirectory.definition.DefinitionNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class ContainerNode : DefinitionNode
 {
-  private static final Logger log = LoggerFactory.getLogger!(ContainerNode)();
+  private static immutable Logger log = LoggerFactory.getLogger!(ContainerNode)();
 
   protected List!(DefinitionNode) childNodes = new ArrayList!(DefinitionNode)();
 
@@ -66,7 +69,7 @@ public abstract class ContainerNode : DefinitionNode
     return totalFound;
   }
 
-  public void validate()
+  override public void validate()
   {
     super.validate();
     if (containerClass is null)
