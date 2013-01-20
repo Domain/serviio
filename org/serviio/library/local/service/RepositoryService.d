@@ -1,5 +1,6 @@
 module org.serviio.library.local.service.RepositoryService;
 
+import java.lang.Long;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -14,136 +15,140 @@ import org.serviio.library.service.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class RepositoryService
-  : Service
+public class RepositoryService : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(RepositoryService)();
+    private static immutable Logger log;
 
-  public static List!(Repository) getAllRepositories()
-  {
-    return DAOFactory.getRepositoryDAO().findAll();
-  }
-
-  public static Repository getRepository(Long repositoryId) {
-    return cast(Repository)DAOFactory.getRepositoryDAO().read(repositoryId);
-  }
-
-  public static bool saveRepositories(List!(Repository) repositories)
-  {
-    List!(Repository) existingRepositories = getAllRepositories();
-    List!(Repository) repsToRemove = new ArrayList!(Repository)();
-    bool mediaItemsModified = false;
-
-    foreach (Repository existingRepository ; existingRepositories) {
-      if (!repositories.contains(existingRepository)) {
-        log.debug_(String.format("Will remove Repository: %s", cast(Object[])[ existingRepository.toString() ]));
-        repsToRemove.add(existingRepository);
-      }
+    static this()
+    {
+        log = LoggerFactory.getLogger!(RepositoryService)();
     }
 
-    if (removeRepositories(repsToRemove)) {
-      mediaItemsModified = true;
+    public static List!(Repository) getAllRepositories()
+    {
+        return DAOFactory.getRepositoryDAO().findAll();
     }
 
-    repositories.removeAll(repsToRemove);
-    foreach (Repository repository ; repositories) {
-      if (repository.getId() is null)
-      {
-        DAOFactory.getRepositoryDAO().create(repository);
-      }
-      else if (updateRepository(repository)) {
-        mediaItemsModified = true;
-      }
+    public static Repository getRepository(Long repositoryId) {
+        return cast(Repository)DAOFactory.getRepositoryDAO().read(repositoryId);
     }
 
-    return mediaItemsModified;
-  }
+    public static bool saveRepositories(List!(Repository) repositories)
+    {
+        List!(Repository) existingRepositories = getAllRepositories();
+        List!(Repository) repsToRemove = new ArrayList!(Repository)();
+        bool mediaItemsModified = false;
 
-  public static List!(Repository) getListOfRepositories(MediaFileType mediaType, AccessGroup accessGroup, int startingIndex, int requestedCount)
-  {
-    return DAOFactory.getRepositoryDAO().getRepositories(mediaType, accessGroup, startingIndex, requestedCount);
-  }
-
-  public static int getNumberOfRepositories(MediaFileType mediaType, AccessGroup accessGroup)
-  {
-    return DAOFactory.getRepositoryDAO().getRepositoriesCount(mediaType, accessGroup);
-  }
-
-  public static void markRepositoryAsScanned(Long repoId) {
-    DAOFactory.getRepositoryDAO().markRepositoryAsScanned(repoId);
-  }
-
-  private static bool removeRepositories(List!(Repository) repositories)
-  {
-    log.debug_(String.format("Found %s repositories to be removed", cast(Object[])[ Integer.valueOf(repositories.size()) ]));
-    bool mediaItemsRemoved = false;
-    foreach (Repository repository ; repositories) {
-      log.debug_(String.format("Removing all items in repository %s", cast(Object[])[ repository.getId() ]));
-
-      List!(MediaItem) mediaItems = MediaService.getMediaItemsInRepository(repository.getId());
-      foreach (MediaItem mediaItem ; mediaItems) {
-        if (mediaItem.getFileType() == MediaFileType.AUDIO)
-          AudioService.removeMusicTrackFromLibrary(mediaItem.getId());
-        else if (mediaItem.getFileType() == MediaFileType.VIDEO)
-          VideoService.removeVideoFromLibrary(mediaItem.getId());
-        else if (mediaItem.getFileType() == MediaFileType.IMAGE) {
-          ImageService.removeImageFromLibrary(mediaItem.getId());
+        foreach (Repository existingRepository ; existingRepositories) {
+            if (!repositories.contains(existingRepository)) {
+                log.debug_(String.format("Will remove Repository: %s", cast(Object[])[ existingRepository.toString() ]));
+                repsToRemove.add(existingRepository);
+            }
         }
-        mediaItemsRemoved = true;
-      }
 
-      List!(Playlist) playlists = PlaylistService.getPlaylistsInRepository(repository.getId());
-      foreach (Playlist playlist ; playlists) {
-        PlaylistService.detetePlaylistAndItems(playlist.getId());
-      }
-
-      DAOFactory.getRepositoryDAO().delete_(repository.getId());
-    }
-    return mediaItemsRemoved;
-  }
-
-  private static bool updateRepository(Repository repository)
-  {
-    bool mediaItemsRemoved = false;
-    Repository existingRepository = getRepository(repository.getId());
-
-    Set!(MediaFileType) existingSupportedFileTypes = existingRepository.getSupportedFileTypes();
-    existingSupportedFileTypes.removeAll(repository.getSupportedFileTypes());
-
-    foreach (MediaFileType unsupportedFileType ; existingSupportedFileTypes) {
-      List!(MediaItem) mediaItems = MediaService.getMediaItemsInRepository(repository.getId(), unsupportedFileType);
-      foreach (MediaItem mediaItem ; mediaItems) {
-        if (mediaItem.getFileType() == MediaFileType.AUDIO)
-          AudioService.removeMusicTrackFromLibrary(mediaItem.getId());
-        else if (mediaItem.getFileType() == MediaFileType.VIDEO)
-          VideoService.removeVideoFromLibrary(mediaItem.getId());
-        else if (mediaItem.getFileType() == MediaFileType.IMAGE) {
-          ImageService.removeImageFromLibrary(mediaItem.getId());
+        if (removeRepositories(repsToRemove)) {
+            mediaItemsModified = true;
         }
-        mediaItemsRemoved = true;
-      }
 
+        repositories.removeAll(repsToRemove);
+        foreach (Repository repository ; repositories) {
+            if (repository.getId() is null)
+            {
+                DAOFactory.getRepositoryDAO().create(repository);
+            }
+            else if (updateRepository(repository)) {
+                mediaItemsModified = true;
+            }
+        }
+
+        return mediaItemsModified;
     }
 
-    List!(AccessGroup) existingAccessGroups = AccessGroupService.getAccessGroupsForRepository(repository.getId());
-    if ((existingAccessGroups.size() != repository.getAccessGroupIds().size()) || (!existingAccessGroups.containsAll(repository.getAccessGroupIds()))) {
-      mediaItemsRemoved = true;
+    public static List!(Repository) getListOfRepositories(MediaFileType mediaType, AccessGroup accessGroup, int startingIndex, int requestedCount)
+    {
+        return DAOFactory.getRepositoryDAO().getRepositories(mediaType, accessGroup, startingIndex, requestedCount);
     }
 
-    if (existingRepository.isSupportsOnlineMetadata() != repository.isSupportsOnlineMetadata()) {
-      List!(MediaItem) mediaItems = MediaService.getMediaItemsInRepository(repository.getId());
-      foreach (MediaItem mediaItem ; mediaItems) {
-        MediaService.markMediaItemAsDirty(mediaItem.getId());
-      }
+    public static int getNumberOfRepositories(MediaFileType mediaType, AccessGroup accessGroup)
+    {
+        return DAOFactory.getRepositoryDAO().getRepositoriesCount(mediaType, accessGroup);
     }
 
-    DAOFactory.getRepositoryDAO().update(repository);
+    public static void markRepositoryAsScanned(Long repoId) {
+        DAOFactory.getRepositoryDAO().markRepositoryAsScanned(repoId);
+    }
 
-    return mediaItemsRemoved;
-  }
+    private static bool removeRepositories(List!(Repository) repositories)
+    {
+        log.debug_(String.format("Found %s repositories to be removed", cast(Object[])[ Integer.valueOf(repositories.size()) ]));
+        bool mediaItemsRemoved = false;
+        foreach (Repository repository ; repositories) {
+            log.debug_(String.format("Removing all items in repository %s", cast(Object[])[ repository.getId() ]));
+
+            List!(MediaItem) mediaItems = MediaService.getMediaItemsInRepository(repository.getId());
+            foreach (MediaItem mediaItem ; mediaItems) {
+                if (mediaItem.getFileType() == MediaFileType.AUDIO)
+                    AudioService.removeMusicTrackFromLibrary(mediaItem.getId());
+                else if (mediaItem.getFileType() == MediaFileType.VIDEO)
+                    VideoService.removeVideoFromLibrary(mediaItem.getId());
+                else if (mediaItem.getFileType() == MediaFileType.IMAGE) {
+                    ImageService.removeImageFromLibrary(mediaItem.getId());
+                }
+                mediaItemsRemoved = true;
+            }
+
+            List!(Playlist) playlists = PlaylistService.getPlaylistsInRepository(repository.getId());
+            foreach (Playlist playlist ; playlists) {
+                PlaylistService.detetePlaylistAndItems(playlist.getId());
+            }
+
+            DAOFactory.getRepositoryDAO().delete_(repository.getId());
+        }
+        return mediaItemsRemoved;
+    }
+
+    private static bool updateRepository(Repository repository)
+    {
+        bool mediaItemsRemoved = false;
+        Repository existingRepository = getRepository(repository.getId());
+
+        Set!(MediaFileType) existingSupportedFileTypes = existingRepository.getSupportedFileTypes();
+        existingSupportedFileTypes.removeAll(repository.getSupportedFileTypes());
+
+        foreach (MediaFileType unsupportedFileType ; existingSupportedFileTypes) {
+            List!(MediaItem) mediaItems = MediaService.getMediaItemsInRepository(repository.getId(), unsupportedFileType);
+            foreach (MediaItem mediaItem ; mediaItems) {
+                if (mediaItem.getFileType() == MediaFileType.AUDIO)
+                    AudioService.removeMusicTrackFromLibrary(mediaItem.getId());
+                else if (mediaItem.getFileType() == MediaFileType.VIDEO)
+                    VideoService.removeVideoFromLibrary(mediaItem.getId());
+                else if (mediaItem.getFileType() == MediaFileType.IMAGE) {
+                    ImageService.removeImageFromLibrary(mediaItem.getId());
+                }
+                mediaItemsRemoved = true;
+            }
+
+        }
+
+        List!(AccessGroup) existingAccessGroups = AccessGroupService.getAccessGroupsForRepository(repository.getId());
+        if ((existingAccessGroups.size() != repository.getAccessGroupIds().size()) || (!existingAccessGroups.containsAll(repository.getAccessGroupIds()))) {
+            mediaItemsRemoved = true;
+        }
+
+        if (existingRepository.isSupportsOnlineMetadata() != repository.isSupportsOnlineMetadata()) {
+            List!(MediaItem) mediaItems = MediaService.getMediaItemsInRepository(repository.getId());
+            foreach (MediaItem mediaItem ; mediaItems) {
+                MediaService.markMediaItemAsDirty(mediaItem.getId());
+            }
+        }
+
+        DAOFactory.getRepositoryDAO().update(repository);
+
+        return mediaItemsRemoved;
+    }
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
- * Qualified Name:     org.serviio.library.local.service.RepositoryService
- * JD-Core Version:    0.6.2
- */
+* Qualified Name:     org.serviio.library.local.service.RepositoryService
+* JD-Core Version:    0.6.2
+*/

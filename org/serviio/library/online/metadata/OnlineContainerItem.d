@@ -5,68 +5,69 @@ import org.serviio.library.entities.MediaItem;
 import org.serviio.library.local.metadata.ImageDescriptor;
 import org.serviio.library.online.AbstractUrlExtractor;
 import org.serviio.library.online.OnlineItemId;
+import org.serviio.library.online.metadata.OnlineItem;
 
-public abstract class OnlineContainerItem(C : OnlineResourceContainer!(Object, Object)) : OnlineItem
+public abstract class OnlineContainerItem(C /*: OnlineResourceContainer!(Object, Object)*/) : OnlineItem
 {
-  protected int order;
-  protected C parentContainer;
-  protected Date expiresOn;
-  protected bool expiresImmediately = false;
-  protected AbstractUrlExtractor plugin;
+    protected int order;
+    protected C parentContainer;
+    protected Date expiresOn;
+    protected bool expiresImmediately = false;
+    protected AbstractUrlExtractor plugin;
 
-  protected OnlineItemId generateId()
-  {
-    return new OnlineItemId(parentContainer.getOnlineRepositoryId().longValue(), order);
-  }
-
-  protected void setPluginOnMediaItem(MediaItem mediaItem) {
-    if (expiresImmediately) {
-      mediaItem.setOnlineResourcePlugin(plugin);
-      mediaItem.setOnlineItem(this);
+    protected OnlineItemId generateId()
+    {
+        return new OnlineItemId(parentContainer.getOnlineRepositoryId().longValue(), order);
     }
-  }
 
-  public MediaItem toMediaItem()
-  {
-    MediaItem item = super.toMediaItem();
-    if (item !is null) {
-      setPluginOnMediaItem(item);
+    protected void setPluginOnMediaItem(MediaItem mediaItem) {
+        if (expiresImmediately) {
+            mediaItem.setOnlineResourcePlugin(plugin);
+            mediaItem.setOnlineItem(this);
+        }
     }
-    return item;
-  }
 
-  public ImageDescriptor getThumbnail()
-  {
-    ImageDescriptor thumbnail = super.getThumbnail();
-    return thumbnail !is null ? thumbnail : parentContainer.getThumbnail();
-  }
+    public MediaItem toMediaItem()
+    {
+        MediaItem item = super.toMediaItem();
+        if (item !is null) {
+            setPluginOnMediaItem(item);
+        }
+        return item;
+    }
 
-  public Date getExpiresOn() {
-    return expiresOn;
-  }
+    public ImageDescriptor getThumbnail()
+    {
+        ImageDescriptor thumbnail = super.getThumbnail();
+        return thumbnail !is null ? thumbnail : parentContainer.getThumbnail();
+    }
 
-  public void setExpiresOn(Date expiresIn) {
-    expiresOn = expiresIn;
-  }
+    public Date getExpiresOn() {
+        return expiresOn;
+    }
 
-  public bool isExpiresImmediately() {
-    return expiresImmediately;
-  }
+    public void setExpiresOn(Date expiresIn) {
+        expiresOn = expiresIn;
+    }
 
-  public void setExpiresImmediately(bool expiresImmediately) {
-    this.expiresImmediately = expiresImmediately;
-  }
+    public bool isExpiresImmediately() {
+        return expiresImmediately;
+    }
 
-  public AbstractUrlExtractor getPlugin() {
-    return plugin;
-  }
+    public void setExpiresImmediately(bool expiresImmediately) {
+        this.expiresImmediately = expiresImmediately;
+    }
 
-  public void setPlugin(AbstractUrlExtractor plugin) {
-    this.plugin = plugin;
-  }
+    public AbstractUrlExtractor getPlugin() {
+        return plugin;
+    }
+
+    public void setPlugin(AbstractUrlExtractor plugin) {
+        this.plugin = plugin;
+    }
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
- * Qualified Name:     org.serviio.library.online.metadata.OnlineContainerItem
- * JD-Core Version:    0.6.2
- */
+* Qualified Name:     org.serviio.library.online.metadata.OnlineContainerItem
+* JD-Core Version:    0.6.2
+*/

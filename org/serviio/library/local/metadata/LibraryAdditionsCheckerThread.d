@@ -25,165 +25,170 @@ import org.slf4j.LoggerFactory;
 
 public class LibraryAdditionsCheckerThread : AbstractLibraryCheckerThread
 {
-  private static final Logger log = LoggerFactory.getLogger!(LibraryAdditionsCheckerThread)();
+    private static immutable Logger log;
 
-  public void run()
-  {
-    log.info("Started looking for newly added files");
-    workerRunning = true;
-    while (workerRunning) {
-      searchingForFiles = true;
-
-      notifyListenersResetForAdding();
-
-      List!(Repository) repositories = RepositoryService.getAllRepositories();
-
-      foreach (Repository repository ; repositories) {
-        try
-        {
-          if ((workerRunning) && 
-            (LibraryManager.getInstance().isRepositoryUpdatable(repository))) {
-            searchForNewFiles(repository.getFolder(), repository);
-            RepositoryService.markRepositoryAsScanned(repository.getId());
-          }
-        }
-        catch (Exception e) {
-          log.warn("An error occured while scanning for item to be added, will continue", e);
-        }
-      }
-
-      searchingForFiles = false;
-
-      if (Configuration.isAutomaticLibraryRefresh())
-        try {
-          if (workerRunning) {
-            isSleeping = true;
-            Thread.sleep(Configuration.getAutomaticLibraryRefreshInterval().intValue() * 60 * 1000);
-            isSleeping = false;
-          }
-        } catch (InterruptedException e) {
-          isSleeping = false;
-        }
-      else {
-        workerRunning = false;
-      }
+    static this()
+    {
+        log = LoggerFactory.getLogger!(LibraryAdditionsCheckerThread)();
     }
-    log.info("Finished looking for newly added files");
-  }
 
-  protected void searchForNewFiles(File folder, Repository repository)
-  {
-    bool searchHidden = Configuration.isSearchHiddenFiles();
+    override public void run()
+    {
+        log.info("Started looking for newly added files");
+        workerRunning = true;
+        while (workerRunning) {
+            searchingForFiles = true;
 
-    if (workerRunning)
-      if ((folder.isDirectory()) && (folder.canRead())) {
-        log.debug_(String.format("Looking for files to share in folder: %s", cast(Object[])[ folder.getAbsolutePath() ]));
-        File[] files = folder.listFiles();
-        int i = 0;
-        while ((workerRunning) && (files !is null) && (i < files.length)) {
-          File file = files[(i++)];
-          if (file.isDirectory()) {
-            if (fileIsVisible(searchHidden, file))
-            {
-              searchForNewFiles(file, repository);
-            }
-          }
-          else
-            try {
-              if (fileIsVisible(searchHidden, file)) {
-                String fileExtension = FileUtils.getFileExtension(file);
-                MediaFileType fileType = MediaFileType.findMediaFileTypeByExtension(fileExtension);
-                if ((fileType !is null) && (repository.getSupportedFileTypes().contains(fileType)))
+            notifyListenersResetForAdding();
+
+            List!(Repository) repositories = RepositoryService.getAllRepositories();
+
+            foreach (Repository repository ; repositories) {
+                try
                 {
-                  addNewMediaFile(repository, file, fileType);
-                } else if (fileType is null)
-                {
-                  if (PlaylistType.playlistTypeExtensionSupported(fileExtension))
-                    addNewPlaylistFile(repository, file);
+                    if ((workerRunning) && 
+                        (LibraryManager.getInstance().isRepositoryUpdatable(repository))) {
+                            searchForNewFiles(repository.getFolder(), repository);
+                            RepositoryService.markRepositoryAsScanned(repository.getId());
+                        }
                 }
-              }
+                catch (Exception e) {
+                    log.warn("An error occured while scanning for item to be added, will continue", e);
+                }
             }
-            catch (InvalidMetadataException ime) {
-              log.warn(String.format("Cannot add file %s because of invalid metadata. Message: %s", cast(Object[])[ file.getName(), ime.getMessage() ]));
-            } catch (CannotParsePlaylistException cppe) {
-              log.warn(String.format("Cannot add playlist file %s. Message: %s", cast(Object[])[ file.getName(), cppe.getMessage() ]), cppe);
-            } catch (Exception e) {
-              log.warn(String.format("Cannot add file %s because of an unexpected error. Message: %s", cast(Object[])[ file.getName(), e.getMessage() ]), e);
+
+            searchingForFiles = false;
+
+            if (Configuration.isAutomaticLibraryRefresh())
+                try {
+                    if (workerRunning) {
+                        isSleeping = true;
+                        Thread.sleep(Configuration.getAutomaticLibraryRefreshInterval().intValue() * 60 * 1000);
+                        isSleeping = false;
+                    }
+                } catch (InterruptedException e) {
+                    isSleeping = false;
+                }
+            else {
+                workerRunning = false;
             }
         }
-      }
-      else {
-        log.warn(String.format("Folder '%s' is either not an existing directory or cannot be read due to access rights", cast(Object[])[ folder.getAbsolutePath() ]));
-      }
-  }
+        log.info("Finished looking for newly added files");
+    }
 
-  private void addNewMediaFile(Repository repository, File file, MediaFileType fileType)
-  {
-    log.debug_(String.format("Found file '%s', checking if it's already in the Library", cast(Object[])[ file.getName() ]));
+    protected void searchForNewFiles(File folder, Repository repository)
+    {
+        bool searchHidden = Configuration.isSearchHiddenFiles();
 
-    bool mediaPresent = MediaService.isMediaPresentInLibrary(file);
+        if (workerRunning)
+            if ((folder.isDirectory()) && (folder.canRead())) {
+                log.debug_(String.format("Looking for files to share in folder: %s", cast(Object[])[ folder.getAbsolutePath() ]));
+                File[] files = folder.listFiles();
+                int i = 0;
+                while ((workerRunning) && (files !is null) && (i < files.length)) {
+                    File file = files[(i++)];
+                    if (file.isDirectory()) {
+                        if (fileIsVisible(searchHidden, file))
+                        {
+                            searchForNewFiles(file, repository);
+                        }
+                    }
+                    else
+                        try {
+                            if (fileIsVisible(searchHidden, file)) {
+                                String fileExtension = FileUtils.getFileExtension(file);
+                                MediaFileType fileType = MediaFileType.findMediaFileTypeByExtension(fileExtension);
+                                if ((fileType !is null) && (repository.getSupportedFileTypes().contains(fileType)))
+                                {
+                                    addNewMediaFile(repository, file, fileType);
+                                } else if (fileType is null)
+                                {
+                                    if (PlaylistType.playlistTypeExtensionSupported(fileExtension))
+                                        addNewPlaylistFile(repository, file);
+                                }
+                            }
+                        }
+                    catch (InvalidMetadataException ime) {
+                        log.warn(String.format("Cannot add file %s because of invalid metadata. Message: %s", cast(Object[])[ file.getName(), ime.getMessage() ]));
+                    } catch (CannotParsePlaylistException cppe) {
+                        log.warn(String.format("Cannot add playlist file %s. Message: %s", cast(Object[])[ file.getName(), cppe.getMessage() ]), cppe);
+                    } catch (Exception e) {
+                        log.warn(String.format("Cannot add file %s because of an unexpected error. Message: %s", cast(Object[])[ file.getName(), e.getMessage() ]), e);
+                    }
+                }
+            }
+            else {
+                log.warn(String.format("Folder '%s' is either not an existing directory or cannot be read due to access rights", cast(Object[])[ folder.getAbsolutePath() ]));
+            }
+    }
 
-    if ((!mediaPresent) && (file.exists()) && (workerRunning))
-      if (file.canRead()) {
-        log.debug_("File not in Library, will add it");
+    private void addNewMediaFile(Repository repository, File file, MediaFileType fileType)
+    {
+        log.debug_(String.format("Found file '%s', checking if it's already in the Library", cast(Object[])[ file.getName() ]));
 
-        LocalItemMetadata mergedMetadata = LibraryManager.getInstance().extractMetadata(file, fileType, repository);
-        if ((mergedMetadata !is null) && (workerRunning))
-        {
-          mergedMetadata.validateMetadata();
-          bool newAdded = false;
+        bool mediaPresent = MediaService.isMediaPresentInLibrary(file);
 
-          if ((fileType == MediaFileType.AUDIO) && (( cast(AudioMetadata)mergedMetadata !is null ))) {
-            AudioService.addMusicTrackToLibrary(cast(AudioMetadata)mergedMetadata, repository);
-            newAdded = true;
-          } else if ((fileType == MediaFileType.VIDEO) && (( cast(VideoMetadata)mergedMetadata !is null ))) {
-            VideoService.addVideoToLibrary(cast(VideoMetadata)mergedMetadata, repository);
-            newAdded = true;
-          } else if ((fileType == MediaFileType.IMAGE) && (( cast(ImageMetadata)mergedMetadata !is null ))) {
-            ImageService.addImageToLibrary(cast(ImageMetadata)mergedMetadata, repository);
-            newAdded = true;
-          }
-          else {
-            log.error(String.format("Error during metadata extraction for file %s. Metadata mismatch.", new Object[0]), file.getName());
-          }
-          if (newAdded) {
-            log.info(String.format("Added file '%s' (title: %s) to Library", cast(Object[])[ file.getName(), mergedMetadata.getTitle() ]));
-            notifyListenersAdd(file.getName());
-          }
-        }
-      } else {
-        log.warn(String.format("File '%s' cannot be read, probably due to access rights", cast(Object[])[ file.getAbsolutePath() ]));
-      }
-  }
+        if ((!mediaPresent) && (file.exists()) && (workerRunning))
+            if (file.canRead()) {
+                log.debug_("File not in Library, will add it");
 
-  private void addNewPlaylistFile(Repository repository, File file)
-  {
-    log.debug_(String.format("Found playlist file '%s', checking if it's already in the Library", cast(Object[])[ file.getName() ]));
-    bool playlistPresent = PlaylistService.isPlaylistInLibrary(file);
+                LocalItemMetadata mergedMetadata = LibraryManager.getInstance().extractMetadata(file, fileType, repository);
+                if ((mergedMetadata !is null) && (workerRunning))
+                {
+                    mergedMetadata.validateMetadata();
+                    bool newAdded = false;
 
-    if ((!playlistPresent) && (file.exists()) && (workerRunning))
-      if (file.canRead()) {
-        log.debug_("Playlist file not in Library, will add it");
+                    if ((fileType == MediaFileType.AUDIO) && (( cast(AudioMetadata)mergedMetadata !is null ))) {
+                        AudioService.addMusicTrackToLibrary(cast(AudioMetadata)mergedMetadata, repository);
+                        newAdded = true;
+                    } else if ((fileType == MediaFileType.VIDEO) && (( cast(VideoMetadata)mergedMetadata !is null ))) {
+                        VideoService.addVideoToLibrary(cast(VideoMetadata)mergedMetadata, repository);
+                        newAdded = true;
+                    } else if ((fileType == MediaFileType.IMAGE) && (( cast(ImageMetadata)mergedMetadata !is null ))) {
+                        ImageService.addImageToLibrary(cast(ImageMetadata)mergedMetadata, repository);
+                        newAdded = true;
+                    }
+                    else {
+                        log.error(String.format("Error during metadata extraction for file %s. Metadata mismatch.", new Object[0]), file.getName());
+                    }
+                    if (newAdded) {
+                        log.info(String.format("Added file '%s' (title: %s) to Library", cast(Object[])[ file.getName(), mergedMetadata.getTitle() ]));
+                        notifyListenersAdd(file.getName());
+                    }
+                }
+            } else {
+                log.warn(String.format("File '%s' cannot be read, probably due to access rights", cast(Object[])[ file.getAbsolutePath() ]));
+            }
+    }
 
-        String playlistFilePath = FileUtils.getProperFilePath(file);
-        ParsedPlaylist playlist = PlaylistParser.getInstance().parse(playlistFilePath);
-        if (playlist !is null) {
-          PlaylistService.addPlaylistToLibrary(playlist, repository, playlistFilePath, null);
-          log.info(String.format("Added playlist '%s' (title: %s) to Library", cast(Object[])[ file.getName(), playlist.getTitle() ]));
-          notifyListenersAdd(file.getName());
-        }
-      } else {
-        log.warn(String.format("Playlist file '%s' cannot be read, probably due to access rights", cast(Object[])[ file.getAbsolutePath() ]));
-      }
-  }
+    private void addNewPlaylistFile(Repository repository, File file)
+    {
+        log.debug_(String.format("Found playlist file '%s', checking if it's already in the Library", cast(Object[])[ file.getName() ]));
+        bool playlistPresent = PlaylistService.isPlaylistInLibrary(file);
 
-  private bool fileIsVisible(bool searchHidden, File file)
-  {
-    return (searchHidden) || ((!searchHidden) && (!file.isHidden()));
-  }
+        if ((!playlistPresent) && (file.exists()) && (workerRunning))
+            if (file.canRead()) {
+                log.debug_("Playlist file not in Library, will add it");
+
+                String playlistFilePath = FileUtils.getProperFilePath(file);
+                ParsedPlaylist playlist = PlaylistParser.getInstance().parse(playlistFilePath);
+                if (playlist !is null) {
+                    PlaylistService.addPlaylistToLibrary(playlist, repository, playlistFilePath, null);
+                    log.info(String.format("Added playlist '%s' (title: %s) to Library", cast(Object[])[ file.getName(), playlist.getTitle() ]));
+                    notifyListenersAdd(file.getName());
+                }
+            } else {
+                log.warn(String.format("Playlist file '%s' cannot be read, probably due to access rights", cast(Object[])[ file.getAbsolutePath() ]));
+            }
+    }
+
+    private bool fileIsVisible(bool searchHidden, File file)
+    {
+        return (searchHidden) || ((!searchHidden) && (!file.isHidden()));
+    }
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
- * Qualified Name:     org.serviio.library.local.metadata.LibraryAdditionsCheckerThread
- * JD-Core Version:    0.6.2
- */
+* Qualified Name:     org.serviio.library.local.metadata.LibraryAdditionsCheckerThread
+* JD-Core Version:    0.6.2
+*/

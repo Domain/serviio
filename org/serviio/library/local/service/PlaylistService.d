@@ -1,5 +1,8 @@
 module org.serviio.library.local.service.PlaylistService;
 
+import java.lang.Long;
+import java.lang.String;
+import java.lang.Integer;
 import java.io.File;
 import java.util.Date;
 import java.util.HashSet;
@@ -14,77 +17,81 @@ import org.serviio.library.service.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class PlaylistService
-  : Service
+public class PlaylistService : Service
 {
-  private static final Logger log = LoggerFactory.getLogger!(PlaylistService)();
+    private static immutable Logger log;
 
-  public static Playlist getPlaylist(Long playlistId)
-  {
-    return cast(Playlist)DAOFactory.getPlaylistDAO().read(playlistId);
-  }
+    static this()
+    {
+        log = LoggerFactory.getLogger!(PlaylistService)();
+    }
 
-  public static List!(Playlist) getAllPlaylists()
-  {
-    return DAOFactory.getPlaylistDAO().findAll();
-  }
+    public static Playlist getPlaylist(Long playlistId)
+    {
+        return cast(Playlist)DAOFactory.getPlaylistDAO().read(playlistId);
+    }
 
-  public static bool isPlaylistInLibrary(File playlistFile)
-  {
-    return DAOFactory.getPlaylistDAO().isPlaylistPresent(playlistFile);
-  }
+    public static List!(Playlist) getAllPlaylists()
+    {
+        return DAOFactory.getPlaylistDAO().findAll();
+    }
 
-  public static void addPlaylistToLibrary(ParsedPlaylist parsedPlaylist, Repository repository, String filePath, Date lastModified)
-  {
-    log.debug_(String.format("Adding playlist into database: %s", cast(Object[])[ parsedPlaylist.getTitle() ]));
+    public static bool isPlaylistInLibrary(File playlistFile)
+    {
+        return DAOFactory.getPlaylistDAO().isPlaylistPresent(playlistFile);
+    }
 
-    Playlist playlist = new Playlist(parsedPlaylist.getTitle(), new HashSet!(MediaFileType)(), filePath, lastModified, repository.getId());
-    playlist.setAllItemsFound(false);
+    public static void addPlaylistToLibrary(ParsedPlaylist parsedPlaylist, Repository repository, String filePath, Date lastModified)
+    {
+        log.debug_(String.format("Adding playlist into database: %s", cast(Object[])[ parsedPlaylist.getTitle() ]));
 
-    DAOFactory.getPlaylistDAO().create(playlist);
-  }
+        Playlist playlist = new Playlist(parsedPlaylist.getTitle(), new HashSet!(MediaFileType)(), filePath, lastModified, repository.getId());
+        playlist.setAllItemsFound(false);
 
-  public static void detetePlaylistAndItems(Long playlistId)
-  {
-    DAOFactory.getPlaylistDAO().delete_(playlistId);
-  }
+        DAOFactory.getPlaylistDAO().create(playlist);
+    }
 
-  public static List!(Playlist) getPlaylistsInRepository(Long repositoryId) {
-    return DAOFactory.getPlaylistDAO().getPlaylistsInRepository(repositoryId);
-  }
+    public static void detetePlaylistAndItems(Long playlistId)
+    {
+        DAOFactory.getPlaylistDAO().delete_(playlistId);
+    }
 
-  public static void removeMediaItemFromPlaylists(Long mediaItemId) {
-    DAOFactory.getPlaylistDAO().removeMediaItemFromPlaylists(mediaItemId);
-  }
+    public static List!(Playlist) getPlaylistsInRepository(Long repositoryId) {
+        return DAOFactory.getPlaylistDAO().getPlaylistsInRepository(repositoryId);
+    }
 
-  public static void updatePlaylist(Playlist transientObject) {
-    DAOFactory.getPlaylistDAO().update(transientObject);
-  }
+    public static void removeMediaItemFromPlaylists(Long mediaItemId) {
+        DAOFactory.getPlaylistDAO().removeMediaItemFromPlaylists(mediaItemId);
+    }
 
-  public static void removePlaylistItems(Long playlistId) {
-    DAOFactory.getPlaylistDAO().removePlaylistItems(playlistId);
-  }
+    public static void updatePlaylist(Playlist transientObject) {
+        DAOFactory.getPlaylistDAO().update(transientObject);
+    }
 
-  public static void addPlaylistItem(Integer order, Long mediaItemId, Long playlistId) {
-    DAOFactory.getPlaylistDAO().addPlaylistItem(order, mediaItemId, playlistId);
-  }
+    public static void removePlaylistItems(Long playlistId) {
+        DAOFactory.getPlaylistDAO().removePlaylistItems(playlistId);
+    }
 
-  public static List!(Integer) getPlaylistItemIndices(Long playlistId) {
-    return DAOFactory.getPlaylistDAO().getPlaylistItemIndices(playlistId);
-  }
+    public static void addPlaylistItem(Integer order, Long mediaItemId, Long playlistId) {
+        DAOFactory.getPlaylistDAO().addPlaylistItem(order, mediaItemId, playlistId);
+    }
 
-  public static List!(Playlist) getListOfPlaylistsWithMedia(MediaFileType mediaType, AccessGroup accessGroup, int startingIndex, int requestedCount)
-  {
-    return DAOFactory.getPlaylistDAO().retrievePlaylistsWithMedia(mediaType, accessGroup, startingIndex, requestedCount);
-  }
+    public static List!(Integer) getPlaylistItemIndices(Long playlistId) {
+        return DAOFactory.getPlaylistDAO().getPlaylistItemIndices(playlistId);
+    }
 
-  public static int getNumberOfPlaylistsWithMedia(MediaFileType mediaType, AccessGroup accessGroup)
-  {
-    return DAOFactory.getPlaylistDAO().getPlaylistsWithMediaCount(mediaType, accessGroup);
-  }
+    public static List!(Playlist) getListOfPlaylistsWithMedia(MediaFileType mediaType, AccessGroup accessGroup, int startingIndex, int requestedCount)
+    {
+        return DAOFactory.getPlaylistDAO().retrievePlaylistsWithMedia(mediaType, accessGroup, startingIndex, requestedCount);
+    }
+
+    public static int getNumberOfPlaylistsWithMedia(MediaFileType mediaType, AccessGroup accessGroup)
+    {
+        return DAOFactory.getPlaylistDAO().getPlaylistsWithMediaCount(mediaType, accessGroup);
+    }
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
- * Qualified Name:     org.serviio.library.local.service.PlaylistService
- * JD-Core Version:    0.6.2
- */
+* Qualified Name:     org.serviio.library.local.service.PlaylistService
+* JD-Core Version:    0.6.2
+*/
