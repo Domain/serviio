@@ -3,12 +3,16 @@ module org.serviio.library.online.WebResourceUrlExtractor;
 import java.net.URL;
 import org.serviio.config.Configuration;
 import org.serviio.library.online.AbstractUrlExtractor;
+import org.serviio.library.online.WebResourceContainer;
+import org.serviio.library.online.ContentURLContainer;
+import org.serviio.library.online.WebResourceItem;
+import org.serviio.library.online.PreferredQuality;
 
 public abstract class WebResourceUrlExtractor : AbstractUrlExtractor
 {
     public final WebResourceContainer parseWebResource(final URL resourceUrl, final int maxItemsToRetrieve)
     {
-        log("Starting parsing resource: " + resourceUrl);
+        log("Starting parsing resource: " ~ resourceUrl);
         return cast(WebResourceContainer)(new class() PluginExecutionProcessor!(Object)
                                           {
                                               protected WebResourceContainer executePluginMethod() {
@@ -18,9 +22,9 @@ public abstract class WebResourceUrlExtractor : AbstractUrlExtractor
             .execute(30000);
     }
 
-    public final ContentURLContainer extractItemUrl(final WebResourceItem item)
+    public final ContentURLContainer extractItemUrl(const WebResourceItem item)
     {
-        log("Starting extraction of url for item: " + item.getTitle());
+        log("Starting extraction of url for item: " ~ item.getTitle());
 
         ContentURLContainer result = cast(ContentURLContainer)(new class() PluginExecutionProcessor!(Object)
                                                                {

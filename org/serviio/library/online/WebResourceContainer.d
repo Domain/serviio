@@ -1,48 +1,55 @@
 module org.serviio.library.online.WebResourceContainer;
 
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
+import org.serviio.library.online.WebResourceItem;
 
 public class WebResourceContainer
 {
-  private String title;
-  private String thumbnailUrl;
-  private List!(WebResourceItem) items = new ArrayList!(WebResourceItem)();
+	private String title;
+	private String thumbnailUrl;
+	private List!(WebResourceItem) items;
 
-  public String getTitle() {
-    return title;
-  }
+	public this()
+	{
+		items = new ArrayList!(WebResourceItem)();
+	}
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+	public String getTitle() {
+		return title;
+	}
 
-  public List!(WebResourceItem) getItems() {
-    return items;
-  }
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-  public void setItems(List!(WebResourceItem) items) {
-    this.items = items;
-  }
+	public List!(WebResourceItem) getItems() {
+		return items;
+	}
 
-  public String getThumbnailUrl() {
-    return thumbnailUrl;
-  }
+	public void setItems(List!(WebResourceItem) items) {
+		this.items = items;
+	}
 
-  public void setThumbnailUrl(String thumbnailUrl) {
-    this.thumbnailUrl = thumbnailUrl;
-  }
+	public String getThumbnailUrl() {
+		return thumbnailUrl;
+	}
 
-  public String toString()
-  {
-    StringBuilder builder = new StringBuilder();
-    builder.append("WebResourceContainer [title=").append(title).append(", thumbnailUrl=").append(thumbnailUrl).append(", items=").append(items).append("]");
+	public void setThumbnailUrl(String thumbnailUrl) {
+		this.thumbnailUrl = thumbnailUrl;
+	}
 
-    return builder.toString();
-  }
+	override public String toString()
+	{
+		StringBuilder builder = new StringBuilder();
+		builder.append("WebResourceContainer [title=").append(title).append(", thumbnailUrl=").append(thumbnailUrl).append(", items=").append(items).append("]");
+
+		return builder.toString();
+	}
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
- * Qualified Name:     org.serviio.library.online.WebResourceContainer
- * JD-Core Version:    0.6.2
- */
+* Qualified Name:     org.serviio.library.online.WebResourceContainer
+* JD-Core Version:    0.6.2
+*/

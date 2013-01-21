@@ -1,6 +1,7 @@
 module org.serviio.library.online.metadata.OnlineItem;
 
 import java.lang.String;
+import java.lang.Long;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Date;
@@ -17,6 +18,7 @@ import org.serviio.library.online.OnlineItemId;
 import org.serviio.util.FileUtils;
 import org.serviio.util.ObjectValidator;
 import org.serviio.util.StringUtils;
+import org.serviio.library.online.metadata.TechnicalMetadata;
 
 public abstract class OnlineItem : ItemMetadata
 {
@@ -31,7 +33,7 @@ public abstract class OnlineItem : ItemMetadata
     private bool live = false;
     private String userAgent;
 
-    public void validateMetadata()
+    override public void validateMetadata()
     {
         super.validateMetadata();
 
@@ -43,7 +45,7 @@ public abstract class OnlineItem : ItemMetadata
             throw new InvalidMetadataException("Unknown feed entry type.");
     }
 
-    public void fillInUnknownEntries()
+    override public void fillInUnknownEntries()
     {
         if (ObjectValidator.isEmpty(author)) {
             setAuthor("Unknown");

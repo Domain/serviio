@@ -15,7 +15,7 @@ public abstract class OnlineContainerItem(C /*: OnlineResourceContainer!(Object,
     protected bool expiresImmediately = false;
     protected AbstractUrlExtractor plugin;
 
-    protected OnlineItemId generateId()
+    override protected OnlineItemId generateId()
     {
         return new OnlineItemId(parentContainer.getOnlineRepositoryId().longValue(), order);
     }
@@ -27,7 +27,7 @@ public abstract class OnlineContainerItem(C /*: OnlineResourceContainer!(Object,
         }
     }
 
-    public MediaItem toMediaItem()
+    override public MediaItem toMediaItem()
     {
         MediaItem item = super.toMediaItem();
         if (item !is null) {
@@ -36,7 +36,7 @@ public abstract class OnlineContainerItem(C /*: OnlineResourceContainer!(Object,
         return item;
     }
 
-    public ImageDescriptor getThumbnail()
+    override public ImageDescriptor getThumbnail()
     {
         ImageDescriptor thumbnail = super.getThumbnail();
         return thumbnail !is null ? thumbnail : parentContainer.getThumbnail();
