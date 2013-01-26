@@ -1,10 +1,12 @@
 module org.serviio.restlet.ValidationException;
 
+import java.lang.String;
 import java.util.List;
+import org.serviio.restlet.AbstractRestfulException;
 
 public class ValidationException : AbstractRestfulException
 {
-  private static final long serialVersionUID = -926366811526462237L;
+  private static const long serialVersionUID = -926366811526462237L;
 
   public this(int errorCode)
   {

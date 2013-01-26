@@ -1,76 +1,78 @@
 module org.serviio.licensing.LicensingManager;
 
+import java.lang.String;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import org.serviio.licensing.ServiioLicense;
+import org.serviio.licensing.LicenseValidator;
 
 public class LicensingManager
 {
-  private static final int LICENSE_UPDATER_INTERVAL_SEC = 3600;
-  private static LicensingManager instance;
-  private ServiioLicense license;
-  private LicenseValidator validator = new LicenseValidator();
+    private static const int LICENSE_UPDATER_INTERVAL_SEC = 3600;
+    private static LicensingManager instance;
+    private ServiioLicense license;
+    private LicenseValidator validator;
 
-  private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    private /*final*/ ScheduledExecutorService scheduler;
 
-  private this()
-  {
-    updateLicense();
-    startCheckingThread();
-  }
-
-  public static LicensingManager getInstance()
-  {
-    if (instance is null) {
-      instance = new LicensingManager();
+    private this()
+    {
+        validator = new LicenseValidator();
+        scheduler = Executors.newScheduledThreadPool(1);
+        updateLicense();
+        startCheckingThread();
     }
-    return instance;
-  }
 
-  public ServiioLicense validateLicense(String licenseBody)
-  {
-    ServiioLicense license = validator.validateProvidedLicense(licenseBody);
-    return license;
-  }
+    public static LicensingManager getInstance()
+    {
+        if (instance is null) {
+            instance = new LicensingManager();
+        }
+        return instance;
+    }
 
-  public synchronized void updateLicense() {
-    license = validator.getCurrentLicense();
-  }
+    public ServiioLicense validateLicense(String licenseBody)
+    {
+        ServiioLicense license = validator.validateProvidedLicense(licenseBody);
+        return license;
+    }
 
-  public bool isProVersion() {
-    return license.getEdition() == ServiioEdition.PRO;
-  }
+    public synchronized void updateLicense() {
+        license = validator.getCurrentLicense();
+    }
 
-  public ServiioLicense getLicense() {
-    return license;
-  }
+    public bool isProVersion() {
+        return license.getEdition() == ServiioEdition.PRO;
+    }
 
-  private void startCheckingThread() {
-    Runnable checker = new class() Runnable {
-      public void run() { updateLicense(); }
+    public ServiioLicense getLicense() {
+        return license;
+    }
 
-    };
-    scheduler.scheduleAtFixedRate(checker, LICENSE_UPDATER_INTERVAL_SEC, LICENSE_UPDATER_INTERVAL_SEC, TimeUnit.SECONDS);
-  }
+    private void startCheckingThread() {
+        Runnable checker = new class() Runnable {
+            public void run() { updateLicense(); }
 
-  public static enum ServiioLicenseType
-  {
-    BETA, 
+        };
+        scheduler.scheduleAtFixedRate(checker, LICENSE_UPDATER_INTERVAL_SEC, LICENSE_UPDATER_INTERVAL_SEC, TimeUnit.SECONDS);
+    }
 
-    UNLIMITED, 
+    public static enum ServiioLicenseType
+    {
+        BETA, 
+        UNLIMITED, 
+        EVALUATION, 
+        NORMAL
+    }
 
-    EVALUATION, 
-
-    NORMAL
-  }
-
-  public static enum ServiioEdition
-  {
-    FREE, PRO
-  }
+    public static enum ServiioEdition
+    {
+        FREE, PRO
+    }
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
- * Qualified Name:     org.serviio.licensing.LicensingManager
- * JD-Core Version:    0.6.2
- */
+* Qualified Name:     org.serviio.licensing.LicensingManager
+* JD-Core Version:    0.6.2
+*/

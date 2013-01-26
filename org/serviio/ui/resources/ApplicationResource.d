@@ -5,8 +5,8 @@ import org.serviio.ui.representation.ApplicationRepresentation;
 
 public abstract interface ApplicationResource
 {
-  @Get("xml|json")
-  public abstract ApplicationRepresentation load();
+    //@Get("xml|json")
+    public abstract ApplicationRepresentation load();
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar

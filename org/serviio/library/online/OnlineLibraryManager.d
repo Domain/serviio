@@ -1,5 +1,6 @@
 module org.serviio.library.online.OnlineLibraryManager;
 
+import java.lang.String;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Calendar;
@@ -28,6 +29,10 @@ import org.serviio.library.online.metadata.SingleURLItem;
 import org.serviio.library.online.metadata.TechnicalMetadata;
 import org.serviio.util.DateUtils;
 import org.serviio.util.HttpClient;
+import org.serviio.library.online.OnlineCacheDecorator;
+import org.serviio.library.online.SingleURLParser;
+import org.serviio.library.online.WebResourceParser;
+import org.serviio.library.online.AbstractUrlExtractor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

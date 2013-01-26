@@ -6,6 +6,7 @@ import com.sun.syndication.feed.synd.SyndImage;
 import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedInput;
 import java.lang.String;
+import java.lang.Long;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,6 +29,7 @@ import org.serviio.util.ObjectValidator;
 import org.serviio.util.StringUtils;
 import org.serviio.util.UnicodeReader;
 import org.serviio.util.ZipUtils;
+import org.serviio.library.online.feed.FeedEntryParser;
 import org.xml.sax.InputSource;
 
 public class FeedParser : AbstractOnlineItemParser

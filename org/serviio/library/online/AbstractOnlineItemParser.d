@@ -1,5 +1,6 @@
 module org.serviio.library.online.AbstractOnlineItemParser;
 
+import java.lang.String;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
@@ -12,6 +13,8 @@ import org.serviio.library.online.metadata.OnlineContainerItem;
 import org.serviio.library.online.metadata.OnlineItem;
 import org.serviio.util.HttpUtils;
 import org.serviio.util.ThreadUtils;
+import org.serviio.library.online.AbstractUrlExtractor;
+import org.serviio.library.online.ContentURLContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

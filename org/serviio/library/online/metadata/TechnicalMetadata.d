@@ -3,6 +3,7 @@ module org.serviio.library.online.metadata.TechnicalMetadata;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.lang.Cloneable;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;

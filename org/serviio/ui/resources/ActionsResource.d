@@ -6,8 +6,8 @@ import org.serviio.ui.representation.ActionRepresentation;
 
 public abstract interface ActionsResource
 {
-  @Post("xml|json")
-  public abstract ResultRepresentation execute(ActionRepresentation paramActionRepresentation);
+    //@Post("xml|json")
+    public abstract ResultRepresentation execute(ActionRepresentation paramActionRepresentation);
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar

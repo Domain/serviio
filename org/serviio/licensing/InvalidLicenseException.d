@@ -1,20 +1,22 @@
 module org.serviio.licensing.InvalidLicenseException;
 
+import java.lang.String;
+
 public class InvalidLicenseException : Exception
 {
-  private static final long serialVersionUID = 4647228477001777038L;
+    private static const long serialVersionUID = 4647228477001777038L;
 
-  public this(String message, Throwable cause)
-  {
-    super(message, cause);
-  }
+    public this(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
 
-  public this(String message) {
-    super(message);
-  }
+    public this(String message) {
+        super(message);
+    }
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
- * Qualified Name:     org.serviio.licensing.InvalidLicenseException
- * JD-Core Version:    0.6.2
- */
+* Qualified Name:     org.serviio.licensing.InvalidLicenseException
+* JD-Core Version:    0.6.2
+*/

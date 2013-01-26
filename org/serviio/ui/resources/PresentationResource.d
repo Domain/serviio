@@ -7,11 +7,11 @@ import org.serviio.ui.representation.PresentationRepresentation;
 
 public abstract interface PresentationResource
 {
-  @Get("xml|json")
-  public abstract PresentationRepresentation load();
+    //@Get("xml|json")
+    public abstract PresentationRepresentation load();
 
-  @Put("xml|json")
-  public abstract ResultRepresentation save(PresentationRepresentation paramPresentationRepresentation);
+    //@Put("xml|json")
+    public abstract ResultRepresentation save(PresentationRepresentation paramPresentationRepresentation);
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar

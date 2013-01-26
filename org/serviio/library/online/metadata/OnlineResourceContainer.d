@@ -10,7 +10,7 @@ import org.serviio.library.online.AbstractUrlExtractor;
 import org.serviio.library.online.metadata.OnlineContainerItem;
 import org.serviio.library.online.metadata.OnlineCachable;
 
-public abstract class OnlineResourceContainer(T/* : OnlineContainerItem!(Object)*/, E : AbstractUrlExtractor) : OnlineCachable
+public abstract class OnlineResourceContainer(T/* : OnlineContainerItem!(Object)*/, E/* : AbstractUrlExtractor*/) : OnlineCachable
 {
     private Long onlineRepositoryId;
     private String title;

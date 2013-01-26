@@ -7,11 +7,11 @@ import org.serviio.ui.representation.ConsoleSettingsRepresentation;
 
 public abstract interface ConsoleSettingsResource
 {
-  @Get("xml|json")
-  public abstract ConsoleSettingsRepresentation load();
+    //@Get("xml|json")
+    public abstract ConsoleSettingsRepresentation load();
 
-  @Put("xml|json")
-  public abstract ResultRepresentation save(ConsoleSettingsRepresentation paramConsoleSettingsRepresentation);
+    //@Put("xml|json")
+    public abstract ResultRepresentation save(ConsoleSettingsRepresentation paramConsoleSettingsRepresentation);
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar

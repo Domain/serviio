@@ -5,8 +5,8 @@ import org.serviio.ui.representation.LibraryStatusRepresentation;
 
 public abstract interface LibraryStatusResource
 {
-  @Get("xml|json")
-  public abstract LibraryStatusRepresentation load();
+    //@Get("xml|json")
+    public abstract LibraryStatusRepresentation load();
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
