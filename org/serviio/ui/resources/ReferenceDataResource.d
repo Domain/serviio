@@ -5,8 +5,8 @@ import org.serviio.ui.representation.ReferenceDataRepresentation;
 
 public abstract interface ReferenceDataResource
 {
-  @Get("xml|json")
-  public abstract ReferenceDataRepresentation load();
+    //@Get("xml|json")
+    public abstract ReferenceDataRepresentation load();
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar

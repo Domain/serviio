@@ -7,11 +7,11 @@ import org.serviio.ui.representation.StatusRepresentation;
 
 public abstract interface StatusResource
 {
-  @Get("xml|json")
-  public abstract StatusRepresentation load();
+    //@Get("xml|json")
+    public abstract StatusRepresentation load();
 
-  @Put("xml|json")
-  public abstract ResultRepresentation save(StatusRepresentation paramStatusRepresentation);
+    //@Put("xml|json")
+    public abstract ResultRepresentation save(StatusRepresentation paramStatusRepresentation);
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar

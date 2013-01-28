@@ -7,11 +7,11 @@ import org.serviio.ui.representation.RepositoryRepresentation;
 
 public abstract interface RepositoryResource
 {
-  @Get("xml|json")
-  public abstract RepositoryRepresentation load();
+    //@Get("xml|json")
+    public abstract RepositoryRepresentation load();
 
-  @Put("xml|json")
-  public abstract ResultRepresentation save(RepositoryRepresentation paramRepositoryRepresentation);
+    //@Put("xml|json")
+    public abstract ResultRepresentation save(RepositoryRepresentation paramRepositoryRepresentation);
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar

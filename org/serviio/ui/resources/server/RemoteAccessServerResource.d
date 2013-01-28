@@ -12,44 +12,44 @@ import org.serviio.ui.resources.RemoteAccessResource;
 import org.serviio.util.ObjectValidator;
 
 public class RemoteAccessServerResource : AbstractProEditionServerResource
-  , RemoteAccessResource
+, RemoteAccessResource
 {
-  public ResultRepresentation save(RemoteAccessRepresentation representation)
-  {
-    bool cleanCache = false;
+    public ResultRepresentation save(RemoteAccessRepresentation representation)
+    {
+        bool cleanCache = false;
 
-    if (ObjectValidator.isEmpty(representation.getRemoteUserPassword())) {
-      throw new ValidationException(504);
+        if (ObjectValidator.isEmpty(representation.getRemoteUserPassword())) {
+            throw new ValidationException(504);
+        }
+        Configuration.setWebPassword(representation.getRemoteUserPassword());
+
+        if (Configuration.getRemotePreferredDeliveryQuality() != representation.getPreferredRemoteDeliveryQuality()) {
+            Configuration.setRemotePreferredDeliveryQuality(representation.getPreferredRemoteDeliveryQuality());
+            cleanCache = true;
+        }
+
+        if (cleanCache) {
+            getCDS().incrementUpdateID();
+        }
+
+        return responseOk();
     }
-    Configuration.setWebPassword(representation.getRemoteUserPassword());
 
-    if (Configuration.getRemotePreferredDeliveryQuality() != representation.getPreferredRemoteDeliveryQuality()) {
-      Configuration.setRemotePreferredDeliveryQuality(representation.getPreferredRemoteDeliveryQuality());
-      cleanCache = true;
+    public RemoteAccessRepresentation load()
+    {
+        RemoteAccessRepresentation rar = new RemoteAccessRepresentation();
+        rar.setRemoteUserPassword(Configuration.getWebPassword());
+        rar.setPreferredRemoteDeliveryQuality(Configuration.getRemotePreferredDeliveryQuality());
+        return rar;
     }
 
-    if (cleanCache) {
-      getCDS().incrementUpdateID();
+    override protected List!(Method) getRestrictedMethods()
+    {
+        return Collections.singletonList(Method.PUT);
     }
-
-    return responseOk();
-  }
-
-  public RemoteAccessRepresentation load()
-  {
-    RemoteAccessRepresentation rar = new RemoteAccessRepresentation();
-    rar.setRemoteUserPassword(Configuration.getWebPassword());
-    rar.setPreferredRemoteDeliveryQuality(Configuration.getRemotePreferredDeliveryQuality());
-    return rar;
-  }
-
-  protected List!(Method) getRestrictedMethods()
-  {
-    return Collections.singletonList(Method.PUT);
-  }
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar
- * Qualified Name:     org.serviio.ui.resources.server.RemoteAccessServerResource
- * JD-Core Version:    0.6.2
- */
+* Qualified Name:     org.serviio.ui.resources.server.RemoteAccessServerResource
+* JD-Core Version:    0.6.2
+*/

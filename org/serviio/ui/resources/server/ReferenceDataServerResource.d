@@ -12,7 +12,7 @@ import org.serviio.library.entities.OnlineRepository;
 import org.serviio.library.local.metadata.extractor.ExtractorType;
 import org.serviio.library.local.metadata.extractor.video.MetadataLanguages;
 import org.serviio.library.online.PreferredQuality;
-import org.serviio.profile.DeliveryQuality : QualityType;
+import org.serviio.profile.DeliveryQuality;
 import org.serviio.profile.Profile;
 import org.serviio.profile.ProfileManager;
 import org.serviio.restlet.AbstractServerResource;
@@ -134,9 +134,9 @@ public class ReferenceDataServerResource : AbstractServerResource , ReferenceDat
 
     private ReferenceDataRepresentation getRemoteDeliveryQualities() {
         ReferenceDataRepresentation rep = new ReferenceDataRepresentation();
-        rep.addValue(QualityType.LOW.toString(), "Low");
-        rep.addValue(QualityType.MEDIUM.toString(), "Medium");
-        rep.addValue(QualityType.ORIGINAL.toString(), "High");
+        rep.addValue(DeliveryQuality.QualityType.LOW.toString(), "Low");
+        rep.addValue(DeliveryQuality.QualityType.MEDIUM.toString(), "Medium");
+        rep.addValue(DeliveryQuality.QualityType.ORIGINAL.toString(), "High");
         return rep;
     }
 
