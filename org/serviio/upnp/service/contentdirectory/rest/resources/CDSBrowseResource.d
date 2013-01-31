@@ -5,8 +5,8 @@ import org.serviio.upnp.service.contentdirectory.rest.representation.ContentDire
 
 public abstract interface CDSBrowseResource
 {
-  @Get("xml|json")
-  public abstract ContentDirectoryRepresentation browse();
+	//@Get("xml|json")
+	public abstract ContentDirectoryRepresentation browse();
 }
 
 /* Location:           D:\Program Files\Serviio\lib\serviio.jar

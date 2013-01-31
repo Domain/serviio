@@ -42,12 +42,13 @@ import org.serviio.upnp.service.contentdirectory.rest.representation.OnlineIdent
 import org.serviio.upnp.service.contentdirectory.rest.resources.CDSBrowseResource;
 import org.serviio.util.HttpUtils;
 import org.serviio.util.StringUtils;
+import org.serviio.upnp.service.contentdirectory.rest.resources.server.AbstractRestrictedCDSServerResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CDSBrowseServerResource : AbstractRestrictedCDSServerResource , CDSBrowseResource
 {
-    private static final Logger log;
+    private static immutable Logger log;
     private String profile;
     private String objectId;
     private int startIndex;
@@ -93,7 +94,7 @@ public class CDSBrowseServerResource : AbstractRestrictedCDSServerResource , CDS
         }
     }
 
-    protected void doInit()
+    override protected void doInit()
     {
         super.doInit();
         objectId = HttpUtils.urlDecode(cast(String)getRequestAttributes().get("objectId"));
